@@ -1,7 +1,7 @@
 # Tank Game Todo List
 
 ## Features to Implement
-- [ ] Create open map
+- [x] Create open map
 - [ ] Implement spawning a tank after death
 - [ ] Implement `W A S D` movement controls
 - [ ] Add main fire functionality with a simple bullet using mouse
