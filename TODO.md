@@ -10,6 +10,7 @@
 - [ ] Scale enemy tanks based on questions answered (health, damage, etc.)
 - [ ] Implement win condition: Answering all questions before time runs out
 - [ ] Add functionality: Killing enemy tanks adds X amount of time
+- [ ] Add a local database for question sets
 
 ## Optional Enhancements
 - [ ] Design tank models and graphics
