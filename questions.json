@@ -1,0 +1,55 @@
+{
+	"question_sets": [
+		{
+			"id": 1,
+			"name": "Mathematics",
+			"description": "Basic math questions",
+			"questions": [
+			{
+				"id": 1,
+				"question_text": "What is 2 + 2?",
+				"answer": "4"
+			},
+			{
+				"id": 2,
+				"question_text": "What is the square root of 16?",
+				"answer": "4"
+			}
+			]
+		},
+		{
+			"id": 2,
+			"name": "History",
+			"description": "Questions about historical events",
+			"questions": [
+			{
+				"id": 3,
+				"question_text": "Who was the first president of the United States?",
+				"answer": "George Washington"
+			},
+			{
+				"id": 4,
+				"question_text": "In what year did World War II end?",
+				"answer": "1945"
+			}
+			]
+		},
+		{
+			"id": 3,
+			"name": "Science",
+			"description": "Questions about scientific concepts",
+			"questions": [
+			{
+				"id": 5,
+				"question_text": "What is the chemical symbol for water?",
+				"answer": "H2O"
+			},
+			{
+				"id": 6,
+				"question_text": "Who proposed the theory of relativity?",
+				"answer": "Albert Einstein"
+			}
+			]
+		}
+	]
+}
