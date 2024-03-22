@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxydvosy3v2ph"]
+
+[ext_resource type="Script" path="res://tanks/TankBase/Tank.gd" id="1_akvvp"]
+[ext_resource type="Texture2D" uid="uid://c3psuwl31mdom" path="res://assets/kenney_top-down-tanks/PNG/Tanks/tankBlue.png" id="2_i5g68"]
+[ext_resource type="Texture2D" uid="uid://8vu2n6wp1256" path="res://assets/kenney_top-down-tanks/PNG/Tanks/barrelBlue.png" id="3_5y62i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypqw4"]
+size = Vector2(36, 38)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66ddr"]
+radius = 3.0
+height = 24.0
+
+[node name="Tank" type="CharacterBody2D" groups=["destroyable"]]
+z_index = 1
+collision_layer = 2
+collision_mask = 23
+script = ExtResource("1_akvvp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ypqw4")
+
+[node name="Body" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_i5g68")
+
+[node name="Cannon" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CannonSprite" type="Sprite2D" parent="Cannon"]
+position = Vector2(13, 0)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_5y62i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cannon"]
+position = Vector2(13, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_66ddr")
+
+[node name="health" type="ProgressBar" parent="."]
+offset_left = -18.0
+offset_top = 26.0
+offset_right = 18.0
+offset_bottom = 31.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+show_percentage = false
+
+[connection signal="child_exiting_tree" from="CollisionShape2D" to="." method="_on_collision_shape_2d_child_exiting_tree"]

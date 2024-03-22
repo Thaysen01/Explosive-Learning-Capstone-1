@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm76hgqs7iqgx"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_b2o4i"]
+[ext_resource type="PackedScene" uid="uid://b5esocitpx2a0" path="res://map/tile_map.tscn" id="2_v43ny"]
+
+[node name="Main" type="Node2D"]
+editor_description = "Known bug
+* bullets will sometimes catch player and pull along
+* tanks will avoid mines not sure if thats good"
+script = ExtResource("1_b2o4i")
+
+[node name="TileMap" parent="." instance=ExtResource("2_v43ny")]
+
+[node name="Spawn" type="Node2D" parent="."]
+
+[node name="Marker" type="Marker2D" parent="Spawn"]
+position = Vector2(919, 510)
+
+[node name="Marker2" type="Marker2D" parent="Spawn"]
+position = Vector2(219, 567)
+
+[node name="Marker3" type="Marker2D" parent="Spawn"]
+position = Vector2(441, 116)
+
+[node name="Marker4" type="Marker2D" parent="Spawn"]
+position = Vector2(912, 146)

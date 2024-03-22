@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://cujeg3447fdmd"]
+
+[ext_resource type="Script" path="res://mine/Mine.gd" id="1_40elg"]
+[ext_resource type="Texture2D" uid="uid://bqivw768npcvm" path="res://assets/kenney_top-down-tanks/PNG/Obstacles/barrelGreen_up.png" id="1_gkix2"]
+[ext_resource type="Texture2D" uid="uid://byffjx7gg741n" path="res://assets/kenney_top-down-tanks/PNG/Obstacles/barrelRed_up.png" id="3_bnsj6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wxyrb"]
+radius = 12.0
+
+[sub_resource type="Animation" id="Animation_aqqo2"]
+resource_name = "tick"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_gkix2"), ExtResource("3_bnsj6")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_koewp"]
+_data = {
+"tick": SubResource("Animation_aqqo2")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_glapi"]
+radius = 60.0
+
+[node name="Mine" type="Area2D" groups=["destroyable", "no_explosion"]]
+collision_layer = 128
+collision_mask = 131
+script = ExtResource("1_40elg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["destroyable"]]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_gkix2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wxyrb")
+
+[node name="ExpireTimer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[node name="BlastTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 2.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_koewp")
+}
+
+[node name="ArmingTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="BlastRadius" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlastRadius"]
+shape = SubResource("CircleShape2D_glapi")
+
+[connection signal="body_entered" from="." to="." method="_on_Mine_entered"]
+[connection signal="timeout" from="ExpireTimer" to="." method="_on_ExpireTimer_timeout"]
+[connection signal="timeout" from="BlastTimer" to="." method="_on_BlastTimer_timeout"]
+[connection signal="timeout" from="ArmingTimer" to="." method="_on_ArmingTimer_timeout"]

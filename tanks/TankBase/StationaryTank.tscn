@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://coe8f8g66io1g"]
+
+[ext_resource type="PackedScene" uid="uid://vehk15qsp0h0" path="res://tanks/TankBase/EnemyTank.tscn" id="1_8xxjj"]
+[ext_resource type="Script" path="res://tanks/TankBase/StationaryTank.gd" id="2_dw4nw"]
+
+[node name="StationaryTank" instance=ExtResource("1_8xxjj")]
+z_index = 0
+script = ExtResource("2_dw4nw")
+
+[node name="ChangeDirectionTimer" type="Timer" parent="." index="5"]
+autostart = true
+
+[connection signal="timeout" from="ChangeDirectionTimer" to="." method="_on_ChangeDirectionTimer_timeout"]

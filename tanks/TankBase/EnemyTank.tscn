@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://vehk15qsp0h0"]
+
+[ext_resource type="PackedScene" uid="uid://cxydvosy3v2ph" path="res://tanks/TankBase/Tank.tscn" id="1_lqyvs"]
+[ext_resource type="Script" path="res://tanks/TankBase/EnemyTank.gd" id="1_xj7y2"]
+
+[node name="EnemyTank" groups=["enemy"] instance=ExtResource("1_lqyvs")]
+script = ExtResource("1_xj7y2")
+bulletsPerSecond = 0.5
+
+[node name="ShootingTimer" type="Timer" parent="." index="4"]
+autostart = true
+
+[connection signal="timeout" from="ShootingTimer" to="." method="_on_ShootingTimer_timeout"]
