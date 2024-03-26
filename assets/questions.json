@@ -1,0 +1,38 @@
+[
+    {
+        "question": "When you freeze water, what is the result?",
+        "option": [
+            "Ice",
+            "Bomb",
+            "Fire"
+        ],
+        "correct_option": 0
+    },
+    {
+        "question": "Where can you go to see lots of animals?",
+        "option": [
+            "Airport",
+            "School",
+            "Zoo"
+        ],
+        "correct_option": 2
+    },
+    {
+        "question": "What do caterpillars become?",
+        "option": [
+            "Butterflies",
+            "Fish",
+            "Birds"
+        ],
+        "correct_option": 0
+    },
+    {
+        "question": "Which is the fastest land animal?",
+        "option": [
+            "Turtle",
+            "Cheetah",
+            "Snail"
+        ],
+        "correct_option": 1
+    }
+]
