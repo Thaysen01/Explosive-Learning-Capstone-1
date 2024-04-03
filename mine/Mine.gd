@@ -7,15 +7,15 @@ var armed = false
 #func _ready():
 	#AudioManager.play(AudioManager.SOUNDS.MINE)
 
-func setup(position: Vector2):
-	self.position = position
+func setup(pos: Vector2):
+	self.position = pos
 
 func createBlast():
 	var blast = Blast.instantiate()
 	blast.position = position
 	get_parent().add_child(blast)
 
-func deal_damage(d):
+func deal_damage(_d):
 	destroy()
 
 func destroy():
@@ -30,7 +30,7 @@ func _on_BlastTimer_timeout():
 	destroy()
 
 
-func _on_Mine_entered(body):
+func _on_Mine_entered(_body):
 	if armed:
 		destroy()
 

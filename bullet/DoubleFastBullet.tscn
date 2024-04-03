@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://fd8j6l2ir6p5"]
+
+[ext_resource type="PackedScene" uid="uid://bfig2slpvfc8g" path="res://bullet/Bullet.tscn" id="1_3dvps"]
+
+[node name="DoubleFastBullet" instance=ExtResource("1_3dvps")]
+speed = 600

@@ -20,10 +20,10 @@ var liveMines = []
 
 
 const Mine = preload("res://mine/Mine.tscn")
-var Bullet = preload("res://bullet/Bullet.tscn")
+@export var bullet_load = preload("res://bullet/Bullet.tscn")
 
 
-var bulletInstance = Bullet.instantiate() # A bullet instance to acces some of ithe Bullet class properties
+var bulletInstance = bullet_load.instantiate() # A bullet instance to acces some of ithe Bullet class properties
 
 var directions = {
 	"UP": Vector2(0,-1),
@@ -46,7 +46,7 @@ func _ready():
 	$health.max_value = max_hp
 	
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	$health.value = current_hp
 
 
@@ -96,13 +96,11 @@ func rotateCannon(angle):
 	
 
 func shoot():
-	var bullet = Bullet.instantiate()#.instance()
+	var bullet = bullet_load.instantiate()
 	var path = $Body.texture.load_path
 	var start = path.find("tank")+4
 	var length = path.find(".png") - start
-	var image = Image.load_from_file("res://assets/kenney_top-down-tanks/PNG/Bullets/bullet{str}.png".format({"str":path.substr(start, length)}))
-	
-	bullet.get_child(0).texture = ImageTexture.create_from_image(image)
+	bullet.get_child(0).texture = bullet.bullet_color[path.substr(start, length)]
 	bullet.setup(getCannonTipPosition(), Vector2(1,0).rotated($Cannon.rotation))
 	get_parent().add_child(bullet)
 	liveBullets.append(bullet)

@@ -20,9 +20,9 @@ func _ready():
 	$ChangeDirTimer.wait_time = rng.randf_range(changeDirTimes[0], changeDirTimes[1])
 	cannonRotSpeed = 0.4
 
-	#if (maxMines > 0):
-		#$MineTimer.wait_time = rng.randf_range(mineTimes[0], mineTimes[1])
-		#$MineTimer.start()
+	if (maxMines > 0):
+		$MineTimer.wait_time = rng.randf_range(mineTimes[0], mineTimes[1])
+		$MineTimer.start()
 
 func _physics_process(delta):
 	super(delta)
@@ -90,6 +90,6 @@ func _on_CollisionCheckTimer_timeout():
 			direction = directions.values()[(rng.randi_range(0, directions.size()-1))]
 
 
-#func _on_MineTimer_timeout():
-	#tryToPlantMine()
-	#$MineTimer.wait_time = rng.randf_range(mineTimes[0], mineTimes[1])
+func _on_MineTimer_timeout():
+	tryToPlantMine()
+	$MineTimer.wait_time = rng.randf_range(mineTimes[0], mineTimes[1])

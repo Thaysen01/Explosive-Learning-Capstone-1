@@ -57,6 +57,7 @@ libraries = {
 }
 
 [node name="ArmingTimer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 autostart = true
 
@@ -67,6 +68,7 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlastRadius"]
 shape = SubResource("CircleShape2D_glapi")
 
+[connection signal="area_entered" from="." to="." method="_on_Mine_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Mine_entered"]
 [connection signal="timeout" from="ExpireTimer" to="." method="_on_ExpireTimer_timeout"]
 [connection signal="timeout" from="BlastTimer" to="." method="_on_BlastTimer_timeout"]

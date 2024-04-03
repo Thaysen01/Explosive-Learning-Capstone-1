@@ -30,6 +30,7 @@ func _ready():
 	var vecToPlayer = position.direction_to((Global.p1Position))
 	rotationDirection = orientation[rng.randi_range(0,1)]
 	$Cannon.rotation = vecToPlayer.rotated(rotationDirection*PI/4).angle()
+	
 
 func _physics_process(delta):
 	super(delta)

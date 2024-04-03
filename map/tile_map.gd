@@ -10,7 +10,7 @@ func _ready():
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	for e in enemies:
 		e.connect("killed", self.checkIfAllEnemiesKilled) 
-		print(e)
+		#print(e)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,10 +46,10 @@ func _physics_process(delta):
 			$PlayerTank.tryToPlantMine()
 
 func checkIfAllEnemiesKilled():
-	print("checking enemies")
+	#print("checking enemies")
 	var enemies = get_tree().get_nodes_in_group("enemy").size()
 	if (enemies == 0):
-		print(get_parent().name)
+		#print(get_parent().name)
 		if (get_parent().name == "Main"):
 			deleteAllBullets()
 			var nextLevel_timer = Timer.new()
@@ -63,20 +63,22 @@ func checkIfAllEnemiesKilled():
 	
 
 func _on_nextLevel_timer_timeout():
-	print("timed out")
+	#print("timed out")
 	if (get_parent().name == "Main"):
 		emit_signal("enemies_killed")
 	else:
 		get_tree().quit()
 
+
+
 func _on_PlayerTank_player_dies():
 	deleteAllBullets()
-	get_tree().quit()
+	#get_tree().quit()
 
 	var death_timer = Timer.new()
 	death_timer.wait_time = 2
 	death_timer.autostart = true
-	death_timer.connect("timeout", self._on_death_timer_timeouts) 
+	death_timer.connect("timeout", self._on_death_timer_timeout) 
 	add_child(death_timer)
 	
 	emit_signal("level_end")

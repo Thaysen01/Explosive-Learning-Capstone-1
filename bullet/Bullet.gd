@@ -7,7 +7,19 @@ class_name Bullet extends CharacterBody2D
 @export var damage = 1
 var currentRebounds
 
+#brown, beige, yellow, teal, green, red, purple, white, black 
 
+var bullet_color ={
+	"Blue" : preload("res://assets/kenney_top-down-tanks/PNG/Bullets/bulletBlue.png"),
+	"Brown" : preload("res://assets/kenney_top-down-tanks/PNG/Bullets/bulletBrown.png"),
+	"Beige" : preload("res://assets/kenney_top-down-tanks/PNG/Bullets/bulletBeige.png"),
+	"Yellow" : preload("res://assets/kenney_top-down-tanks/PNG/Bullets/bulletYellow.png"),
+	"Teal" : preload("res://assets/kenney_top-down-tanks/PNG/Bullets/bulletTeal.png"),
+	"Green" : preload("res://assets/kenney_top-down-tanks/PNG/Bullets/bulletGreen.png"),
+	"Red" : preload("res://assets/kenney_top-down-tanks/PNG/Bullets/bulletRed.png"),
+	"Purple" : preload("res://assets/kenney_top-down-tanks/PNG/Bullets/bulletPurple.png"),
+	"Black" : preload("res://assets/kenney_top-down-tanks/PNG/Bullets/bulletBlack.png"),
+}
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,7 +36,7 @@ func setup(initialPosition: Vector2, initialVelocity: Vector2):
 func destroy():
 	queue_free()
 	
-func deal_damage(d):
+func deal_damage(_d):
 	destroy()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

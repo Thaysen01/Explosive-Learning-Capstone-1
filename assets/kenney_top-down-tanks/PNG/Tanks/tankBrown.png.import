@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8bknwvonowj"
-path="res://.godot/imported/bulletGreen.png-27893e93edcb8bae347d18de35b99946.ctex"
+uid="uid://b2vsg5ibfpa1h"
+path="res://.godot/imported/tankBrown.png-033e5bcef754366688e98aec3e2d795b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney_top-down-tanks/PNG/Bullets/bulletGreen.png"
-dest_files=["res://.godot/imported/bulletGreen.png-27893e93edcb8bae347d18de35b99946.ctex"]
+source_file="res://assets/kenney_top-down-tanks/PNG/Tanks/tankBrown.png"
+dest_files=["res://.godot/imported/tankBrown.png-033e5bcef754366688e98aec3e2d795b.ctex"]
 
 [params]
 

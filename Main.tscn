@@ -1,12 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm76hgqs7iqgx"]
+[gd_scene load_steps=5 format=3 uid="uid://bm76hgqs7iqgx"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_b2o4i"]
 [ext_resource type="PackedScene" uid="uid://b5esocitpx2a0" path="res://map/tile_map.tscn" id="2_v43ny"]
+[ext_resource type="PackedScene" uid="uid://qxvg38sf0kva" path="res://ui/PauseMenu.tscn" id="3_8vrxk"]
+[ext_resource type="PackedScene" uid="uid://cb43uubfftuyx" path="res://ui/CreateQuestionSet.tscn" id="4_2yemq"]
 
 [node name="Main" type="Node2D"]
 editor_description = "Known bug
-* bullets will sometimes catch player and pull along
-* tanks will avoid mines not sure if thats good"
+* bullets will sometimes catch player and pull along"
 script = ExtResource("1_b2o4i")
 
 [node name="TileMap" parent="." instance=ExtResource("2_v43ny")]
@@ -24,3 +25,11 @@ position = Vector2(441, 116)
 
 [node name="Marker4" type="Marker2D" parent="Spawn"]
 position = Vector2(912, 146)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_8vrxk")]
+visible = false
+
+[node name="CreateQuestionSet" parent="CanvasLayer" instance=ExtResource("4_2yemq")]
+visible = false
