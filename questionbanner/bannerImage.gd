@@ -3,6 +3,8 @@ extends TextureRect
 @onready var animator = $AnimationPlayer
 
 func _lower_banner():
+	var node = get_node("res://questionbanner/questionLoad.gd");
+	node.new_question()
 	animator.play("slide_down");
 	
 
