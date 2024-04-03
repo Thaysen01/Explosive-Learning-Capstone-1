@@ -1,0 +1,242 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb43uubfftuyx"]
+
+[ext_resource type="Texture2D" uid="uid://btehpty2qlnno" path="res://assets/CartoonTank.jpg" id="1_xkcij"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ciojg"]
+bg_color = Color(0.584314, 0, 0, 1)
+shadow_size = 3
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 1.233
+anchor_bottom = 1.239
+offset_right = -4.02506
+offset_bottom = 0.799934
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_horizontal_guides_ = [-151.0, -1.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.396078, 0.396078, 0.396078, 1)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 1751.0
+offset_bottom = 994.0
+texture = ExtResource("1_xkcij")
+expand_mode = 1
+
+[node name="CreateNewQuestions" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1746.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "Create New Questions!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="QuestionSetName" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.178
+anchor_top = 0.194
+anchor_right = 0.178
+anchor_bottom = 0.194
+offset_left = 0.677995
+offset_top = -0.254006
+offset_right = 451.678
+offset_bottom = 48.746
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+text = "Enter Question Set Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 3
+
+[node name="QuestionSetInput" type="TextEdit" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.559
+anchor_top = 0.194
+anchor_right = 0.559
+anchor_bottom = 0.194
+offset_left = 0.308973
+offset_top = -0.254006
+offset_right = 531.309
+offset_bottom = 62.746
+theme_override_colors/background_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Question Set Name"
+scroll_smooth = true
+
+[node name="Question" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.249
+anchor_top = 0.296
+anchor_right = 0.249
+anchor_bottom = 0.296
+offset_left = 0.498977
+offset_top = -0.336004
+offset_right = 377.499
+offset_bottom = 64.664
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+text = "Enter Question"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 3
+
+[node name="QuestionInput" type="TextEdit" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.56
+anchor_top = 0.308
+anchor_right = 0.56
+anchor_bottom = 0.308
+offset_left = 0.559996
+offset_top = -0.228028
+offset_right = 532.56
+offset_bottom = 61.772
+theme_override_colors/background_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Question"
+scroll_smooth = true
+
+[node name="Answer" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.297
+anchor_top = 0.428
+anchor_right = 0.297
+anchor_bottom = 0.428
+offset_left = 0.546964
+offset_top = -0.148033
+offset_right = 236.547
+offset_bottom = 48.852
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+text = "Enter Answer"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 3
+
+[node name="AnswerInput" type="TextEdit" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.563
+anchor_top = 0.428
+anchor_right = 0.563
+anchor_bottom = 0.428
+offset_left = -0.687041
+offset_top = -0.148033
+offset_right = 531.313
+offset_bottom = 60.852
+theme_override_colors/background_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Answer"
+scroll_smooth = true
+
+[node name="Choice1" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.268
+anchor_top = 0.552
+anchor_right = 0.268
+anchor_bottom = 0.552
+offset_left = 0.267988
+offset_top = -0.0320454
+offset_right = 321.268
+offset_bottom = 48.968
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+text = "Enter Choice 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 3
+
+[node name="Choice1Input" type="TextEdit" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.561
+anchor_top = 0.554
+anchor_right = 0.561
+anchor_bottom = 0.554
+offset_left = 0.810914
+offset_top = -0.0140198
+offset_right = 533.811
+offset_bottom = 68.986
+theme_override_colors/background_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Choice 1"
+scroll_smooth = true
+
+[node name="Choice2" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.285
+anchor_top = 0.669
+anchor_right = 0.285
+anchor_bottom = 0.669
+offset_left = 12.535
+offset_top = 0.0209707
+offset_right = 259.535
+offset_bottom = 49.021
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+text = "Enter Choice 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 3
+
+[node name="Choice2Input" type="TextEdit" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.564
+anchor_top = 0.667
+anchor_right = 0.564
+anchor_bottom = 0.667
+offset_left = -0.436018
+offset_top = 0.00294518
+offset_right = 531.564
+offset_bottom = 67.0029
+theme_override_colors/background_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Choice 2"
+scroll_smooth = true
+
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.433
+anchor_top = 0.813
+anchor_right = 0.433
+anchor_bottom = 0.813
+offset_left = -0.317049
+offset_top = 1.31698
+offset_right = 242.683
+offset_bottom = 84.317
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(0.533333, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ciojg")
+text = "Submit"
