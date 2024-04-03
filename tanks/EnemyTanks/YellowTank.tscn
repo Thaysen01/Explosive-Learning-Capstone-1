@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0ubxs713mblk"]
+
+[ext_resource type="PackedScene" uid="uid://uqldrk5mvfx0" path="res://tanks/TankBase/MovingTank.tscn" id="1_n2n07"]
+[ext_resource type="Texture2D" uid="uid://dxr1fv5yr1kly" path="res://assets/kenney_top-down-tanks/PNG/Tanks/tankYellow.png" id="2_sf481"]
+[ext_resource type="Texture2D" uid="uid://hufyny68jxmu" path="res://assets/kenney_top-down-tanks/PNG/Tanks/barrelYellow.png" id="3_1qemk"]
+
+[node name="YellowTank" instance=ExtResource("1_n2n07")]
+maxMines = 2
+
+[node name="Body" parent="." index="1"]
+texture = ExtResource("2_sf481")
+
+[node name="CannonSprite" parent="Cannon" index="0"]
+texture = ExtResource("3_1qemk")

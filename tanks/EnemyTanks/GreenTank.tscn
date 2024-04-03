@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://clfa731khycj5"]
+
+[ext_resource type="PackedScene" uid="uid://coe8f8g66io1g" path="res://tanks/TankBase/StationaryTank.tscn" id="1_8f35q"]
+[ext_resource type="PackedScene" uid="uid://fd8j6l2ir6p5" path="res://bullet/DoubleFastBullet.tscn" id="2_qsf26"]
+[ext_resource type="Texture2D" uid="uid://ckg0kx1aowvik" path="res://assets/kenney_top-down-tanks/PNG/Tanks/tankGreen.png" id="2_ttadh"]
+[ext_resource type="Texture2D" uid="uid://8o7e8bmu4nwl" path="res://assets/kenney_top-down-tanks/PNG/Tanks/barrelGreen.png" id="3_50xpr"]
+
+[node name="GreenTank" instance=ExtResource("1_8f35q")]
+bullet_load = ExtResource("2_qsf26")
+
+[node name="Body" parent="." index="1"]
+texture = ExtResource("2_ttadh")
+
+[node name="CannonSprite" parent="Cannon" index="0"]
+texture = ExtResource("3_50xpr")

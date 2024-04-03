@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc4t3dhcecb6o"]
+
+[ext_resource type="PackedScene" uid="uid://cxydvosy3v2ph" path="res://tanks/TankBase/Tank.tscn" id="1_7w22a"]
+[ext_resource type="Script" path="res://tanks/PlayerTank.gd" id="1_31hxe"]
+
+[node name="PlayerTank" groups=["player"] instance=ExtResource("1_7w22a")]
+script = ExtResource("1_31hxe")
+maxBullets = 100
+maxMines = 5
+max_hp = 100
+current_hp = 100
