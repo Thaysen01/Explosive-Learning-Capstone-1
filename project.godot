@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Utils="*res://util/Utils.gd"
 Global="*res://util/Global.gd"
 Debug="*res://util/Debug.gd"
+StaticData="*res://data/StaticData.gd"
 
 [display]
 

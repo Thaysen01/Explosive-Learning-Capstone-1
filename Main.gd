@@ -2,14 +2,14 @@ extends Node2D
 
 #brown, beige, yellow, teal, green, red, purple, white, black 
 var enemytanks = [
-	#preload("res://tanks/EnemyTanks/BrownTank.tscn"), 
-	#preload("res://tanks/EnemyTanks/BeigeTank.tscn"), 
-	#preload("res://tanks/EnemyTanks/YellowTank.tscn"),
-	#preload("res://tanks/EnemyTanks/TealTank.tscn"),
+	preload("res://tanks/EnemyTanks/BrownTank.tscn"), 
+	preload("res://tanks/EnemyTanks/BeigeTank.tscn"), 
+	preload("res://tanks/EnemyTanks/YellowTank.tscn"),
+	preload("res://tanks/EnemyTanks/TealTank.tscn"),
 	preload("res://tanks/EnemyTanks/GreenTank.tscn"),
-	#preload("res://tanks/EnemyTanks/RedTank.tscn"),
-	#preload("res://tanks/EnemyTanks/PurpleTank.tscn"),
-	#preload("res://tanks/EnemyTanks/BlackTank.tscn")
+	preload("res://tanks/EnemyTanks/RedTank.tscn"),
+	preload("res://tanks/EnemyTanks/PurpleTank.tscn"),
+	preload("res://tanks/EnemyTanks/BlackTank.tscn")
 	]
 	
 var rng = RandomNumberGenerator.new()
