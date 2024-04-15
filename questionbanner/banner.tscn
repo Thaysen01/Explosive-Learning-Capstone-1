@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://dkvkeiafkvt4r" path="res://assets/banner.png" id="1_6g3ul"]
 [ext_resource type="Script" path="res://questionbanner/banner.gd" id="1_wvg3r"]
 [ext_resource type="Theme" uid="uid://bfibo4accu3ky" path="res://questionbanner/Button.tres" id="2_8xe2j"]
-[ext_resource type="FontFile" uid="uid://84p8lf281u37" path="res://assets/1 Papyrus Regular.ttf" id="4_dgdfi"]
+[ext_resource type="FontFile" uid="uid://bp3y1rewfdn8p" path="res://assets/papyrus_let_bold.ttf" id="4_jy1jw"]
 
 [sub_resource type="Theme" id="Theme_rmdrx"]
 RichTextLabel/colors/default_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
-RichTextLabel/fonts/normal_font = ExtResource("4_dgdfi")
+RichTextLabel/fonts/normal_font = ExtResource("4_jy1jw")
 
 [sub_resource type="Animation" id="Animation_mw817"]
 resource_name = "slide_down"
