@@ -1,122 +1,92 @@
-[gd_scene load_steps=17 format=3 uid="uid://d2jksevmm4q8i"]
+[gd_scene load_steps=7 format=3 uid="uid://d2jksevmm4q8i"]
 
 [ext_resource type="Texture2D" uid="uid://dkvkeiafkvt4r" path="res://assets/banner.png" id="1_6g3ul"]
 [ext_resource type="Script" path="res://questionbanner/banner.gd" id="1_wvg3r"]
-[ext_resource type="Script" path="res://questionbanner/bannerImage.gd" id="2_ojxus"]
-[ext_resource type="Script" path="res://questionbanner/line2D.gd" id="3_7mxs3"]
+[ext_resource type="Theme" path="res://questionbanner/Button.tres" id="2_8xe2j"]
 
-[sub_resource type="Theme" id="Theme_1do78"]
+[sub_resource type="Theme" id="Theme_334tc"]
 Label/colors/font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gcc1h"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rnpbg"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fcrw6"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l1ghr"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7c8jl"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uxjib"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e13ax"]
-
-[sub_resource type="Theme" id="Theme_ytgwu"]
-ItemList/colors/font_color = Color(0, 0, 0, 1)
-ItemList/colors/font_hovered_color = Color(0.227451, 0.227451, 0.227451, 1)
-ItemList/colors/font_outline_color = Color(1, 1, 1, 0)
-ItemList/colors/font_selected_color = Color(0.282353, 0.317647, 0.121569, 1)
-ItemList/colors/guide_color = Color(0.701961, 0.701961, 0.701961, 0)
-ItemList/styles/cursor = SubResource("StyleBoxEmpty_gcc1h")
-ItemList/styles/cursor_unfocused = SubResource("StyleBoxEmpty_rnpbg")
-ItemList/styles/focus = SubResource("StyleBoxEmpty_fcrw6")
-ItemList/styles/hovered = SubResource("StyleBoxEmpty_l1ghr")
-ItemList/styles/panel = SubResource("StyleBoxEmpty_7c8jl")
-ItemList/styles/selected = SubResource("StyleBoxEmpty_uxjib")
-ItemList/styles/selected_focus = SubResource("StyleBoxEmpty_e13ax")
-
-[sub_resource type="Animation" id="Animation_it7gw"]
-resource_name = "Countdown"
-
-[sub_resource type="Animation" id="Animation_10rcx"]
+[sub_resource type="Animation" id="Animation_mw817"]
 resource_name = "slide_down"
-step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("bannerImage:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(155, -229), Vector2(155, -56)]
+"values": [Vector2(155, -372), Vector2(155, -132)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_27kyf"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ebp2x"]
 _data = {
-"Countdown": SubResource("Animation_it7gw"),
-"slide_down": SubResource("Animation_10rcx")
+"slide_down": SubResource("Animation_mw817")
 }
 
-[node name="Banner" type="Node2D"]
-script = ExtResource("1_wvg3r")
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="bannerImage" type="TextureRect" parent="."]
 offset_left = 155.0
-offset_top = -229.0
+offset_top = -372.0
 offset_right = 975.0
-offset_bottom = 1.0
+offset_bottom = 3.0
 texture = ExtResource("1_6g3ul")
-script = ExtResource("2_ojxus")
+script = ExtResource("1_wvg3r")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="bannerImage"]
 layout_mode = 0
-offset_left = 131.0
-offset_top = 104.0
-offset_right = 769.0
-offset_bottom = 234.0
+offset_left = 79.0
+offset_top = 150.0
+offset_right = 751.0
+offset_bottom = 281.0
 
 [node name="Question" type="Label" parent="bannerImage/VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_1do78")
+size_flags_horizontal = 4
+theme = SubResource("Theme_334tc")
 text = "Why do I have to fix Morales's linux machine to run my AI hw?"
 
-[node name="ItemList" type="ItemList" parent="bannerImage/VBoxContainer"]
+[node name="Option A" type="Button" parent="bannerImage/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 5.77
-theme = SubResource("Theme_ytgwu")
-item_count = 4
-max_columns = 4
-same_column_width = true
-fixed_column_width = 150
-item_0/text = "Answer 1"
-item_1/text = "Answer 2"
-item_2/text = "Answer 3"
-item_3/text = "Answer 3"
+theme = ExtResource("2_8xe2j")
+text = "Answer"
+
+[node name="Option B" type="Button" parent="bannerImage/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_8xe2j")
+text = "Answer"
+
+[node name="Option C" type="Button" parent="bannerImage/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_8xe2j")
+text = "Answer"
+
+[node name="Option D" type="Button" parent="bannerImage/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_8xe2j")
+text = "Answer"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="bannerImage"]
-root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_27kyf")
+"": SubResource("AnimationLibrary_ebp2x")
 }
 
-[node name="Line2D" type="Line2D" parent="."]
-position = Vector2(1000, 85)
-scale = Vector2(8.83, 1)
-points = PackedVector2Array(0, 0, 10, 0)
-width = 20.0
-default_color = Color(0.580392, 0.576471, 0, 1)
-script = ExtResource("3_7mxs3")
+[node name="Timer" type="Timer" parent="bannerImage"]
+wait_time = 2.0
+autostart = true
 
-[node name="lineTimer" type="Timer" parent="Line2D"]
-process_callback = 0
-
-[connection signal="item_clicked" from="bannerImage/VBoxContainer/ItemList" to="bannerImage" method="_on_item_list_item_clicked"]
-[connection signal="item_selected" from="bannerImage/VBoxContainer/ItemList" to="bannerImage" method="_on_item_list_item_selected"]
-[connection signal="animation_finished" from="bannerImage/AnimationPlayer" to="bannerImage" method="_on_animation_player_animation_finished"]
-[connection signal="_time_to_die" from="Line2D" to="bannerImage" method="_on_line_2d__time_to_die"]
-[connection signal="timeout" from="Line2D/lineTimer" to="Line2D" method="_on_line_timer_timeout"]
+[connection signal="pressed" from="bannerImage/VBoxContainer/Option A" to="bannerImage" method="_on_option_a_pressed"]
+[connection signal="pressed" from="bannerImage/VBoxContainer/Option B" to="bannerImage" method="_on_option_b_pressed"]
+[connection signal="pressed" from="bannerImage/VBoxContainer/Option C" to="bannerImage" method="_on_option_c_pressed"]
+[connection signal="pressed" from="bannerImage/VBoxContainer/Option D" to="bannerImage" method="_on_option_d_pressed"]
+[connection signal="timeout" from="bannerImage/Timer" to="bannerImage" method="_on_timer_timeout"]
