@@ -3,17 +3,18 @@ extends Control
 var items = load_json_file("res://assets/questions.json")
 @onready var question = $bannerImage/Question
 @onready var animator = $AnimationPlayer
-@onready var button = $VBoxContainer.get_children()
+@onready var button = []
 
 var answer = 0
-signal correct_answer
-signal incorrect_answer
-
+var total_num_questions = 0
+var total_correct_answer = 0
 
 #------------Slide Down Animation Call------------#
 
 #Lowers the banner with a new quetion loaded
 func _lower_banner():
+	button = $Answers.get_children()
+	print(button)
 	new_question()
 	animator.play("slide_down")
 
@@ -76,12 +77,11 @@ func check_answer(choice: int):
 	if (choice == answer[0]):
 		button[0].text = str("Correct")
 		slide_up()
-		correct_answer.emit()
+		total_correct_answer+=1
 	else:
 		button[0].text = str("Incorrect")
 		slide_up()
-		incorrect_answer.emit()
-
+	total_num_questions+=1
 
 #Calls check answer when any of the buttons are pressed
 func _on_option_a_pressed():
@@ -95,3 +95,4 @@ func _on_option_c_pressed():
 
 func _on_option_d_pressed():
 	check_answer(3)
+
