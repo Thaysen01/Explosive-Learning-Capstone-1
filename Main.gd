@@ -18,7 +18,6 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	_addCurrentLevel()
 
 func _unhandled_input(event):

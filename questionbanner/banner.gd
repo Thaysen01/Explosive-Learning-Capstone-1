@@ -3,18 +3,15 @@ extends Control
 var items = load_json_file("res://assets/questions.json")
 @onready var question = $bannerImage/Question
 @onready var animator = $AnimationPlayer
-@onready var button = []
+@onready var button = $Answers.get_children()
 
 var answer = 0
-var total_num_questions = 0
-var total_correct_answer = 0
+
 
 #------------Slide Down Animation Call------------#
 
 #Lowers the banner with a new quetion loaded
 func _lower_banner():
-	button = $Answers.get_children()
-	print(button)
 	new_question()
 	animator.play("slide_down")
 
@@ -34,6 +31,7 @@ func slide_up():
 
 #Loads a new question
 func new_question():
+	Global.total_num_questions += 1
 	var index = randi() % 547
 	var item = items.questions
 	var questionTest = item[index].text
@@ -77,11 +75,11 @@ func check_answer(choice: int):
 	if (choice == answer[0]):
 		button[0].text = str("Correct")
 		slide_up()
-		total_correct_answer+=1
+		Global.total_correct_answer += 1
 	else:
 		button[0].text = str("Incorrect")
 		slide_up()
-	total_num_questions+=1
+
 
 #Calls check answer when any of the buttons are pressed
 func _on_option_a_pressed():
