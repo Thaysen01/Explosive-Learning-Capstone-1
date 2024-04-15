@@ -3,9 +3,12 @@ extends Control
 var items = load_json_file("res://assets/questions.json")
 @onready var question = $bannerImage/Question
 @onready var animator = $AnimationPlayer
+@onready var button = $VBoxContainer.get_children()
+
 var answer = 0
-var correct = false
-var selected = false
+signal correct_answer
+signal incorrect_answer
+
 
 #------------Slide Down Animation Call------------#
 
@@ -13,7 +16,6 @@ var selected = false
 func _lower_banner():
 	new_question()
 	animator.play("slide_down")
-	
 
 #Stops the animation after finished and unhides the options
 func _on_animation_player_animation_finished(anim_name):
@@ -39,10 +41,9 @@ func new_question():
 	get_node("Question").text = str(questionTest)
 	#get_node("ItemList").clear()
 	var options = item[index].options
-	get_node("VBoxContainer/Option A").text = str(options[0])
-	get_node("VBoxContainer/Option B").text = str(options[1])
-	get_node("VBoxContainer/Option C").text = str(options[2])
-	get_node("VBoxContainer/Option D").text = str(options[3])
+	for i in range(0,4):
+		button[i].text = str(options[i])
+	
 	
 
 #Gets data from the JSON file
@@ -56,15 +57,13 @@ func load_json_file(filePath: String):
 
 #Hides the options. Used to show if answer is correct or not. 
 func hide_options():
-	get_node("VBoxContainer/Option B").hide()
-	get_node("VBoxContainer/Option C").hide()
-	get_node("VBoxContainer/Option D").hide()
+	for i in range(1,4):
+		button[i].hide()
 
 #Shows the options. Used to show if answer is correct or not.  
 func show_options():
-		get_node("VBoxContainer/Option B").show()
-		get_node("VBoxContainer/Option C").show()
-		get_node("VBoxContainer/Option D").show()
+		for i in range(1,4):
+			button[i].show()
 
 #Used to test the banner 
 func _on_timer_timeout():
@@ -75,13 +74,13 @@ func _on_timer_timeout():
 func check_answer(choice: int):
 	hide_options()
 	if (choice == answer[0]):
-		get_node("VBoxContainer/Option A").text = str("Correct")
-		correct = true
+		button[0].text = str("Correct")
 		slide_up()
+		correct_answer.emit()
 	else:
-		get_node("VBoxContainer/Option A").text = str("Incorrect")
+		button[0].text = str("Incorrect")
 		slide_up()
-	return correct
+		incorrect_answer.emit()
 
 
 #Calls check answer when any of the buttons are pressed
