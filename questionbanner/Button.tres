@@ -1,8 +1,11 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c8smsuyfh4qml"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c8smsuyfh4qml"]
+
+[ext_resource type="FontFile" uid="uid://84p8lf281u37" path="res://assets/1 Papyrus Regular.ttf" id="1_poyck"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7a5np"]
 
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/icon_normal_color = Color(1, 1, 1, 0)
+Button/fonts/font = ExtResource("1_poyck")
 Button/styles/normal = SubResource("StyleBoxEmpty_7a5np")

@@ -2,9 +2,10 @@ extends Control
 
 
 var items = load_json_file("res://assets/questions.json")
-@onready var question = $bannerImage/VBoxContainer/Question
+@onready var question = $bannerImage/Question
 @onready var animator = $AnimationPlayer
 var answer = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,7 +48,7 @@ func new_question():
 	var questionTest = item[index].text
 	answer = item[index].correct_option
 	print(answer)
-	get_node("VBoxContainer/Question").text = str(questionTest)
+	get_node("Question").text = str(questionTest)
 	#get_node("ItemList").clear()
 	var options = item[index].options
 	get_node("VBoxContainer/Option A").text = str(options[0])
