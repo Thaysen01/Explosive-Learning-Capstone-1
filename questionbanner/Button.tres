@@ -1,11 +1,22 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c8smsuyfh4qml"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bfibo4accu3ky"]
 
 [ext_resource type="FontFile" uid="uid://84p8lf281u37" path="res://assets/1 Papyrus Regular.ttf" id="1_poyck"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5skxl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nbtio"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7a5np"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_80u57"]
 
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 0)
 Button/colors/icon_normal_color = Color(1, 1, 1, 0)
 Button/fonts/font = ExtResource("1_poyck")
+Button/styles/focus = SubResource("StyleBoxEmpty_5skxl")
+Button/styles/hover = SubResource("StyleBoxEmpty_nbtio")
 Button/styles/normal = SubResource("StyleBoxEmpty_7a5np")
+Button/styles/pressed = SubResource("StyleBoxEmpty_80u57")
