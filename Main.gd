@@ -46,7 +46,7 @@ func spawn_tanks():
 		e.connect("killed", $TileMap.checkIfAllEnemiesKilled)
 
 func nextLevel():
-	#print("next level")
+
 	spawn_tanks()
 
 func restartLevel():
@@ -56,5 +56,4 @@ func _addCurrentLevel():
 	$TileMap.connect("enemies_killed",  self.nextLevel)
 	$TileMap.connect("player_died", self.restartLevel)
 
-	$TileMap.paused = true
 
