@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://b5esocitpx2a0"]
+[gd_scene load_steps=15 format=3 uid="uid://b5esocitpx2a0"]
 
 [ext_resource type="Texture2D" uid="uid://bed7fhoo2i6sd" path="res://assets/kenney_top-down-tanks/Vector/vector_tanks.svg" id="1_winrq"]
 [ext_resource type="Texture2D" uid="uid://cu5upaf81i4xq" path="res://assets/kenney_top-down-tanks/Spritesheet/sheet_tanks.png" id="2_p5au1"]
 [ext_resource type="Script" path="res://map/tile_map.gd" id="3_p51be"]
-[ext_resource type="PackedScene" uid="uid://d2jksevmm4q8i" path="res://questionbanner/banner.tscn" id="4_n72v3"]
 [ext_resource type="PackedScene" uid="uid://bc4t3dhcecb6o" path="res://tanks/PlayerTank.tscn" id="4_tfxyf"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_xnrqx"]
@@ -699,7 +698,5 @@ script = ExtResource("3_p51be")
 
 [node name="PlayerTank" parent="." instance=ExtResource("4_tfxyf")]
 position = Vector2(525, 313)
-
-[node name="Banner" parent="." instance=ExtResource("4_n72v3")]
 
 [connection signal="player_dies" from="PlayerTank" to="." method="_on_PlayerTank_player_dies"]
