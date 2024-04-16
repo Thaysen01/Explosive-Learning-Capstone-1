@@ -130,6 +130,9 @@ func destroy():
 	
 	
 func deal_damage(d):
+	$health/AnimationPlayer.stop()
+	$health/AnimationPlayer.clear_queue()
+	$health/AnimationPlayer.play("damage_dealt")
 	current_hp -= d
 	$health.value -= d
 	if current_hp <= 0:
