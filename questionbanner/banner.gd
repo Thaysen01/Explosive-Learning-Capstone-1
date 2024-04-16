@@ -50,6 +50,7 @@ func load_json_file(filePath: String):
 	if FileAccess.file_exists(filePath):
 		var dataFile  = FileAccess.open(filePath, FileAccess.READ);
 		var parsedResults = JSON.parse_string(dataFile.get_as_text());
+		dataFile.close()
 		return parsedResults
 	else:
 		print("File does not exist");

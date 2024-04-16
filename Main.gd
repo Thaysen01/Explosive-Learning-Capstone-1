@@ -18,6 +18,8 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if not FileAccess.file_exists("user://questions.json"):
+		print(FileAccess.file_exists("res://assets/questions.json"))
 	_addCurrentLevel()
 
 func _unhandled_input(event):
@@ -53,3 +55,6 @@ func restartLevel():
 func _addCurrentLevel():
 	$TileMap.connect("enemies_killed",  self.nextLevel)
 	$TileMap.connect("player_died", self.restartLevel)
+
+	$TileMap.paused = true
+
