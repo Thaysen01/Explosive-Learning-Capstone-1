@@ -1,6 +1,6 @@
 extends Control
 
-var path = "res://assets/questions.json"
+#var path = "res://assets/questions.json"
 #update this to change where the the questions are being imported from
 
 var save_path = "user://questions.json"
@@ -72,10 +72,10 @@ func load_json_file(filePath: String):
 		dataFile.close()
 		Global.total_questions = parsedResults.questions.size()
 		return parsedResults
-	else:
-		#IF USER FILE DOESN'T EXSIST, CREATE IT, RERUN IF STATEMENT
-		var script = preload("res://ui/filedialog.gd").new()
-		return script._on_file_dialog_file_selected(path)
+	#else:
+		##IF USER FILE DOESN'T EXSIST, CREATE IT, RERUN IF STATEMENT
+		#var script = preload("res://ui/filedialog.gd").new()
+		#return script._on_file_dialog_file_selected(path)
 		#calls func in filedialog.gd
 
 #Hides the options. Used to show if answer is correct or not. 

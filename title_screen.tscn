@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://coq27e5f43cs1"]
+[gd_scene load_steps=5 format=3 uid="uid://coq27e5f43cs1"]
 
 [ext_resource type="Texture2D" uid="uid://dfllcewog72r1" path="res://assets/Jungle.png" id="1_48gk2"]
 [ext_resource type="Script" path="res://title_screen.gd" id="1_wlq45"]
+[ext_resource type="PackedScene" uid="uid://dk3ag75scu3rx" path="res://ui/filedialog.tscn" id="3_7kmk7"]
 
 [sub_resource type="FontVariation" id="FontVariation_ruic4"]
 
@@ -66,3 +67,9 @@ custom_minimum_size = Vector2(180, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Exit"
+
+[node name="File" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Upload Questions"
+
+[node name="FileD" parent="." instance=ExtResource("3_7kmk7")]
