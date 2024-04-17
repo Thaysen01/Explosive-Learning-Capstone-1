@@ -5,7 +5,7 @@ const MAX_INT = 9223372036854775807 # 2^63 - 1
 
 # Global variables
 var p1Position: Vector2
-var total_questions
+var total_questions: float
 var num_correct_answer = 0
 
 func _ready():

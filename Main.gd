@@ -29,32 +29,24 @@ func _ready():
 	_addCurrentLevel()
 	spawn_tanks()
 
-#func _unhandled_input(event):
-	#if event.is_action_pressed("spawn"):
-		#spawn_tanks() 
-
-#func _physics_process(delta):
-	#if (Input.is_action_pressed("spawn")):
-		#var bullet = Bullet.instantiate()
-		#print($Marker2D.position)
 
 
 func spawn_tanks():
 	print("spawn tanks")
 	var split = ceili(Global.total_questions/8)
 	var half = ceili(split/2)
-	if Global.num_correct_answer/Global.total_questions == 0:
+	if float(Global.num_correct_answer)/float(Global.total_questions) == 0:
 		spawn = 4
 		newTank_index = 1
 		num_newTank = 1
-	elif Global.total_questions % split == 0 and not ishalf:
+	elif Global.num_correct_answer % split == 0 and not ishalf:
 		ishalf = true
 		partition_num += 1
 		spawn = 4
 		newTank_index += 1
 		num_newTank = 1
 	
-	elif Global.total_questions % half == 0 and  ishalf:
+	elif Global.num_correct_answer % half == 0 and  ishalf:
 		ishalf = false
 		partition_num += 1
 		spawn = 6
@@ -78,20 +70,12 @@ func spawn_tanks():
 		var tank = tank_spawn[x].instantiate()
 		$TileMap.add_child(tank)
 		tank.position = rand_spawn[x].position
-			
-	
-	#for x in $Spawn.get_children():
-		##print(x.position)
-		#var rand_tank = enemytanks[rng.randi_range(0, enemytanks.size() - 1)]
-		#var tank = rand_tank.instantiate()
-		#$TileMap.add_child(tank)
-		#tank.position = x.position
 		
 			
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	for e in enemies:
 		e.connect("killed", $TileMap.checkIfAllEnemiesKilled)
-
+		
 func nextLevel():
 	$CanvasLayer/Banner._lower_banner()
 	#spawn_tanks()

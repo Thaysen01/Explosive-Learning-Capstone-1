@@ -58,6 +58,7 @@ func checkIfAllEnemiesKilled():
 			nextLevel_timer.one_shot = true
 			nextLevel_timer.connect("timeout",  self._on_nextLevel_timer_timeout) 
 			call_deferred("add_child", nextLevel_timer)
+			
 		else:
 			get_tree().quit()
 	

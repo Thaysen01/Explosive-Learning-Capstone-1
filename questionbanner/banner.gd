@@ -1,6 +1,6 @@
 extends Control
 
-@onready var items = load_json_file("res://assets/questions.json")
+@onready var items = load_json_file("res://assets/testQuestions.json")
 @onready var question = $bannerImage/Question
 @onready var animator = $bannerImage/AnimationPlayer
 @onready var button = $bannerImage/Answers.get_children()
