@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Main.gd" id="1_b2o4i"]
 [ext_resource type="PackedScene" uid="uid://b5esocitpx2a0" path="res://map/tile_map.tscn" id="2_v43ny"]
 [ext_resource type="PackedScene" uid="uid://cb43uubfftuyx" path="res://ui/CreateQuestionSet.tscn" id="4_2yemq"]
-[ext_resource type="PackedScene" path="res://ui/pause_screen.tscn" id="5_is534"]
+[ext_resource type="PackedScene" uid="uid://cmobtr863hvoj" path="res://ui/pause_screen.tscn" id="5_is534"]
 [ext_resource type="PackedScene" uid="uid://d2jksevmm4q8i" path="res://questionbanner/banner.tscn" id="5_xnm5v"]
 
 [node name="Main" type="Node2D"]
@@ -29,9 +29,9 @@ position = Vector2(912, 146)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="CreateQuestionSet" parent="CanvasLayer" instance=ExtResource("4_2yemq")]
-visible = false
+[node name="pause_screen" parent="CanvasLayer" instance=ExtResource("5_is534")]
 
 [node name="Banner" parent="CanvasLayer" instance=ExtResource("5_xnm5v")]
 
-[node name="pause_screen" parent="CanvasLayer" instance=ExtResource("5_is534")]
+[node name="CreateQuestionSet" parent="CanvasLayer" instance=ExtResource("4_2yemq")]
+visible = false

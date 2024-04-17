@@ -11,6 +11,7 @@
 - [ ] Implement win condition: Answering all questions before time runs out
 - [ ] Add functionality: Killing enemy tanks adds X amount of time
 - [x] Add a local database for question sets (Matt)
+- [x] Connected Database to the banner showing questions and options (Hardik)
 
 ## Optional Enhancements
 - [ ] Design tank models and graphics

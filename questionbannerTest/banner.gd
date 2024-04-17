@@ -1,7 +1,7 @@
 extends Control
 
 var items = load_json_file("res://assets/questions.json")
-@onready var question = $Question
+@onready var question = $bannerImage/Question
 @onready var animator = $AnimationPlayer
 @onready var button = $Answers.get_children()
 

@@ -5,15 +5,16 @@ extends Control
 #func _ready():
 	#hide()
 
-
-
-
 func resume():
 	get_tree().paused = false
+	
 	$AnimationPlayer.play_backwards("blur")
+	await get_tree().create_timer(0.4).timeout
+	$"../Banner".visible = true
 
 func pause():
 	get_tree().paused = true
+	$"../Banner".visible = false
 	$AnimationPlayer.play("blur")
 
 func testEsc():
@@ -36,6 +37,3 @@ func _on_quit_pressed():
 
 func _process(delta):
 	testEsc()
-
-
-
