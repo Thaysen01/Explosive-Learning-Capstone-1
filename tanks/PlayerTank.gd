@@ -1,7 +1,8 @@
 extends "res://tanks/TankBase/Tank.gd"
 signal player_dies
 
-
+@onready var player_bullets = maxBullets
+@onready var player_mines = maxMines
 
 func _ready():
 	super()
