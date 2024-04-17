@@ -46,6 +46,15 @@ offset_right = 975.0
 offset_bottom = 3.0
 texture = ExtResource("1_6g3ul")
 
+[node name="Question" type="RichTextLabel" parent="bannerImage"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 163.0
+offset_right = 354.0
+offset_bottom = 273.0
+theme = SubResource("Theme_rmdrx")
+text = "In horse racing, what is the term for a wager on the 1st, 2nd and 3rd place finishers in a specific race?"
+
 [node name="Answers" type="VBoxContainer" parent="bannerImage"]
 layout_mode = 0
 offset_left = 400.0
@@ -77,14 +86,10 @@ size_flags_horizontal = 0
 theme = ExtResource("2_8xe2j")
 text = "Answer"
 
-[node name="Question" type="RichTextLabel" parent="bannerImage"]
-layout_mode = 0
-offset_left = 79.0
-offset_top = 163.0
-offset_right = 354.0
-offset_bottom = 273.0
-theme = SubResource("Theme_rmdrx")
-text = "In horse racing, what is the term for a wager on the 1st, 2nd and 3rd place finishers in a specific race?"
+[node name="Line2D" type="Line2D" parent="bannerImage"]
+points = PackedVector2Array(365, 163, 365, 255)
+width = 2.0
+default_color = Color(0, 0, 0, 0.34902)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="bannerImage"]
 libraries = {

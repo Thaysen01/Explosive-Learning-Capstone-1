@@ -5,11 +5,9 @@ extends Control
 #func _ready():
 	#hide()
 
-
-
-
 func resume():
 	get_tree().paused = false
+	
 	$AnimationPlayer.play_backwards("blur")
 	$"../Banner".visible = true
 
@@ -49,6 +47,3 @@ func _on_quit_pressed():
 
 func _process(delta):
 	testEsc()
-
-
-

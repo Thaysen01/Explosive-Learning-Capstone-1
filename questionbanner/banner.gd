@@ -16,6 +16,7 @@ var rng = RandomNumberGenerator.new()
 
 #------------Slide Down Animation Call------------#
 
+
 #Lowers the banner with a new quetion loaded
 func _lower_banner():
 	new_question()
