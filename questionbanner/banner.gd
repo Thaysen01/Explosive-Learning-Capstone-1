@@ -1,21 +1,19 @@
 extends Control
 
-@onready var items = load_json_file("res://assets/testQuestions.json")
+var path = "res://assets/questions.json"
+#update this to change where the the questions are being imported from
+
+var save_path = "user://questions.json"
+#Set folder location for saving to "user"
+@onready var items = load_json_file(save_path)
 @onready var question = $bannerImage/Question
-@onready var animator = $bannerImage/AnimationPlayer
-@onready var button = $bannerImage/Answers.get_children()
+@onready var animator = $AnimationPlayer
+@onready var button = $Answers.get_children()
+#var path = "res://assets/questions.json"
 
-signal question_answered
-
-var question_index
 var answer = 0
 
-var rng = RandomNumberGenerator.new()
-
-
-
 #------------Slide Down Animation Call------------#
-
 
 #Lowers the banner with a new quetion loaded
 func _lower_banner():
@@ -26,52 +24,41 @@ func _lower_banner():
 func _on_animation_player_animation_finished(anim_name):
 	animator.stop(true);
 	show_options()
-	
 
 #Slides the banner up when you select an answer
 func slide_up():
-	#await get_tree().create_timer(1).timeout
-	var slide_timer = Timer.new()
-	slide_timer.wait_time = 1
-	slide_timer.autostart = true
-	slide_timer.one_shot = true
-	slide_timer.connect("timeout",  self._on_slide_timer_timeout) 
-	
-	call_deferred("add_child", slide_timer)
-	
-
-
-func _on_slide_timer_timeout():
+	await get_tree().create_timer(1).timeout
 	print("selected");
 	animator.play_backwards("slide_down",-1);	
-	emit_signal("question_answered")
+	$Timer.start()
 
 #Loads a new question
 func new_question():
-	print(items.questions.size())
-	question_index = rng.randi_range(0, items.questions.size() - 1)
+	Global.total_num_questions += 1
+	var index = randi() % 547
 	var item = items.questions
-	var questionTest = item[question_index].text
-	answer = item[question_index].correct_option
+	var questionTest = item[index].text
+	answer = item[index].correct_option
 	print(answer)
-	$bannerImage/Question.text = str(questionTest)
+	get_node("Question").text = str(questionTest)
 	#get_node("ItemList").clear()
-	var options = item[question_index].options
+	var options = item[index].options
 	for i in range(0,4):
 		button[i].text = str(options[i])
-	
-	
 
 #Gets data from the JSON file
 func load_json_file(filePath: String):
 	if FileAccess.file_exists(filePath):
-		var dataFile  = FileAccess.open(filePath, FileAccess.READ);
-		var parsedResults = JSON.parse_string(dataFile.get_as_text());
+		#IF THE USER FILE EXISTS ALREADY ON THE USERS COMPUTER, RUN IT
+		var dataFile  = FileAccess.open(filePath, FileAccess.READ)
+		var parsedResults = JSON.parse_string(dataFile.get_as_text())
 		dataFile.close()
-		Global.total_questions = parsedResults.questions.size()
 		return parsedResults
 	else:
-		print("File does not exist");
+		#IF USER FILE DOESN'T EXSIST, CREATE IT, RERUN IF STATEMENT
+		var script = preload("res://ui/filedialog.gd").new()
+		return script._on_file_dialog_file_selected(path)
+		#calls func in filedialog.gd
 
 #Hides the options. Used to show if answer is correct or not. 
 func hide_options():
@@ -83,7 +70,10 @@ func show_options():
 		for i in range(1,4):
 			button[i].show()
 
-
+#Used to test the banner 
+func _on_timer_timeout():
+	_lower_banner()
+	$Timer.stop()
 
 #Checks the answer with their choice
 func check_answer(choice: int):
@@ -91,8 +81,7 @@ func check_answer(choice: int):
 	if (choice == answer[0]):
 		button[0].text = str("Correct")
 		slide_up()
-		Global.num_correct_answer += 1
-		items.questions.pop_at(question_index)
+		Global.total_correct_answer += 1
 	else:
 		button[0].text = str("Incorrect")
 		slide_up()
@@ -110,4 +99,3 @@ func _on_option_c_pressed():
 
 func _on_option_d_pressed():
 	check_answer(3)
-

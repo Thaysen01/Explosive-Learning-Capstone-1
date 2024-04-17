@@ -5,16 +5,13 @@ var save_path = "user://questions.json"
 func _ready():
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
-
-	
-
-
 func _on_file_dialog_file_selected(path):
+	print("Creating parced file")
+	#If a new JSON file is saved through (FILE DIALOG): then overwrite that
 	var dataFile  = FileAccess.open(path, FileAccess.READ)
 	var parsedResults = JSON.parse_string(dataFile.get_as_text())
 	dataFile.close()
