@@ -1,6 +1,6 @@
 extends Control
 
-@onready var main_menu = preload("res://Main.tscn") as PackedScene
+@onready var title_screen = load("res://title_screen.tscn") as PackedScene
 # Called when the node enters the scene tree for the first time.
 #func _ready():
 	#hide()
@@ -18,10 +18,11 @@ func pause():
 	$"../Banner".visible = false
 	$AnimationPlayer.play("blur")
 
-func testEsc():
-	if Input.is_action_just_pressed("esc") and !get_tree().paused:
+#func testEsc():
+func _unhandled_input(event):
+	if event.is_action_pressed("esc") and !get_tree().paused:
 		pause()
-	elif Input.is_action_just_pressed("esc") and get_tree().paused:
+	elif event.is_action_pressed("esc") and get_tree().paused:
 		resume()
 
 func _on_resume_pressed():
@@ -37,13 +38,23 @@ func _on_restart_pressed():
 	buffer_wait.connect("timeout",  self._on_buffer_wait_timeout) 
 	
 	call_deferred("add_child", buffer_wait)
-	#get_tree().reload_current_scene()
 
 func _on_buffer_wait_timeout():
 	get_tree().reload_current_scene()
 
 func _on_quit_pressed():
-	get_tree().quit()
+	$AnimationPlayer.play_backwards("blur")
+	var quit_wait = Timer.new()
+	quit_wait.wait_time = 0.4
+	quit_wait.autostart = true
+	quit_wait.one_shot = true
+	quit_wait.connect("timeout",  self._on_quit_wait_timeout) 
+	
+	call_deferred("add_child", quit_wait)
 
-func _process(delta):
-	testEsc()
+	
+func _on_quit_wait_timeout():
+	get_tree().paused = false
+	get_tree().change_scene_to_packed(title_screen)
+
+

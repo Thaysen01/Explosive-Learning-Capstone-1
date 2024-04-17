@@ -48,6 +48,7 @@ func _on_slide_timer_timeout():
 
 #Loads a new question
 func new_question():
+	print(items.questions.size())
 	question_index = rng.randi_range(0, items.questions.size() - 1)
 	var item = items.questions
 	var questionTest = item[question_index].text

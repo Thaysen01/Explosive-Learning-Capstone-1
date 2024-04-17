@@ -9,6 +9,7 @@ extends Control
 func _ready():
 	start.button_down.connect(on_start)
 	quit.button_down.connect(on_exit)
+	
 
 func on_start() -> void:
 	get_tree().change_scene_to_packed(start_game)
