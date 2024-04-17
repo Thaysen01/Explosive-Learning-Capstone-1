@@ -1,11 +1,17 @@
 extends Control
 
-var items = load_json_file("res://assets/questions.json")
+@onready var items = load_json_file("res://assets/questions.json")
 @onready var question = $bannerImage/Question
-@onready var animator = $AnimationPlayer
-@onready var button = $Answers.get_children()
+@onready var animator = $bannerImage/AnimationPlayer
+@onready var button = $bannerImage/Answers.get_children()
 
+signal question_answered
+
+var question_index
 var answer = 0
+
+var rng = RandomNumberGenerator.new()
+
 
 
 #------------Slide Down Animation Call------------#
@@ -23,23 +29,32 @@ func _on_animation_player_animation_finished(anim_name):
 
 #Slides the banner up when you select an answer
 func slide_up():
-	await get_tree().create_timer(1).timeout
+	#await get_tree().create_timer(1).timeout
+	var slide_timer = Timer.new()
+	slide_timer.wait_time = 1
+	slide_timer.autostart = true
+	slide_timer.one_shot = true
+	slide_timer.connect("timeout",  self._on_slide_timer_timeout) 
+	
+	call_deferred("add_child", slide_timer)
+	
+
+
+func _on_slide_timer_timeout():
 	print("selected");
 	animator.play_backwards("slide_down",-1);	
-	$Timer.start()
-
+	emit_signal("question_answered")
 
 #Loads a new question
 func new_question():
-	Global.total_num_questions += 1
-	var index = randi() % 547
+	question_index = rng.randi_range(0, items.questions.size() - 1)
 	var item = items.questions
-	var questionTest = item[index].text
-	answer = item[index].correct_option
+	var questionTest = item[question_index].text
+	answer = item[question_index].correct_option
 	print(answer)
-	get_node("Question").text = str(questionTest)
+	$bannerImage/Question.text = str(questionTest)
 	#get_node("ItemList").clear()
-	var options = item[index].options
+	var options = item[question_index].options
 	for i in range(0,4):
 		button[i].text = str(options[i])
 	
@@ -51,6 +66,7 @@ func load_json_file(filePath: String):
 		var dataFile  = FileAccess.open(filePath, FileAccess.READ);
 		var parsedResults = JSON.parse_string(dataFile.get_as_text());
 		dataFile.close()
+		Global.total_questions = parsedResults.questions.size()
 		return parsedResults
 	else:
 		print("File does not exist");
@@ -65,10 +81,7 @@ func show_options():
 		for i in range(1,4):
 			button[i].show()
 
-#Used to test the banner 
-func _on_timer_timeout():
-	_lower_banner()
-	$Timer.stop()
+
 
 #Checks the answer with their choice
 func check_answer(choice: int):
@@ -76,7 +89,8 @@ func check_answer(choice: int):
 	if (choice == answer[0]):
 		button[0].text = str("Correct")
 		slide_up()
-		Global.total_correct_answer += 1
+		Global.num_correct_answer += 1
+		items.questions.pop_at(question_index)
 	else:
 		button[0].text = str("Incorrect")
 		slide_up()

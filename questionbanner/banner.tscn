@@ -36,6 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wvg3r")
 
 [node name="bannerImage" type="TextureRect" parent="."]
 layout_mode = 0
@@ -44,7 +45,6 @@ offset_top = -372.0
 offset_right = 975.0
 offset_bottom = 3.0
 texture = ExtResource("1_6g3ul")
-script = ExtResource("1_wvg3r")
 
 [node name="Answers" type="VBoxContainer" parent="bannerImage"]
 layout_mode = 0
@@ -91,19 +91,9 @@ libraries = {
 "": SubResource("AnimationLibrary_ebp2x")
 }
 
-[node name="Timer" type="Timer" parent="bannerImage"]
-wait_time = 2.0
-autostart = true
-
-[node name="Line2D" type="Line2D" parent="bannerImage"]
-points = PackedVector2Array(365, 163, 365, 255)
-width = 2.0
-default_color = Color(0, 0, 0, 0.34902)
-
 [connection signal="ready" from="." to="bannerImage" method="_on_control_ready"]
-[connection signal="pressed" from="bannerImage/Answers/Option A" to="bannerImage" method="_on_option_a_pressed"]
-[connection signal="pressed" from="bannerImage/Answers/Option B" to="bannerImage" method="_on_option_b_pressed"]
-[connection signal="pressed" from="bannerImage/Answers/Option C" to="bannerImage" method="_on_option_c_pressed"]
-[connection signal="pressed" from="bannerImage/Answers/Option D" to="bannerImage" method="_on_option_d_pressed"]
-[connection signal="animation_finished" from="bannerImage/AnimationPlayer" to="bannerImage" method="_on_animation_player_animation_finished"]
-[connection signal="timeout" from="bannerImage/Timer" to="bannerImage" method="_on_timer_timeout"]
+[connection signal="pressed" from="bannerImage/Answers/Option A" to="." method="_on_option_a_pressed"]
+[connection signal="pressed" from="bannerImage/Answers/Option B" to="." method="_on_option_b_pressed"]
+[connection signal="pressed" from="bannerImage/Answers/Option C" to="." method="_on_option_c_pressed"]
+[connection signal="pressed" from="bannerImage/Answers/Option D" to="." method="_on_option_d_pressed"]
+[connection signal="animation_finished" from="bannerImage/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
