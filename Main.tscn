@@ -41,5 +41,3 @@ position = Vector2(930, 314)
 
 [node name="CreateQuestionSet" parent="CanvasLayer" instance=ExtResource("4_2yemq")]
 visible = false
-
-[connection signal="question_answered" from="CanvasLayer/Banner" to="." method="spawn_tanks"]
