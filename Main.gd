@@ -93,9 +93,11 @@ func spawn_tanks():
 		e.connect("killed", $TileMap.checkIfAllEnemiesKilled)
 	
 	$TileMap/PlayerTank.maxBullets = $TileMap/PlayerTank.player_bullets
+	$TileMap/PlayerTank.maxMines = $TileMap/PlayerTank.player_mines
 
 func nextLevel():
 	$TileMap/PlayerTank.maxBullets = 0
+	$TileMap/PlayerTank.maxMines = 0
 	$CanvasLayer/Banner._lower_banner()
 	#spawn_tanks()
 
