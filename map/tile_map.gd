@@ -5,6 +5,7 @@ signal enemies_killed
 signal level_start
 signal level_end
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var enemies = get_tree().get_nodes_in_group("enemy")
@@ -13,8 +14,8 @@ func _ready():
 		#print(e)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+# Called every frame. 'delta' is the elapsed time since the previous frame. _physics_process
+func _process(delta):
 	if (get_node_or_null("PlayerTank")):
 		
 		var tankDirection
