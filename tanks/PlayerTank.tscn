@@ -5,7 +5,7 @@
 
 [node name="PlayerTank" groups=["player"] instance=ExtResource("1_7w22a")]
 script = ExtResource("1_31hxe")
-maxBullets = 100
+maxBullets = 5
 maxMines = 5
 max_hp = 100
 current_hp = 100

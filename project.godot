@@ -10,17 +10,17 @@ config_version=5
 
 [application]
 
-config/name="testing Tank game"
+config/name="EXPLOSIVE Learning"
 run/main_scene="res://title_screen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/CartoonTank.jpg"
 
 [autoload]
 
 Utils="*res://util/Utils.gd"
 Global="*res://util/Global.gd"
 Debug="*res://util/Debug.gd"
-Banner="*res://questionbanner/banner.tscn"
+Banner="*res://ui/banner.tscn"
 
 [display]
 

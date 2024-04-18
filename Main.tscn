@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Main.gd" id="1_b2o4i"]
 [ext_resource type="PackedScene" uid="uid://b5esocitpx2a0" path="res://map/tile_map.tscn" id="2_v43ny"]
 [ext_resource type="PackedScene" uid="uid://cjucnla4wsu42" path="res://ui/pause_screen.tscn" id="3_sxes0"]
-[ext_resource type="PackedScene" uid="uid://cb43uubfftuyx" path="res://ui/CreateQuestionSet.tscn" id="4_2yemq"]
-[ext_resource type="PackedScene" uid="uid://d2jksevmm4q8i" path="res://questionbanner/banner.tscn" id="5_xnm5v"]
+[ext_resource type="PackedScene" uid="uid://d2jksevmm4q8i" path="res://ui/banner.tscn" id="4_2r3cq"]
+[ext_resource type="PackedScene" uid="uid://s217hqa17x3v" path="res://ui/finish.tscn" id="6_q6s18"]
 
 [node name="Main" type="Node2D"]
 editor_description = "Known bug
@@ -37,7 +37,9 @@ position = Vector2(930, 314)
 
 [node name="pause_screen" parent="CanvasLayer" instance=ExtResource("3_sxes0")]
 
-[node name="Banner" parent="CanvasLayer" instance=ExtResource("5_xnm5v")]
+[node name="Banner" parent="CanvasLayer" instance=ExtResource("4_2r3cq")]
 
-[node name="CreateQuestionSet" parent="CanvasLayer" instance=ExtResource("4_2yemq")]
+[node name="Finish" parent="CanvasLayer" instance=ExtResource("6_q6s18")]
 visible = false
+
+[connection signal="question_answered" from="CanvasLayer/Banner" to="." method="spawn_tanks"]

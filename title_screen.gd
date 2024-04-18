@@ -9,10 +9,10 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#This is ran before the game starts to ensure that there is a question set ready ("res://assets/questions.json" by deafault)
-	
-	var path = "res://assets/questions.json"
-	var script = preload("res://ui/filedialog.gd").new()
-	script._on_file_dialog_file_selected(path)
+	if not FileAccess.file_exists("user://questions.json"):
+		var path = "res://assets/questions.json"
+		#var script = preload("res://ui/filedialog.gd").new()
+		$CreateQuestionSet._on_file_dialog_file_selected(path)
 	
 	start.button_down.connect(on_start)
 	quit.button_down.connect(on_exit)
@@ -27,9 +27,10 @@ func on_exit() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func on_file():
-	$FileD/FileDialog.show()
+	$CreateQuestionSet.show()
+	$CreateQuestionSet/FileDialog.show()
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 

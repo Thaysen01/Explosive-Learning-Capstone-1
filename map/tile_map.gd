@@ -77,7 +77,7 @@ func _on_PlayerTank_player_dies():
 	#get_tree().quit()
 
 	var death_timer = Timer.new()
-	death_timer.wait_time = 2
+	death_timer.wait_time = 1
 	death_timer.autostart = true
 	death_timer.connect("timeout", self._on_death_timer_timeout) 
 	add_child(death_timer)

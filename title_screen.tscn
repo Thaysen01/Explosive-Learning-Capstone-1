@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dfllcewog72r1" path="res://assets/Jungle.png" id="1_48gk2"]
 [ext_resource type="Script" path="res://title_screen.gd" id="1_wlq45"]
-[ext_resource type="PackedScene" uid="uid://dk3ag75scu3rx" path="res://ui/filedialog.tscn" id="3_7kmk7"]
+[ext_resource type="PackedScene" uid="uid://cb43uubfftuyx" path="res://ui/CreateQuestionSet.tscn" id="4_vnajj"]
 
 [sub_resource type="FontVariation" id="FontVariation_ruic4"]
 
@@ -62,14 +62,17 @@ theme_override_fonts/font = SubResource("FontVariation_ruic4")
 theme_override_font_sizes/font_size = 25
 text = "Start Game"
 
+[node name="File" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 60)
+layout_mode = 2
+text = "Upload Questions"
+
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Exit"
 
-[node name="File" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Upload Questions"
-
-[node name="FileD" parent="." instance=ExtResource("3_7kmk7")]
+[node name="CreateQuestionSet" parent="." instance=ExtResource("4_vnajj")]
+visible = false
+layout_mode = 1
