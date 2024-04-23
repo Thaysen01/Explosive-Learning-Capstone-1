@@ -55,7 +55,6 @@ func spawn_tanks():
 			ishalf = false
 			partition_num += 1
 			spawn = 6
-			newTank_index += 1
 			num_newTank = 2
 		
 			
