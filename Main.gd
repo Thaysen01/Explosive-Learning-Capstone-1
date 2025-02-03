@@ -13,7 +13,7 @@ var enemytanks = [
 	preload("res://tanks/EnemyTanks/PurpleTank.tscn"),
 	preload("res://tanks/EnemyTanks/BlackTank.tscn")
 	]
-	
+
 var rng = RandomNumberGenerator.new()
 
 var ishalf = false
@@ -28,9 +28,6 @@ func _ready():
 	$CanvasLayer/Finish.hide()
 	_addCurrentLevel()
 	spawn_tanks()
-
-
-
 
 func spawn_tanks():
 	print("spawn tanks")
@@ -110,7 +107,7 @@ func _on_finish_wait_timeout():
 	
 
 func _addCurrentLevel():
-	$TileMap.connect("enemies_killed",  self.nextLevel)
+	$TileMap.connect("enemies_killed", self.nextLevel)
 	$TileMap.connect("player_died", self.player_failed)
 
 

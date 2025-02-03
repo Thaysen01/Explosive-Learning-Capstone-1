@@ -18,6 +18,8 @@ var question_index
 var answer = 0
 var rng = RandomNumberGenerator.new()
 
+var banner_down #removes old testing in game for quick spawning tanks
+
 func _ready():
 	items = load_json_file(save_path)
 
@@ -27,6 +29,7 @@ func _ready():
 func _lower_banner():
 	new_question()
 	animator.play("slide_down")
+	banner_down = true
 
 #Stops the animation after finished and unhides the options
 func _on_animation_player_animation_finished(anim_name):
@@ -39,10 +42,11 @@ func slide_up():
 	slide_timer.wait_time = 1
 	slide_timer.autostart = true
 	slide_timer.one_shot = true
-	slide_timer.connect("timeout",  self._on_slide_timer_timeout) 
+	slide_timer.connect("timeout",  self._on_slide_timer_timeout)
+	banner_down = false
 	
 	call_deferred("add_child", slide_timer)
-	
+
 
 
 func _on_slide_timer_timeout():
@@ -109,13 +113,17 @@ func check_answer(choice: int):
 
 #Calls check answer when any of the buttons are pressed
 func _on_option_a_pressed():
-	check_answer(0)
+	if banner_down:
+		check_answer(0)
 
 func _on_option_b_pressed():
-	check_answer(1)
+	if banner_down:
+		check_answer(1)
 
 func _on_option_c_pressed():
-	check_answer(2)
+	if banner_down:
+		check_answer(2)
 
 func _on_option_d_pressed():
-	check_answer(3)
+	if banner_down:
+		check_answer(3)

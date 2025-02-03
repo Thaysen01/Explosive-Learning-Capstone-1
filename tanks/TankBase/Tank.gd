@@ -114,21 +114,23 @@ func tryToShoot():
 func tryToPlantMine():
 	if (Utils.getNumberOfActiveObjects(liveMines) < maxMines):
 		plantMine()
+	# this does allow for mines to be able to be planted anywhere, 
+	# as lng as the cap has not been hit (for mines)
 
 
 func plantMine():
 	var mine = Mine.instantiate()
 	mine.position = position
 	get_parent().add_child(mine)
-	liveMines.append(mine)
+	liveMines.append(mine)  # Add the mine to the liveMines list
+
 
 func getCannonTipPosition():
 	return position + $Cannon.position + Vector2(35,0).rotated($Cannon.rotation)
 
 func destroy():
 	queue_free()
-	
-	
+
 func deal_damage(d):
 	$health/AnimationPlayer.stop()
 	$health/AnimationPlayer.clear_queue()

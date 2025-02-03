@@ -5,7 +5,6 @@ signal enemies_killed
 signal level_start
 signal level_end
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var enemies = get_tree().get_nodes_in_group("enemy")
@@ -53,6 +52,7 @@ func checkIfAllEnemiesKilled():
 		#print(get_parent().name)
 		if (get_parent().name == "Main"):
 			deleteAllBullets()
+			deleteAllMines()
 			var nextLevel_timer = Timer.new()
 			nextLevel_timer.wait_time = 1
 			nextLevel_timer.autostart = true
@@ -62,7 +62,6 @@ func checkIfAllEnemiesKilled():
 			
 		else:
 			get_tree().quit()
-	
 
 func _on_nextLevel_timer_timeout():
 	#print("timed out")
@@ -72,10 +71,10 @@ func _on_nextLevel_timer_timeout():
 		get_tree().quit()
 
 
-
 func _on_PlayerTank_player_dies():
 	deleteAllBullets()
 	#get_tree().quit()
+	deleteAllMines()
 
 	var death_timer = Timer.new()
 	death_timer.wait_time = 1
@@ -95,3 +94,23 @@ func deleteAllBullets():
 	for node in get_children():
 		if(node is Bullet): 
 			node.queue_free()
+
+func deleteAllMines():
+	var i = 0
+	var root = get_tree().root
+	var player_tank = get_node("PlayerTank")
+	# Access the liveMines array from PlayerTank
+	if player_tank:
+		while i < player_tank.liveMines.size():
+			var mine = player_tank.liveMines[i]
+			print(player_tank.liveMines)
+			print(mine)
+			if is_instance_valid(mine):  # Ensure mine is still valid before freeing
+				mine.queue_free()  # Free the mine object
+				i += 1  # Only increment i if no element was erased
+			else:
+				player_tank.liveMines.erase(mine)
+		player_tank.liveMines.clear()  # Empty the list after removing mines
+		print(player_tank.liveMines)
+	else:
+		print("PlayerTank not found!")
