@@ -8,6 +8,8 @@
 bulletsPerSecond = 2.0
 speed = 60
 maxBullets = 3
+max_hp = 13
+current_hp = 13
 
 [node name="Body" parent="." index="1"]
 texture = ExtResource("2_qri4b")

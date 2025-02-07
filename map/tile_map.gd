@@ -103,14 +103,11 @@ func deleteAllMines():
 	if player_tank:
 		while i < player_tank.liveMines.size():
 			var mine = player_tank.liveMines[i]
-			print(player_tank.liveMines)
-			print(mine)
 			if is_instance_valid(mine):  # Ensure mine is still valid before freeing
 				mine.queue_free()  # Free the mine object
 				i += 1  # Only increment i if no element was erased
 			else:
 				player_tank.liveMines.erase(mine)
 		player_tank.liveMines.clear()  # Empty the list after removing mines
-		print(player_tank.liveMines)
 	else:
-		print("PlayerTank not found!")
+		print("PlayerTank not found")

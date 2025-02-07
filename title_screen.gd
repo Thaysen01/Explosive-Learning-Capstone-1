@@ -33,4 +33,16 @@ func on_file():
 func _process(_delta):
 	pass
 
-
+func _on_difficulty_pressed():
+	Global.difficulty = Global.difficulty + 1
+	if Global.difficulty == 0 or Global.difficulty == 5:
+		Global.difficulty = 0
+		$MarginContainer/HBoxContainer/VBoxContainer/Difficulty.text = "  Difficulty: Beginner"
+	elif Global.difficulty == 1:
+		$MarginContainer/HBoxContainer/VBoxContainer/Difficulty.text = "  Difficulty: Easy"
+	elif Global.difficulty == 2:
+		$MarginContainer/HBoxContainer/VBoxContainer/Difficulty.text = "  Difficulty: Standard"
+	elif Global.difficulty == 3:
+		$MarginContainer/HBoxContainer/VBoxContainer/Difficulty.text = "  Difficulty: Hard"
+	elif Global.difficulty == 4:
+		$MarginContainer/HBoxContainer/VBoxContainer/Difficulty.text = "  Difficulty: Impossible"

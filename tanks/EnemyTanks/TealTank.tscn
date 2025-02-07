@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cx675hwwvpidh" path="res://assets/kenney_top-down-tanks/PNG/Tanks/barrelTeal.png" id="4_14txx"]
 
 [node name="TealTank" instance=ExtResource("1_ye02x")]
-speed = 60
+bulletsPerSecond = 1.0
+rotation_speed = 6.0
+maxBullets = 2
 bullet_load = ExtResource("2_x31fx")
 
 [node name="Body" parent="." index="1"]

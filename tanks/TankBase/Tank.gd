@@ -15,7 +15,7 @@ var liveBullets = []
 var liveMines = []
 
 
-@export var max_hp = 5
+@export var max_hp = 5 #default value is 5 if unassigned (it wont be)
 @export var current_hp = 5
 
 
@@ -36,16 +36,52 @@ var directions = {
 	"UP_LEFT": Vector2(-1,-1),
 }
 
-
 func _ready():
 	var sb = StyleBoxFlat.new()
 	$health.add_theme_stylebox_override("fill", sb)
 	sb.bg_color = Color("00ff00")
+	
+	if scene_file_path == "res://tanks/EnemyTanks/BlackTank.tscn": # Check to see if this is a boss
+		# Difficulty Adjustments (boss current_hp, max_hp)
+		if Global.difficulty == 0:
+			current_hp = 15
+			max_hp = 15
+		elif Global.difficulty == 1:
+			current_hp = 25
+			max_hp = 25
+		elif Global.difficulty == 2:
+			current_hp = 35
+			max_hp = 35
+		elif Global.difficulty == 3:
+			current_hp = 50
+			max_hp = 50
+		elif Global.difficulty == 4:
+			current_hp = 100
+			max_hp = 100
+	
+	# Difficulty Adjustments (player current_hp, max_hp)
+	elif scene_file_path == "res://tanks/PlayerTank.tscn":
+		# Difficulty Adjustments (max_hp)
+		if Global.difficulty == 0:
+			current_hp = 500
+			max_hp = 500
+		elif Global.difficulty == 1:
+			current_hp = 200
+			max_hp = 200
+		elif Global.difficulty == 2:
+			current_hp = 100
+			max_hp = 100
+		elif Global.difficulty == 3:
+			current_hp = 50
+			max_hp = 50
+		elif Global.difficulty == 4:
+			current_hp = 1
+			max_hp = 1
 	$health.value = current_hp
 	$health.min_value = 0
 	$health.max_value = max_hp
-	
-	
+
+
 func _physics_process(_delta):
 	$health.value = current_hp
 
@@ -87,7 +123,7 @@ func move(delta, direction):
 		$CollisionShape2D.rotation = closerDirection.angle()
 		currentDirection = direction
 		velocity = direction.normalized() * speed
-		move_and_slide()#direction.normalized() * speed)
+		move_and_slide()
 
 
 

@@ -20,8 +20,9 @@ var rng = RandomNumberGenerator.new()
 
 var banner_down #removes old testing in game for quick spawning tanks
 
-func _ready():
-	items = load_json_file(save_path)
+#This should need to run here since we do it (@onready)
+#func _ready():
+#	items = load_json_file(save_path)
 
 #------------Slide Down Animation Call------------#
 
@@ -50,20 +51,20 @@ func slide_up():
 
 
 func _on_slide_timer_timeout():
-	print("selected");
+	#print("selected");
 	animator.play_backwards("slide_down",-1);	
 	emit_signal("question_answered")
 
 
 #Loads a new question
 func new_question():
-	print(items.questions.size())
+	#print("Number of questions remaining: ", items.questions.size())
 	question_index = rng.randi_range(0, items.questions.size() - 1)
 	var item = items.questions
 	var questionTest = item[question_index].text
 	answer = item[question_index].correct_option
 
-	print(answer)
+	print("Correct answer for this question: ", answer) # Comment this out, used in testing---
 	$bannerImage/Question.text = str(questionTest)
 
 	#get_node("ItemList").clear()
@@ -71,14 +72,24 @@ func new_question():
 	for i in range(0,4):
 		button[i].text = str(options[i])
 
+#Could have default question sets that the user can choose from (I think the game launches with a question set in mind) ---
 #Gets data from the JSON file
 func load_json_file(filePath: String):
 	if FileAccess.file_exists(filePath):
+		#print(filePath)
 		#IF THE USER FILE EXISTS ALREADY ON THE USERS COMPUTER, RUN IT
 		var dataFile  = FileAccess.open(filePath, FileAccess.READ)
 		var parsedResults = JSON.parse_string(dataFile.get_as_text())
 		dataFile.close()
-		Global.total_questions = parsedResults.questions.size()
+		if typeof(parsedResults) == TYPE_DICTIONARY and parsedResults.has("questions") and parsedResults.questions is Array:
+			print("Fine read")
+			Global.total_questions = parsedResults.questions.size()
+		else:
+			print("Bad read")
+			var main_scene = load("res://main.tscn").instantiate()
+			main_scene.player_failed()
+			Global.total_questions = 0
+		print("Total Questions: ", Global.total_questions)
 		return parsedResults
 	#else:
 		##IF USER FILE DOESN'T EXSIST, CREATE IT, RERUN IF STATEMENT

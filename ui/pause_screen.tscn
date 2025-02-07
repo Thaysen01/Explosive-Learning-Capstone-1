@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjucnla4wsu42"]
+[gd_scene load_steps=9 format=3 uid="uid://cjucnla4wsu42"]
 
 [ext_resource type="Script" path="res://ui/pause_screen.gd" id="1_wl04b"]
 [ext_resource type="Shader" path="res://ui/pause_screen.gdshader" id="2_ptysv"]
+[ext_resource type="Texture2D" uid="uid://0s2mrmr465nk" path="res://ui/enemyTanksA.png" id="3_vc46e"]
+[ext_resource type="Texture2D" uid="uid://6gqfsoigp7eq" path="res://ui/enemyTanksB.png" id="4_3d38d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ifjx"]
 shader = ExtResource("2_ptysv")
@@ -132,7 +134,7 @@ layout_mode = 2
 
 [node name="HSeparator3" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
 [node name="resume" type="Button" parent="PanelContainer/VBoxContainer"]
@@ -142,7 +144,7 @@ text = "Resume"
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
 [node name="restart" type="Button" parent="PanelContainer/VBoxContainer"]
@@ -152,7 +154,7 @@ text = "Restart"
 
 [node name="HSeparator2" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
 [node name="quit" type="Button" parent="PanelContainer/VBoxContainer"]
@@ -165,6 +167,112 @@ modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
+[node name="tanks" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Tanks"
+
+[node name="HSeparator5" type="HSeparator" parent="PanelContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="EnemyTanksA" type="Sprite2D" parent="PanelContainer/VBoxContainer"]
+visible = false
+position = Vector2(-249.5, 175.5)
+scale = Vector2(1.31295, 1.49517)
+texture = ExtResource("3_vc46e")
+
+[node name="RichTextLabelPT" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
+offset_left = -48.0
+offset_top = -22.0
+offset_right = -8.0
+offset_bottom = 24.0
+tooltip_text = "Popped tire: Unable to move"
+
+[node name="RichTextLabelB" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
+offset_left = -48.0
+offset_top = 136.0
+offset_right = -4.99999
+offset_bottom = 183.0
+tooltip_text = "Bomber: May drop up to 2 bombs at a time. "
+
+[node name="EnemyTanksB" type="Sprite2D" parent="PanelContainer/VBoxContainer"]
+visible = false
+position = Vector2(581, 175)
+scale = Vector2(1.40123, 1.50725)
+texture = ExtResource("4_3d38d")
+
+[node name="RichTextLabelB2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = -67.0837
+offset_top = 56.3942
+offset_right = -24.0837
+offset_bottom = 103.394
+tooltip_text = "Bomber: May drop 1 bomb at a time. "
+
+[node name="RichTextLabelFB" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = -67.0
+offset_top = -172.0
+offset_right = -31.0
+offset_bottom = -147.0
+tooltip_text = "Fast Bullets: These bullets travel quicker than normal"
+
+[node name="RichTextLabelFB2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = -67.7973
+offset_top = 149.942
+offset_right = -31.7973
+offset_bottom = 174.942
+tooltip_text = "Fast Bullets: These bullets travel quicker than normal"
+
+[node name="RichTextLabelSFB" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = -66.0
+offset_top = -93.0
+offset_right = -10.0
+offset_bottom = -68.0
+tooltip_text = "Super Fast Bullets: These bullets travel at rapid speeds. "
+
+[node name="RichTextLabelPT2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = -7.13655
+offset_top = -101.51
+offset_right = 32.8635
+offset_bottom = -55.5096
+tooltip_text = "Popped tire: Unable to move"
+
+[node name="RichTextLabelMB" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = -24.0
+offset_top = -21.0
+offset_right = 5.0
+offset_bottom = 23.0
+tooltip_text = "Multiple Bullets: May have 3 bullets travelling at a time. "
+
+[node name="RichTextLabelFR" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = 8.0
+offset_top = -21.0
+offset_right = 49.0
+offset_bottom = 26.0
+tooltip_text = "Fast Relode: Can shoot 2 bullets/s"
+
+[node name="RichTextLabelFR2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = 9.0
+offset_top = 56.0
+offset_right = 45.0
+offset_bottom = 103.0
+tooltip_text = "Fast Relode: Can shoot 2 bullets/s"
+
+[node name="RichTextLabelMB2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = -21.0
+offset_top = 49.0
+offset_right = 8.0
+offset_bottom = 113.0
+tooltip_text = "Multiple Bullets: May have 5 bullets travelling at a time. "
+
+[node name="RichTextLabelQ" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = 48.0
+offset_top = 55.0
+offset_right = 86.0
+offset_bottom = 100.0
+tooltip_text = "Quick: Navigates faster than normal. "
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_5wft6")
@@ -173,3 +281,4 @@ libraries = {
 [connection signal="pressed" from="PanelContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/tanks" to="." method="_on_tanks_pressed"]

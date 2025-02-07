@@ -7,7 +7,7 @@ class_name Bullet extends CharacterBody2D
 @export var damage = 1
 var currentRebounds
 
-#brown, beige, yellow, teal, green, red, purple, white, black 
+#brown, beige, yellow, teal, green, red, purple, black 
 
 var bullet_color ={
 	"Blue" : preload("res://assets/kenney_top-down-tanks/PNG/Bullets/bulletBlue.png"),
@@ -21,12 +21,24 @@ var bullet_color ={
 	"Black" : preload("res://assets/kenney_top-down-tanks/PNG/Bullets/bulletBlack.png"),
 }
 
-
 # Called when the node enters the scene tree for the first time.
 
-	
-
 func setup(initialPosition: Vector2, initialVelocity: Vector2):
+	if scene_file_path == "res://bullet/FastBullet.tscn":
+		if Global.difficulty == 0 or Global.difficulty == 1:
+			damage = 1
+		elif Global.difficulty == 2:
+			damage = 2
+		elif Global.difficulty == 3:
+			damage = 3
+	elif scene_file_path == "res://bullet/DoubleFastBullet.tscn":
+		if Global.difficulty == 0 or Global.difficulty == 1:
+			damage = 1
+		elif Global.difficulty == 2:
+			damage = 3
+		elif Global.difficulty == 3:
+			damage = 5
+	
 	position = initialPosition
 	self.velocity = initialVelocity.normalized()
 	currentRebounds = 0

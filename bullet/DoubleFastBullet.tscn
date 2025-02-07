@@ -4,3 +4,4 @@
 
 [node name="DoubleFastBullet" instance=ExtResource("1_3dvps")]
 speed = 600
+damage = 3

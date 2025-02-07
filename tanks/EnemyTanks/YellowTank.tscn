@@ -5,7 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://hufyny68jxmu" path="res://assets/kenney_top-down-tanks/PNG/Tanks/barrelYellow.png" id="3_1qemk"]
 
 [node name="YellowTank" instance=ExtResource("1_n2n07")]
+speed = 90
 maxMines = 2
+max_hp = 8
+current_hp = 8
 
 [node name="Body" parent="." index="1"]
 texture = ExtResource("2_sf481")

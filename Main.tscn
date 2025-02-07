@@ -40,6 +40,5 @@ position = Vector2(930, 314)
 [node name="Banner" parent="CanvasLayer" instance=ExtResource("4_2r3cq")]
 
 [node name="Finish" parent="CanvasLayer" instance=ExtResource("6_q6s18")]
-visible = false
 
 [connection signal="question_answered" from="CanvasLayer/Banner" to="." method="spawn_tanks"]

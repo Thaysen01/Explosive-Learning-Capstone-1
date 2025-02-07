@@ -2,9 +2,9 @@ extends Node2D
 
 @onready var title_screen = load("res://title_screen.tscn") as PackedScene
 
-#brown, beige, yellow, teal, green, red, purple, white, black 
+# Enemy tank order: brown, beige, yellow, teal, red, green, purple, black 
 var enemytanks = [
-	preload("res://tanks/EnemyTanks/BrownTank.tscn"), 
+	preload("res://tanks/EnemyTanks/BrownTank.tscn"),
 	preload("res://tanks/EnemyTanks/BeigeTank.tscn"), 
 	preload("res://tanks/EnemyTanks/YellowTank.tscn"),
 	preload("res://tanks/EnemyTanks/TealTank.tscn"),
@@ -14,47 +14,55 @@ var enemytanks = [
 	preload("res://tanks/EnemyTanks/BlackTank.tscn")
 	]
 
+var playertank = preload("res://tanks/PlayerTank.tscn")
+
 var rng = RandomNumberGenerator.new()
 
-var ishalf = false
-var partition_num = 0
 var spawn = 4
 var newTank_index = 0
 var num_newTank = 1
+var old_num_correct_answer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	difficulty_adjustments()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED) # Mouse cannot drag off screen
 	Global.num_correct_answer = 0
 	$CanvasLayer/Finish.hide()
 	_addCurrentLevel()
 	spawn_tanks()
 
+# Decides how many new tanks to spawn as well as when to add new tank(s)
 func spawn_tanks():
-	print("spawn tanks")
-	print(Global.total_questions == Global.num_correct_answer, Global.total_questions , Global.num_correct_answer)
-	if Global.total_questions == Global.num_correct_answer:
-		player_failed()
-	else:
-		var split = ceili(Global.total_questions/8)
-		var half = ceili(split/2)
-		if float(Global.num_correct_answer)/float(Global.total_questions) == 0:
+	print("Spawning tanks. Number of correct anwers: ", Global.num_correct_answer)
+	if Global.total_questions == Global.num_correct_answer or (Global.num_correct_answer == 14):
+		player_failed() # Player wins the game
+	
+	else: # Spawn another round of tanks
+		# Dealing with if there are more questions than tanks (extra rounds)
+		var extras = int(Global.total_questions) % 8
+		if Global.total_questions < 8:
+			extras = 0
+		var split: float = 6.0 / float(extras)
+		
+		# First round
+		print("Level: ", Global.num_correct_answer+1)
+		if Global.num_correct_answer == 0:
 			spawn = 4
 			newTank_index = 1
 			num_newTank = 1
-		elif Global.num_correct_answer % split == 0 and not ishalf:
-			ishalf = true
-			partition_num += 1
-			spawn = 4
-			newTank_index += 1
-			num_newTank = 1
+		elif Global.num_correct_answer != old_num_correct_answer:
+			# Extra rounds (6 tanks)
+			if (is_nearest_multiple(newTank_index, split) and spawn != 6): 
+				spawn = 6
+				num_newTank = 2
+			# New tank introduced (4 tanks)
+			else:
+				spawn = 4
+				newTank_index += 1
+				num_newTank = 1
+		old_num_correct_answer = Global.num_correct_answer # Save previous question count
 		
-		elif Global.num_correct_answer % half == 0 and  ishalf:
-			ishalf = false
-			partition_num += 1
-			spawn = 6
-			num_newTank = 2
-		
-			
 		var rand_spawn = []
 		while rand_spawn.size() != spawn:
 			var select = $Spawn.get_children().pick_random()
@@ -62,35 +70,77 @@ func spawn_tanks():
 				rand_spawn.append(select)
 		var slice_tank = enemytanks.slice(0, newTank_index)
 		var tank_spawn = []
-		for x in range(num_newTank):
+		for x in range(num_newTank): # Ensures there are atleast 1 (or 2, depending) of the newest tank spawning in
 			tank_spawn.append(slice_tank[-1])
-		while tank_spawn.size() != spawn:
-			tank_spawn.append(slice_tank.pick_random())
-		
+		while tank_spawn.size() != spawn: # All other tanks will be random
+			if (slice_tank.size() != 8): # Normal level
+				tank_spawn.append(slice_tank.pick_random())
+			else: # Final level: Only 1 (or 2) bosses
+				tank_spawn.append(slice_tank[randi() % 7])
+	
 		for x in range(spawn):
 			var tank = tank_spawn[x].instantiate()
 			$TileMap.add_child(tank)
 			tank.position = rand_spawn[x].position
+			var enemies = get_tree().get_nodes_in_group("enemy")
+			for e in enemies:
+				e.connect("killed", $TileMap.checkIfAllEnemiesKilled)
+			$TileMap/PlayerTank.maxBullets = $TileMap/PlayerTank.player_bullets
+			$TileMap/PlayerTank.maxMines = $TileMap/PlayerTank.player_mines
 
-		var enemies = get_tree().get_nodes_in_group("enemy")
-		for e in enemies:
-			e.connect("killed", $TileMap.checkIfAllEnemiesKilled)
-			
-		$TileMap/PlayerTank.maxBullets = $TileMap/PlayerTank.player_bullets
-		$TileMap/PlayerTank.maxMines = $TileMap/PlayerTank.player_mines
+func difficulty_adjustments():
+	# Player Tank
+	var current_hp = 100
+	if Global.difficulty == 0:
+		current_hp = 500
+	elif Global.difficulty == 1:
+		current_hp = 200
+	elif Global.difficulty == 2:
+		current_hp = 100
+	elif Global.difficulty == 3:
+		current_hp = 50
+	elif Global.difficulty == 4:
+		current_hp = 1
+	$TileMap/PlayerTank.current_hp = current_hp
+	
+	#var black_tank_scene = enemytanks[0]  # This is the preloaded PackedScene
+	#var black_tank_instance = black_tank_scene.instantiate()  # Create an instance
+	#black_tank_instance.speed = 300  # Modify the instance's speed
+	#add_child(black_tank_instance)  # Add it to the scene tree
 
+# Checks what the nearest multiple of the split is for extra spawning logic
+func is_nearest_multiple(n: int, fraction: float) -> bool:
+	var k: int = 1
+	var max_value = 6
+	while (fraction * k) <= max_value:
+		var nearest_int = round(fraction * k)  # Match nearest integer to all mutltiples
+		if nearest_int == (n-1): # -1, since going back 1 on divisons
+			return true
+		k += 1
+	return false
 
 func nextLevel():
 	$TileMap/PlayerTank.maxBullets = 0
 	$TileMap/PlayerTank.maxMines = 0
 	$CanvasLayer/Banner._lower_banner()
 
-
+# Ran for victory or defeat
 func player_failed():
-	if Global.total_questions == Global.num_correct_answer:
-		$CanvasLayer/Finish/Panel/Label.text = "VICTORY"
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	Global.difficulty = 2
+	# Make it so screen blue doesnt happen for end of game pauses / mouse.visable somtimes messes up when these clash ---
+	# If the game is paused on "game over" screen. The player also cannot interact with interface ---
+	if Global.total_questions == 0:
+		$CanvasLayer/Finish/Panel2.show()
+		$CanvasLayer/Finish/Panel.hide()
+		$CanvasLayer/Finish/Panel.hide()
 	else:
-		$CanvasLayer/Finish/Panel/Label.text = "DEFEAT"
+		$CanvasLayer/Finish/Panel.show()
+		$CanvasLayer/Finish/Panel2.hide()
+		if Global.total_questions == Global.num_correct_answer or (Global.num_correct_answer == 14):
+			$CanvasLayer/Finish/Panel/Label.text = "VICTORY"
+		else:
+			$CanvasLayer/Finish/Panel/Label.text = "DEFEAT"
 	$CanvasLayer/Finish.show()
 	var finish_wait = Timer.new()
 	finish_wait.wait_time = 2
@@ -108,6 +158,6 @@ func _on_finish_wait_timeout():
 
 func _addCurrentLevel():
 	$TileMap.connect("enemies_killed", self.nextLevel)
-	$TileMap.connect("player_died", self.player_failed)
+	$TileMap.connect("player_died", self.player_failed) # runs when game is over
 
 

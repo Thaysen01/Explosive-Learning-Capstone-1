@@ -5,7 +5,12 @@ extends Control
 #func _ready():
 	#hide()
 
+# Rework pause screen images --- 
+# Show controls in pause menu ---
+# Display stats on screen ---
+
 func resume():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	get_tree().paused = false
 	
 	$AnimationPlayer.play_backwards("blur")
@@ -14,6 +19,7 @@ func resume():
 	
 
 func pause():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 	$"../Banner".visible = false
 	$AnimationPlayer.play("blur")
@@ -52,6 +58,9 @@ func _on_quit_pressed():
 	
 	call_deferred("add_child", quit_wait)
 
+func _on_tanks_pressed():
+	$"PanelContainer/VBoxContainer/EnemyTanksA".visible = true
+	$"PanelContainer/VBoxContainer/EnemyTanksB".visible = true
 	
 func _on_quit_wait_timeout():
 	get_tree().paused = false
