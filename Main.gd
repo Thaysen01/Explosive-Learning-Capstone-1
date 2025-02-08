@@ -128,8 +128,7 @@ func nextLevel():
 func player_failed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	Global.difficulty = 2
-	# Make it so screen blue doesnt happen for end of game pauses / mouse.visable somtimes messes up when these clash ---
-	# If the game is paused on "game over" screen. The player also cannot interact with interface ---
+	# Make it so: once game ends, pause screen doesn't unset mouse.visable (seems to be working now) ---
 	if Global.total_questions == 0:
 		$CanvasLayer/Finish/Panel2.show()
 		$CanvasLayer/Finish/Panel.hide()
@@ -147,6 +146,7 @@ func player_failed():
 	finish_wait.autostart = true
 	finish_wait.one_shot = true
 	finish_wait.connect("timeout",  self._on_finish_wait_timeout) 
+	$CanvasLayer/pause_screen/AnimationPlayer.stop()
 	
 	call_deferred("add_child", finish_wait)
 	

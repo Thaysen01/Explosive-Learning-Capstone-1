@@ -64,7 +64,7 @@ func new_question():
 	var questionTest = item[question_index].text
 	answer = item[question_index].correct_option
 
-	print("Correct answer for this question: ", answer) # Comment this out, used in testing---
+	print("Correct answer for this question: ", answer) # comment everything out---
 	$bannerImage/Question.text = str(questionTest)
 
 	#get_node("ItemList").clear()
