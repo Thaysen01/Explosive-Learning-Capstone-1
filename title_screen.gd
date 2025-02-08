@@ -17,7 +17,7 @@ func _ready():
 	start.button_down.connect(on_start)
 	quit.button_down.connect(on_exit)
 	file.button_down.connect(on_file)
-	
+	set_difficulty_button()
 
 func on_start() -> void:
 	get_tree().change_scene_to_packed(start_game)
@@ -35,6 +35,9 @@ func _process(_delta):
 
 func _on_difficulty_pressed():
 	Global.difficulty = Global.difficulty + 1
+	set_difficulty_button()
+
+func set_difficulty_button():
 	if Global.difficulty == 0 or Global.difficulty == 5:
 		Global.difficulty = 0
 		$MarginContainer/HBoxContainer/VBoxContainer/Difficulty.text = "  Difficulty: Beginner"

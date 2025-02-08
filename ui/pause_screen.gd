@@ -24,7 +24,6 @@ func pause():
 	$"../Banner".visible = false
 	$AnimationPlayer.play("blur")
 
-#func testEsc():
 func _unhandled_input(event):
 	if event.is_action_pressed("esc") and !get_tree().paused:
 		pause()

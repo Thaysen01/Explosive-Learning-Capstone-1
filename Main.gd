@@ -46,7 +46,7 @@ func spawn_tanks():
 		var split: float = 6.0 / float(extras)
 		
 		# First round
-		print("Level: ", Global.num_correct_answer+1)
+		print("Level: ", Global.num_correct_answer + 1)
 		if Global.num_correct_answer == 0:
 			spawn = 4
 			newTank_index = 1
@@ -102,11 +102,6 @@ func difficulty_adjustments():
 	elif Global.difficulty == 4:
 		current_hp = 1
 	$TileMap/PlayerTank.current_hp = current_hp
-	
-	#var black_tank_scene = enemytanks[0]  # This is the preloaded PackedScene
-	#var black_tank_instance = black_tank_scene.instantiate()  # Create an instance
-	#black_tank_instance.speed = 300  # Modify the instance's speed
-	#add_child(black_tank_instance)  # Add it to the scene tree
 
 # Checks what the nearest multiple of the split is for extra spawning logic
 func is_nearest_multiple(n: int, fraction: float) -> bool:
@@ -127,7 +122,6 @@ func nextLevel():
 # Ran for victory or defeat
 func player_failed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	Global.difficulty = 2
 	# Make it so: once game ends, pause screen doesn't unset mouse.visable (seems to be working now) ---
 	if Global.total_questions == 0:
 		$CanvasLayer/Finish/Panel2.show()

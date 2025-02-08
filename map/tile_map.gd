@@ -109,5 +109,3 @@ func deleteAllMines():
 			else:
 				player_tank.liveMines.erase(mine)
 		player_tank.liveMines.clear()  # Empty the list after removing mines
-	else:
-		print("PlayerTank not found")
