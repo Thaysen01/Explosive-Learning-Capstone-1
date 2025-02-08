@@ -87,6 +87,13 @@ func spawn_tanks():
 				e.connect("killed", $TileMap.checkIfAllEnemiesKilled)
 			$TileMap/PlayerTank.maxBullets = $TileMap/PlayerTank.player_bullets
 			$TileMap/PlayerTank.maxMines = $TileMap/PlayerTank.player_mines
+	
+	# Level display (UI)
+	if Global.total_questions > 13:
+		$CanvasLayer/Stats/PanelContainer/VBoxContainer/Label.text = " Level: " + str(Global.num_correct_answer + 1) + " / 14 "
+	else:
+		$CanvasLayer/Stats/PanelContainer/VBoxContainer/Label.text = " Level: " + str(Global.num_correct_answer + 1) + " / " + str(Global.total_questions) + " "
+
 
 func difficulty_adjustments():
 	# Player Tank
@@ -122,7 +129,6 @@ func nextLevel():
 # Ran for victory or defeat
 func player_failed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	# Make it so: once game ends, pause screen doesn't unset mouse.visable (seems to be working now) ---
 	if Global.total_questions == 0:
 		$CanvasLayer/Finish/Panel2.show()
 		$CanvasLayer/Finish/Panel.hide()

@@ -13,7 +13,7 @@ func _ready():
 			player_bullets = 5
 	super()
 	collision_layer = 2 # Need to set it here as the UI seems to be buggy on 3.4, it always sets it to 1 no mather what you choose
-	
+
 
 func _physics_process(delta):
 	super(delta)

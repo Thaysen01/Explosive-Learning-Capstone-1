@@ -7,7 +7,20 @@ extends Control
 
 # Rework pause screen images --- 
 # Show controls in pause menu ---
-# Display stats on screen ---
+# Display BOSS stats on screen ---
+
+func _ready():
+	# Update pause display
+	if Global.difficulty == 0:
+		$PanelContainer/VBoxContainer/Label.text = "Difficulty: Beginner"
+	elif Global.difficulty == 1:
+		$PanelContainer/VBoxContainer/Label.text = "Difficulty: Easy"
+	elif Global.difficulty == 2:
+		$PanelContainer/VBoxContainer/Label.text = "Difficulty: Standard"
+	elif Global.difficulty == 3:
+		$PanelContainer/VBoxContainer/Label.text = "Difficulty: Hard"
+	elif Global.difficulty == 4:
+		$PanelContainer/VBoxContainer/Label.text = "Difficulty: Impossible"
 
 func resume():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)

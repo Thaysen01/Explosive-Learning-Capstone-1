@@ -42,4 +42,30 @@ position = Vector2(930, 314)
 [node name="Finish" parent="CanvasLayer" instance=ExtResource("6_q6s18")]
 mouse_filter = 2
 
+[node name="Stats" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 132.0
+offset_bottom = 60.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Stats"]
+layout_mode = 0
+offset_right = 124.0
+offset_bottom = 53.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Stats/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Stats/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = " Level: "
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/Stats/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = " Health: "
+horizontal_alignment = 1
+
 [connection signal="question_answered" from="CanvasLayer/Banner" to="." method="spawn_tanks"]

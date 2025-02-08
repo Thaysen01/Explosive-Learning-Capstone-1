@@ -77,14 +77,14 @@ func _ready():
 		elif Global.difficulty == 4:
 			current_hp = 1
 			max_hp = 1
-	$health.value = current_hp
 	$health.min_value = 0
 	$health.max_value = max_hp
 
 
 func _physics_process(_delta):
 	$health.value = current_hp
-
+	if scene_file_path == "res://tanks/PlayerTank.tscn":
+		get_node("../../CanvasLayer/Stats/PanelContainer/VBoxContainer/Label2").text = " Health: ❤️ " + str($health.value) + " "
 
 func isRotationWithinDeltaForDirection(direction, rotDelta):
 	return (tankRotation > direction - rotDelta) && (tankRotation < direction + rotDelta)
