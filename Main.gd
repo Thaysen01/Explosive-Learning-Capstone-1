@@ -21,7 +21,7 @@ var rng = RandomNumberGenerator.new()
 var spawn = 4
 var newTank_index = 0
 var num_newTank = 1
-var old_num_correct_answer
+var old_num_correct_answer = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,12 +32,16 @@ func _ready():
 	_addCurrentLevel()
 	spawn_tanks()
 
+# animate tank spawning---
 # Decides how many new tanks to spawn as well as when to add new tank(s)
 func spawn_tanks():
+	if Global.num_correct_answer != 0 || Global.num_correct_answer == old_num_correct_answer: # Delay after questions are answered
+		await get_tree().create_timer(1.2).timeout
+	
 	print("Spawning tanks. Number of correct anwers: ", Global.num_correct_answer)
 	if Global.total_questions == Global.num_correct_answer or (Global.num_correct_answer == 14):
 		player_failed() # Player wins the game
-	
+
 	else: # Spawn another round of tanks
 		# Dealing with if there are more questions than tanks (extra rounds)
 		var extras = int(Global.total_questions) % 8
@@ -51,18 +55,17 @@ func spawn_tanks():
 			spawn = 4
 			newTank_index = 1
 			num_newTank = 1
-		elif Global.num_correct_answer != old_num_correct_answer:
-			# Extra rounds (6 tanks)
+		elif Global.num_correct_answer != old_num_correct_answer: # Extra rounds (6 tanks)
 			if (is_nearest_multiple(newTank_index, split) and spawn != 6): 
 				spawn = 6
 				num_newTank = 2
-			# New tank introduced (4 tanks)
-			else:
+			else: # New tank introduced (4 tanks)
 				spawn = 4
 				newTank_index += 1
 				num_newTank = 1
 		old_num_correct_answer = Global.num_correct_answer # Save previous question count
 		
+		# Choosing new and random tank counts
 		var rand_spawn = []
 		while rand_spawn.size() != spawn:
 			var select = $Spawn.get_children().pick_random()
@@ -77,8 +80,9 @@ func spawn_tanks():
 				tank_spawn.append(slice_tank.pick_random())
 			else: # Final level: Only 1 (or 2) bosses
 				tank_spawn.append(slice_tank[randi() % 7])
-	
-		for x in range(spawn):
+		
+		
+		for x in range(spawn): # Spawning tanks
 			var tank = tank_spawn[x].instantiate()
 			$TileMap.add_child(tank)
 			tank.position = rand_spawn[x].position
@@ -129,7 +133,7 @@ func nextLevel():
 # Ran for victory or defeat
 func player_failed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	if Global.total_questions == 0:
+	if Global.total_questions == 0: # If the question set is invalid
 		$CanvasLayer/Finish/Panel2.show()
 		$CanvasLayer/Finish/Panel.hide()
 		$CanvasLayer/Finish/Panel.hide()
@@ -139,6 +143,7 @@ func player_failed():
 		if Global.total_questions == Global.num_correct_answer or (Global.num_correct_answer == 14):
 			$CanvasLayer/Finish/Panel/Label.text = "VICTORY"
 		else:
+			get_node("CanvasLayer/Stats/PanelContainer/VBoxContainer/Label2").text = " Health: ❤️ 0 "
 			$CanvasLayer/Finish/Panel/Label.text = "DEFEAT"
 	$CanvasLayer/Finish.show()
 	var finish_wait = Timer.new()
@@ -146,7 +151,8 @@ func player_failed():
 	finish_wait.autostart = true
 	finish_wait.one_shot = true
 	finish_wait.connect("timeout",  self._on_finish_wait_timeout) 
-	$CanvasLayer/pause_screen/AnimationPlayer.stop()
+	$CanvasLayer/pause_screen/AnimationPlayer.stop() #still vary rarely shows blur on new games---
+	#fget_node("CanvasLayer/Stats/PanelContainer2").visible = false
 	
 	call_deferred("add_child", finish_wait)
 	

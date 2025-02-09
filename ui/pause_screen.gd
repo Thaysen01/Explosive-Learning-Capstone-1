@@ -7,7 +7,6 @@ extends Control
 
 # Rework pause screen images --- 
 # Show controls in pause menu ---
-# Display BOSS stats on screen ---
 
 func _ready():
 	# Update pause display

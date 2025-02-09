@@ -54,7 +54,7 @@ func checkIfAllEnemiesKilled():
 			deleteAllBullets()
 			deleteAllMines()
 			var nextLevel_timer = Timer.new()
-			nextLevel_timer.wait_time = 1
+			nextLevel_timer.wait_time = .5
 			nextLevel_timer.autostart = true
 			nextLevel_timer.one_shot = true
 			nextLevel_timer.connect("timeout",  self._on_nextLevel_timer_timeout) 
@@ -77,7 +77,7 @@ func _on_PlayerTank_player_dies():
 	deleteAllMines()
 
 	var death_timer = Timer.new()
-	death_timer.wait_time = 1
+	death_timer.wait_time = .5
 	death_timer.autostart = true
 	death_timer.connect("timeout", self._on_death_timer_timeout) 
 	add_child(death_timer)

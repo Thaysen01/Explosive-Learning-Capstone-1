@@ -28,6 +28,7 @@ var banner_down
 
 #Lowers the banner with a new quetion loaded
 func _lower_banner():
+	get_node("../../CanvasLayer/Stats/PanelContainer2").visible = false
 	new_question()
 	animator.play("slide_down")
 	banner_down = true
@@ -45,6 +46,7 @@ func slide_up():
 	slide_timer.one_shot = true
 	slide_timer.connect("timeout",  self._on_slide_timer_timeout)
 	banner_down = false
+	await get_tree().create_timer(.5).timeout
 	
 	call_deferred("add_child", slide_timer)
 
@@ -110,14 +112,11 @@ func check_answer(choice: int):
 	hide_options()
 	if (choice == answer[0]):
 		button[0].text = str("Correct")
-		slide_up()
 		Global.num_correct_answer += 1
 		items.questions.pop_at(question_index)
-
 	else:
 		button[0].text = str("Incorrect")
-		slide_up()
-
+	slide_up()
 
 # Calls check answer when any of the buttons are pressed
 func _on_option_a_pressed():

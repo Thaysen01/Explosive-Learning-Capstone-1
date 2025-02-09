@@ -42,6 +42,7 @@ func _ready():
 	sb.bg_color = Color("00ff00")
 	
 	if scene_file_path == "res://tanks/EnemyTanks/BlackTank.tscn": # Check to see if this is a boss
+		get_node("../../CanvasLayer/Stats/PanelContainer2").visible = true # Show boss bar
 		# Difficulty Adjustments (boss current_hp, max_hp)
 		if Global.difficulty == 0:
 			current_hp = 15
@@ -85,6 +86,8 @@ func _physics_process(_delta):
 	$health.value = current_hp
 	if scene_file_path == "res://tanks/PlayerTank.tscn":
 		get_node("../../CanvasLayer/Stats/PanelContainer/VBoxContainer/Label2").text = " Health: ❤️ " + str($health.value) + " "
+	elif scene_file_path == "res://tanks/EnemyTanks/BlackTank.tscn":
+		get_node("../../CanvasLayer/Stats/PanelContainer2/VBoxContainer/Label").text = " Boss   Health: 🖤 " + str($health.value) + " "
 
 func isRotationWithinDeltaForDirection(direction, rotDelta):
 	return (tankRotation > direction - rotDelta) && (tankRotation < direction + rotDelta)

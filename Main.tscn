@@ -68,4 +68,20 @@ layout_mode = 2
 text = " Health: "
 horizontal_alignment = 1
 
+[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer/Stats"]
+visible = false
+layout_mode = 0
+offset_left = 466.0
+offset_top = 8.0
+offset_right = 686.0
+offset_bottom = 32.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Stats/PanelContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Stats/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = " Boss - Health: 🖤  "
+horizontal_alignment = 1
+
 [connection signal="question_answered" from="CanvasLayer/Banner" to="." method="spawn_tanks"]

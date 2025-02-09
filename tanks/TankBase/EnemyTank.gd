@@ -69,6 +69,7 @@ func destroy():
 	remove_from_group("enemy")
 	emit_signal("killed")
 	super.destroy()
+	get_node("../../CanvasLayer/Stats/PanelContainer2/VBoxContainer/Label").text = " Boss   Health: 🖤 0 " # Assume boss died
 
 #func deal_damage(d):
 	#current_hp -= d
