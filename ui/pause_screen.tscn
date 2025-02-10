@@ -551,7 +551,7 @@ metadata/_edit_use_anchors_ = true
 [node name="RichTextLabelC3" type="RichTextLabel" parent="PanelContainer/VBoxContainer/ControlsB"]
 anchors_preset = -1
 anchor_left = -0.00719631
-anchor_top = -0.165239
+anchor_top = -0.226966
 anchor_right = 0.211554
 anchor_bottom = -0.226966
 offset_left = -51.0789
@@ -564,7 +564,7 @@ metadata/_edit_use_anchors_ = true
 [node name="RichTextLabelC4" type="RichTextLabel" parent="PanelContainer/VBoxContainer/ControlsB"]
 anchors_preset = -1
 anchor_left = -0.00745094
-anchor_top = -0.224617
+anchor_top = -0.286345
 anchor_right = 0.211299
 anchor_bottom = -0.286345
 offset_left = -51.0463

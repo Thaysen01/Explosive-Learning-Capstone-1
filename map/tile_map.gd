@@ -12,11 +12,34 @@ func _ready():
 		e.connect("killed", self.checkIfAllEnemiesKilled) 
 		#print(e)
 
+var shake_strength = 5  # Maximum shake offset
+var shake_duration = 0.3  # How long the shake lasts
+var shaking = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame. _physics_process
+# Shake the screen
+func start_shake(shake_strength: float = 5.0, duration: float = 0.3):
+	shake_duration = duration
+	shaking = true
+	call_deferred("_start_shake")  # Defer the shake to ensure it's done after the current frame
+
+func _start_shake():
+	# Using a Timer to control shake duration
+	var timer = Timer.new()
+	add_child(timer)  # Add the timer to the node tree
+	timer.wait_time = shake_duration
+	timer.one_shot = true
+	timer.start()
+	
+	# Connect the timer's timeout signal to stop shaking
+	timer.connect("timeout", Callable(self, "_on_shake_timeout"))
+
+func _on_shake_timeout():
+	shaking = false
+	position = Vector2.ZERO  # Reset position after shake
+
 func _process(delta):
+	# Player direction
 	if (get_node_or_null("PlayerTank")):
-		
 		var tankDirection
 		if (Input.is_action_pressed("up") && Input.is_action_pressed("right")):
 			tankDirection = $PlayerTank.directions.UP_RIGHT
@@ -37,13 +60,20 @@ func _process(delta):
 
 		if tankDirection:
 			$PlayerTank.move(delta, tankDirection)
-
-			
+	
 		if Input.is_action_just_pressed("click"):
 			$PlayerTank.tryToShoot()
-			
+	
 		if Input.is_action_just_pressed("plant_mine"):
 			$PlayerTank.tryToPlantMine()
+	
+	# Screen shaking
+	if shaking:
+		position = Vector2(
+			randf_range(-shake_strength, shake_strength),
+			randf_range(-shake_strength, shake_strength)
+		)
+
 
 func checkIfAllEnemiesKilled():
 	#print("checking enemies")

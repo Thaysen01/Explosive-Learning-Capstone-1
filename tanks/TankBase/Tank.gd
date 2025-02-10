@@ -37,6 +37,7 @@ var directions = {
 }
 
 func _ready():
+	z_index = 1 # bring the character forward for animation to appear under them
 	var sb = StyleBoxFlat.new()
 	$health.add_theme_stylebox_override("fill", sb)
 	sb.bg_color = Color("00ff00")
