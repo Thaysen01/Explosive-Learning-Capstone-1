@@ -38,7 +38,7 @@ func spawn_tanks():
 	if Global.num_correct_answer != 0 || Global.num_correct_answer == old_num_correct_answer: # Delay after questions are answered
 		await get_tree().create_timer(1.2).timeout
 	
-	print("Spawning tanks. Number of correct anwers: ", Global.num_correct_answer)
+	#print("Spawning tanks. Number of correct anwers: ", Global.num_correct_answer)
 	if Global.total_questions == Global.num_correct_answer or (Global.num_correct_answer == 14):
 		player_failed() # Player wins the game
 
@@ -49,8 +49,7 @@ func spawn_tanks():
 			extras = 0
 		var split: float = 6.0 / float(extras)
 		
-		# First round
-		print("Level: ", Global.num_correct_answer + 1)
+		# First wave/level
 		if Global.num_correct_answer == 0:
 			spawn = 4
 			newTank_index = 1
@@ -134,6 +133,7 @@ func nextLevel():
 func player_failed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if Global.total_questions == 0: # If the question set is invalid
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		$CanvasLayer/Finish/Panel2.show()
 		$CanvasLayer/Finish/Panel.hide()
 		$CanvasLayer/Finish/Panel.hide()
@@ -151,7 +151,7 @@ func player_failed():
 	finish_wait.autostart = true
 	finish_wait.one_shot = true
 	finish_wait.connect("timeout",  self._on_finish_wait_timeout) 
-	$CanvasLayer/pause_screen/AnimationPlayer.stop() #still vary rarely shows blur on new games---
+	$CanvasLayer/pause_screen/AnimationPlayer.stop() #still vary rarely shows blur on new games --
 	#fget_node("CanvasLayer/Stats/PanelContainer2").visible = false
 	
 	call_deferred("add_child", finish_wait)
@@ -160,10 +160,9 @@ func _on_finish_wait_timeout():
 	#get_tree().reload_current_scene()
 	get_tree().change_scene_to_packed(title_screen)
 	#$CanvasLayer/pause_screen._on_quit_wait_timeout()
-	
+
 
 func _addCurrentLevel():
 	$TileMap.connect("enemies_killed", self.nextLevel)
 	$TileMap.connect("player_died", self.player_failed) # runs when game is over
-
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjucnla4wsu42"]
+[gd_scene load_steps=11 format=3 uid="uid://cjucnla4wsu42"]
 
 [ext_resource type="Script" path="res://ui/pause_screen.gd" id="1_wl04b"]
 [ext_resource type="Shader" path="res://ui/pause_screen.gdshader" id="2_ptysv"]
 [ext_resource type="Texture2D" uid="uid://0s2mrmr465nk" path="res://ui/enemyTanksA.png" id="3_vc46e"]
 [ext_resource type="Texture2D" uid="uid://6gqfsoigp7eq" path="res://ui/enemyTanksB.png" id="4_3d38d"]
+[ext_resource type="Texture2D" uid="uid://2pecy5bnhbkx" path="res://ui/controls.png" id="5_a7sjf"]
+[ext_resource type="Texture2D" uid="uid://bwf8sidbxtqou" path="res://ui/controlsB.png" id="6_s4cyg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ifjx"]
 shader = ExtResource("2_ptysv")
@@ -110,6 +112,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -123,9 +127,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -132.0
-offset_top = -167.0
+offset_top = -194.0
 offset_right = 132.0
-offset_bottom = 167.0
+offset_bottom = 194.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -139,7 +143,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Test"
+text = "Difficulty: "
 horizontal_alignment = 1
 
 [node name="HSeparator6" type="HSeparator" parent="PanelContainer/VBoxContainer"]
@@ -189,99 +193,386 @@ layout_mode = 2
 
 [node name="EnemyTanksA" type="Sprite2D" parent="PanelContainer/VBoxContainer"]
 visible = false
-position = Vector2(-249.5, 175.5)
-scale = Vector2(1.31295, 1.49517)
+position = Vector2(-245.5, 199)
+scale = Vector2(1.42086, 1.4686)
 texture = ExtResource("3_vc46e")
 
-[node name="RichTextLabelPT" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
-offset_left = -48.0
-offset_top = -22.0
-offset_right = -8.0
-offset_bottom = 24.0
-tooltip_text = "Popped tire: Unable to move"
+[node name="RichTextLabelT" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
+offset_left = -128.443
+offset_top = -171.592
+offset_right = -50.4433
+offset_bottom = -98.592
+tooltip_text = "Blue Tank   YOU
+Health: (Variable) 1-100
+Movement Speed: Normal/Fast
+Barrel Rotation Speed: (Mouse Controlled)
+Bullet Type: Normal
+Fire Rate: (Click Controlled)
+Max Bullets: (Variable) 5-10
+Max Mines: 5"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelT2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
+offset_left = -129.0
+offset_top = -38.3454
+offset_right = -51.0
+offset_bottom = 34.6546
+tooltip_text = "Brown Tank
+Health: 4
+Movement: Stationary
+Barrel Rotation Speed: Normal
+Bullet Type: Normal
+Fire Rate: Slow
+Max Bullets: 1
+No Mines"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelT3" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
+offset_left = -129.0
+offset_top = 41.3223
+offset_right = -51.0
+offset_bottom = 114.322
+tooltip_text = "Grey Tank
+Health: 5
+Movement Speed: Normal
+Barrel Rotation Speed: Slow
+Bullet Type: Normal
+Fire Rate: Slow
+Max Bullets: 1
+No Mines"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelT4" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
+offset_left = -129.0
+offset_top = 123.033
+offset_right = -51.0
+offset_bottom = 196.033
+tooltip_text = "Yellow Tank
+Health: 8
+Movement Speed: Fast
+Barrel Rotation Speed: Normals
+Bullet Type: Normal
+Fire Rate: Slow
+Max Bullets: 1
+Max Mines: 2"
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabelB" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
 offset_left = -48.0
 offset_top = 136.0
-offset_right = -4.99999
-offset_bottom = 183.0
-tooltip_text = "Bomber: May drop up to 2 bombs at a time. "
+offset_right = -6.0
+offset_bottom = 184.0
+tooltip_text = "Bomber: Drops explosive mines"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelB2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
+offset_left = 22.7263
+offset_top = -159.803
+offset_right = 64.7263
+offset_bottom = -111.803
+tooltip_text = "Bomber: Drops explosive mines"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelPT" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
+offset_left = -48.0
+offset_top = -23.0
+offset_right = -7.0
+offset_bottom = 25.0
+tooltip_text = "Popped tire: Unable to move"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelH" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
+offset_left = 68.0
+offset_top = -158.0
+offset_right = 108.0
+offset_bottom = -119.0
+tooltip_text = "Tanky: May have more health than normal"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelFR" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
+offset_left = -18.0939
+offset_top = -159.803
+offset_right = 18.9061
+offset_bottom = -112.803
+tooltip_text = "Fast Relode: Shoots at a faster rate"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelMB" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
+offset_left = -45.4433
+offset_top = -169.592
+offset_right = -19.4433
+offset_bottom = -104.592
+tooltip_text = "Multiple Bullets: Tank can have multiple bullets on the screen"
+metadata/_edit_use_anchors_ = true
 
 [node name="EnemyTanksB" type="Sprite2D" parent="PanelContainer/VBoxContainer"]
 visible = false
-position = Vector2(581, 175)
-scale = Vector2(1.40123, 1.50725)
+position = Vector2(540, 199.5)
+scale = Vector2(1.47601, 1.48086)
 texture = ExtResource("4_3d38d")
 
-[node name="RichTextLabelB2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
-offset_left = -67.0837
-offset_top = 56.3942
-offset_right = -24.0837
-offset_bottom = 103.394
-tooltip_text = "Bomber: May drop 1 bomb at a time. "
+[node name="RichTextLabelT" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = -123.983
+offset_top = -198.871
+offset_right = -45.9823
+offset_bottom = -125.871
+tooltip_text = "Teal Tank
+Health: 5
+Movement Speed: Normal
+Barrel Rotation Speed: Slow
+Bullet Type: Fast
+Fire Rate: Normal
+Max Bullets: 2
+No Mines"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelT2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = -123.983
+offset_top = -119.187
+offset_right = -45.9823
+offset_bottom = -46.1874
+tooltip_text = "Orange Tank
+Health: 13
+Movement Speed: Slow
+Barrel Rotation Speed: Normal
+Bullet Type: Normal
+Fire Rate: Fast
+Max Bullets: 3
+No Mines"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelT3" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = -123.983
+offset_top = -39.504
+offset_right = -45.9823
+offset_bottom = 33.496
+tooltip_text = "Green Tank
+Health: 8
+Movement: Stationary
+Barrel Rotation Speed: Normal
+Bullet Type: Super Fast
+Fire Rate: (Fast)
+Max Bullets: 1
+No Mines"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelT4" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = -123.983
+offset_top = 40.8546
+offset_right = -45.9823
+offset_bottom = 113.855
+tooltip_text = "Purple Tank
+Health: 6
+Movement Speed: Super Fast
+Barrel Rotation Speed: Fast
+Bullet Type: Normal
+Fire Rate: Fast
+Max Bullets: 1
+Max Mines: 3"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelT5" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = -123.983
+offset_top = 119.187
+offset_right = -45.9823
+offset_bottom = 192.187
+tooltip_text = "Black Tank   BOSS
+Health: (Variable) 15-100
+Movement Speed: Super Slow
+Barrel Rotation Speed: Slow
+Bullet Type: Super Fast
+Fire Rate: Fast
+Max Bullets: 5
+No Mines"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelB" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = 38.2226
+offset_top = 52.0
+offset_right = 81.2226
+offset_bottom = 101.0
+tooltip_text = "Bomber: Drops explosive mines"
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabelFB" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
-offset_left = -67.0
-offset_top = -172.0
-offset_right = -31.0
+offset_left = -42.3549
+offset_top = -177.0
+offset_right = -3.35486
 offset_bottom = -147.0
-tooltip_text = "Fast Bullets: These bullets travel quicker than normal"
-
-[node name="RichTextLabelFB2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
-offset_left = -67.7973
-offset_top = 149.942
-offset_right = -31.7973
-offset_bottom = 174.942
-tooltip_text = "Fast Bullets: These bullets travel quicker than normal"
+tooltip_text = "Fast Bullets: These bullets travel quicker
+Multiple Bullets: Tank can have multiple bullets on the screen"
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabelSFB" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
-offset_left = -66.0
-offset_top = -93.0
-offset_right = -10.0
-offset_bottom = -68.0
-tooltip_text = "Super Fast Bullets: These bullets travel at rapid speeds. "
+offset_left = -42.0049
+offset_top = -16.5444
+offset_right = 13.9951
+offset_bottom = 8.45558
+tooltip_text = "Super Fast Bullets: These bullets travel at rapid speeds"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelSFB2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = -42.3549
+offset_top = 126.0
+offset_right = 16.6451
+offset_bottom = 190.0
+tooltip_text = "Super Fast Bullets: These bullets travel at rapid speeds
+Multiple Bullets: Tank can have multiple bullets on the screen"
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabelPT2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
-offset_left = -7.13655
-offset_top = -101.51
-offset_right = 32.8635
-offset_bottom = -55.5096
+offset_left = 18.6451
+offset_top = -24.0
+offset_right = 58.6451
+offset_bottom = 23.0
 tooltip_text = "Popped tire: Unable to move"
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabelMB" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
-offset_left = -24.0
-offset_top = -21.0
-offset_right = 5.0
-offset_bottom = 23.0
-tooltip_text = "Multiple Bullets: May have 3 bullets travelling at a time. "
+offset_left = -41.3549
+offset_top = -102.0
+offset_right = -15.3549
+offset_bottom = -60.0
+tooltip_text = "Multiple Bullets: Tank can have multiple bullets on the screen"
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabelFR" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
-offset_left = 8.0
-offset_top = -21.0
-offset_right = 49.0
-offset_bottom = 26.0
-tooltip_text = "Fast Relode: Can shoot 2 bullets/s"
+offset_left = -15.3549
+offset_top = -103.0
+offset_right = 21.6451
+offset_bottom = -56.0
+tooltip_text = "Fast Relode: Shoots at a faster rate"
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabelFR2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
-offset_left = 9.0
-offset_top = 56.0
-offset_right = 45.0
-offset_bottom = 103.0
-tooltip_text = "Fast Relode: Can shoot 2 bullets/s"
+offset_left = -39.2949
+offset_top = 53.685
+offset_right = -3.29484
+offset_bottom = 100.685
+tooltip_text = "Fast Relode: Shoots at a faster rate"
+metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabelMB2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
-offset_left = -21.0
-offset_top = 49.0
-offset_right = 8.0
-offset_bottom = 113.0
-tooltip_text = "Multiple Bullets: May have 5 bullets travelling at a time. "
+[node name="RichTextLabelFR3" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = 17.6151
+offset_top = 134.719
+offset_right = 53.6151
+offset_bottom = 181.719
+tooltip_text = "Fast Relode: Shoots at a faster rate"
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabelQ" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
-offset_left = 48.0
+offset_left = -2.13489
 offset_top = 55.0
-offset_right = 86.0
+offset_right = 35.8651
 offset_bottom = 100.0
 tooltip_text = "Quick: Navigates faster than normal. "
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelH" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = 19.6451
+offset_top = -100.0
+offset_right = 60.6451
+offset_bottom = -61.0
+tooltip_text = "Tanky: Has more health than normal"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelH2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksB"]
+offset_left = 53.6451
+offset_top = 138.0
+offset_right = 93.6451
+offset_bottom = 177.0
+tooltip_text = "Tanky: Has more health than normal"
+metadata/_edit_use_anchors_ = true
+
+[node name="Controls" type="Sprite2D" parent="PanelContainer/VBoxContainer"]
+visible = false
+position = Vector2(-272.779, 230.683)
+scale = Vector2(2.44275, 2.00896)
+texture = ExtResource("5_a7sjf")
+
+[node name="RichTextLabelC" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Controls"]
+anchors_preset = -1
+anchor_left = -0.00214685
+anchor_top = 0.000432903
+anchor_right = 0.213238
+anchor_bottom = 0.0514537
+offset_left = -61.4911
+offset_top = -143.127
+offset_right = 16.5089
+offset_bottom = -70.1274
+tooltip_text = "Left click to shoot bullets"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelC2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Controls"]
+anchors_preset = -1
+anchor_left = -0.00835791
+anchor_top = 0.034042
+anchor_right = 0.28395
+anchor_bottom = 0.0952665
+offset_left = -56.9135
+offset_top = -64.0083
+offset_right = 21.0865
+offset_bottom = 8.99166
+tooltip_text = "Right click to plant a mine"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelC3" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Controls"]
+anchors_preset = -1
+anchor_left = 0.0566548
+anchor_top = 0.00575469
+anchor_right = 0.310501
+anchor_bottom = 0.0907891
+offset_left = -68.3651
+offset_top = 35.3081
+offset_right = 9.63486
+offset_bottom = 108.308
+tooltip_text = "Use WASD or array keys to move around"
+metadata/_edit_use_anchors_ = true
+
+[node name="ControlsB" type="Sprite2D" parent="PanelContainer/VBoxContainer"]
+visible = false
+position = Vector2(521, 176)
+scale = Vector2(2.5625, 1.95062)
+texture = ExtResource("6_s4cyg")
+
+[node name="RichTextLabelC" type="RichTextLabel" parent="PanelContainer/VBoxContainer/ControlsB"]
+anchors_preset = -1
+anchor_left = 0.00263786
+anchor_top = -0.00531122
+anchor_right = 0.3542
+anchor_bottom = 0.109916
+offset_left = -61.3376
+offset_top = -120.709
+offset_right = 16.6623
+offset_bottom = -47.7095
+tooltip_text = "Left click to answer questions"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelC3" type="RichTextLabel" parent="PanelContainer/VBoxContainer/ControlsB"]
+anchors_preset = -1
+anchor_left = -0.00719631
+anchor_top = -0.165239
+anchor_right = 0.211554
+anchor_bottom = -0.226966
+offset_left = -51.0789
+offset_top = 36.153
+offset_right = 26.9211
+offset_bottom = 109.153
+tooltip_text = "Press F11 to enter and exit full screen"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelC4" type="RichTextLabel" parent="PanelContainer/VBoxContainer/ControlsB"]
+anchors_preset = -1
+anchor_left = -0.00745094
+anchor_top = -0.224617
+anchor_right = 0.211299
+anchor_bottom = -0.286345
+offset_left = -51.0463
+offset_top = 119.582
+offset_right = 26.9537
+offset_bottom = 192.582
+tooltip_text = "Press Esc to pause and unpause"
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

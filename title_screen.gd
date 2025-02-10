@@ -19,6 +19,18 @@ func _ready():
 	file.button_down.connect(on_file)
 	set_difficulty_button()
 
+# Checks possible keyboard inputs user if giving
+func _unhandled_input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_F11:
+		toggle_fullscreen()
+
+func toggle_fullscreen():
+	var window = get_window()
+	if window.mode == Window.MODE_WINDOWED:
+		window.mode = Window.MODE_EXCLUSIVE_FULLSCREEN  # Fullscreen mode without borders
+	else:
+		window.mode = Window.MODE_WINDOWED
+
 func on_start() -> void:
 	get_tree().change_scene_to_packed(start_game)
 

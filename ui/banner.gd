@@ -66,7 +66,7 @@ func new_question():
 	var questionTest = item[question_index].text
 	answer = item[question_index].correct_option
 
-	print("Correct answer for this question: ", answer) # comment all print statements out---
+	#print("Correct answer for this question: ", answer) --
 	$bannerImage/Question.text = str(questionTest)
 
 	#get_node("ItemList").clear()
@@ -89,7 +89,7 @@ func load_json_file(filePath: String):
 			var main_scene = load("res://main.tscn").instantiate()
 			main_scene.player_failed()
 			Global.total_questions = 0
-		print("Total Questions: ", Global.total_questions)
+		#print("Total Questions: ", Global.total_questions)
 		return parsedResults
 	#else: # If user file doesn't exsist, create it and rerun if statment
 		#var script = preload("res://ui/filedialog.gd").new()
