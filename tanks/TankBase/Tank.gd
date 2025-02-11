@@ -133,7 +133,7 @@ func move(delta, direction):
 
 func rotateCannon(angle):
 	$Cannon.rotation = angle
-	
+
 
 func shoot():
 	var bullet = bullet_load.instantiate()
@@ -172,6 +172,7 @@ func destroy():
 	queue_free()
 
 func deal_damage(d):
+	var deathSoundPath = "res://ui/death.wav"
 	$health/AnimationPlayer.stop()
 	$health/AnimationPlayer.clear_queue()
 	$health/AnimationPlayer.play("damage_dealt")
@@ -179,6 +180,7 @@ func deal_damage(d):
 	$health.value -= d
 	if current_hp <= 0:
 		destroy()
+		get_node("../..").play_sound(deathSoundPath, -10.0)
 
 func _exit_tree():
 	#print(get_parent().get_children())

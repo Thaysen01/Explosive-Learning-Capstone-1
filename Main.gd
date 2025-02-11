@@ -8,8 +8,8 @@ var enemytanks = [
 	preload("res://tanks/EnemyTanks/BeigeTank.tscn"), 
 	preload("res://tanks/EnemyTanks/YellowTank.tscn"),
 	preload("res://tanks/EnemyTanks/TealTank.tscn"),
-	preload("res://tanks/EnemyTanks/GreenTank.tscn"),
 	preload("res://tanks/EnemyTanks/RedTank.tscn"),
+	preload("res://tanks/EnemyTanks/GreenTank.tscn"),
 	preload("res://tanks/EnemyTanks/PurpleTank.tscn"),
 	preload("res://tanks/EnemyTanks/BlackTank.tscn")
 	]
@@ -23,6 +23,7 @@ var spawn = 4
 var newTank_index = 0
 var num_newTank = 1
 var old_num_correct_answer = -1
+var gameOverStarted = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,7 +34,7 @@ func _ready():
 	_addCurrentLevel()
 	spawn_tanks()
 
-# work on audio/sounds ---
+# make sound and music audio mutable (buttons/if trues) ---
 # Decides how many new tanks to spawn as well as when to add new tank(s)
 func spawn_tanks():
 	if Global.num_correct_answer != 0 || Global.num_correct_answer == old_num_correct_answer: # Delay after questions are answered
@@ -80,7 +81,7 @@ func spawn_tanks():
 				tank_spawn.append(slice_tank.pick_random())
 			else: # Final level: Only 1 boss
 				tank_spawn.append(slice_tank[randi() % 7])
-		
+				get_node("AudioStreamPlayer2").pitch_scale = 1.13
 		
 		for x in range(spawn): # Spawning tanks
 			var tank = tank_spawn[x].instantiate()
@@ -101,10 +102,11 @@ func spawn_tanks():
 				tileMap.start_shake(10.0, 1.3)
 	
 	# Level display (UI)
-	if Global.total_questions > 13:
-		$CanvasLayer/Stats/PanelContainer/VBoxContainer/Label.text = " Level: " + str(Global.num_correct_answer + 1) + " / 14 "
-	else:
-		$CanvasLayer/Stats/PanelContainer/VBoxContainer/Label.text = " Level: " + str(Global.num_correct_answer + 1) + " / " + str(Global.total_questions) + " "
+	if Global.total_questions > Global.num_correct_answer:
+		if Global.total_questions > 13:
+			$CanvasLayer/Stats/PanelContainer/VBoxContainer/Label.text = " Level: " + str(Global.num_correct_answer + 1) + " / 14 "
+		else:
+			$CanvasLayer/Stats/PanelContainer/VBoxContainer/Label.text = " Level: " + str(Global.num_correct_answer + 1) + " / " + str(Global.total_questions) + " "
 
 # Play a fake explosion animation
 func spawn_blast_animation(pos: Vector2):
@@ -146,35 +148,40 @@ func nextLevel():
 
 # Ran for victory or defeat
 func player_failed():
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	var tileMap = $TileMap
-	var finish_wait = Timer.new()
-	if Global.total_questions == 0: # If the question set is invalid
+	if gameOverStarted == false: # ensures this doesn't get called repeatedly on player death
+		gameOverStarted = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		$CanvasLayer/Finish/Panel2.show()
-		$CanvasLayer/Finish/Panel.hide()
-		$CanvasLayer/Finish/Panel.hide()
-		finish_wait.wait_time = 7
-	else:
-		$CanvasLayer/Finish/Panel.show()
-		$CanvasLayer/Finish/Panel2.hide()
-		if Global.total_questions == Global.num_correct_answer or (Global.num_correct_answer == 14):
-			$CanvasLayer/Finish/Panel/Label.text = "VICTORY"
-			tileMap.start_shake(8.0, 3.0)
-			finish_wait.wait_time = 5
+		get_node("AudioStreamPlayer2").playing = false # Main music off
+		var tileMap = $TileMap
+		var finish_wait = Timer.new()
+		if Global.total_questions == 0: # If the question set is invalid
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			play_sound("res://ui/error.wav", -15.0)
+			$CanvasLayer/Finish/Panel2.show()
+			$CanvasLayer/Finish/Panel.hide()
+			$CanvasLayer/Finish/Panel.hide()
+			finish_wait.wait_time = 7
 		else:
-			get_node("CanvasLayer/Stats/PanelContainer/VBoxContainer/Label2").text = " Health: ❤️ 0 "
-			$CanvasLayer/Finish/Panel/Label.text = "DEFEAT"
-			tileMap.start_shake(4.0, .3)
-			finish_wait.wait_time = 3
-	finish_wait.autostart = true
-	finish_wait.one_shot = true
-	finish_wait.connect("timeout",  self._on_finish_wait_timeout) 
-	$CanvasLayer/Finish.show()
-	$CanvasLayer/pause_screen/AnimationPlayer.stop() #still vary rarely shows blur on new games --
-	#fget_node("CanvasLayer/Stats/PanelContainer2").visible = false
-	
-	call_deferred("add_child", finish_wait)
+			$CanvasLayer/Finish/Panel.show()
+			$CanvasLayer/Finish/Panel2.hide()
+			if Global.total_questions == Global.num_correct_answer or (Global.num_correct_answer == 14):
+				$CanvasLayer/Finish/Panel/Label.text = "VICTORY"
+				play_sound("res://ui/victory.wav", -15.0)
+				tileMap.start_shake(0.1, 0.5)
+				finish_wait.wait_time = 5
+			else:
+				get_node("CanvasLayer/Stats/PanelContainer/VBoxContainer/Label2").text = " Health: ❤️ 0 "
+				$CanvasLayer/Finish/Panel/Label.text = "DEFEAT"
+				play_sound("res://ui/defeat.wav", -20.0)
+				tileMap.start_shake(0.2, 4.0)
+				finish_wait.wait_time = 4.2
+		finish_wait.autostart = true
+		finish_wait.one_shot = true
+		finish_wait.connect("timeout",  self._on_finish_wait_timeout) 
+		$CanvasLayer/Finish.show()
+		$CanvasLayer/pause_screen/AnimationPlayer.stop() #still vary rarely shows blur on new games --
+		
+		call_deferred("add_child", finish_wait)
 	
 func _on_finish_wait_timeout():
 	#get_tree().reload_current_scene()
@@ -186,3 +193,9 @@ func _addCurrentLevel():
 	$TileMap.connect("enemies_killed", self.nextLevel)
 	$TileMap.connect("player_died", self.player_failed) # runs when game is over
 
+func play_sound(sound_path: String, volume_db: float):
+	var audio_stream = load(sound_path)
+	var audio_player = $AudioStreamPlayer
+	audio_player.stream = audio_stream
+	audio_player.volume_db = volume_db
+	audio_player.play()

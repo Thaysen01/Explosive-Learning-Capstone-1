@@ -8,7 +8,6 @@ class_name Bullet extends CharacterBody2D
 var currentRebounds
 
 #brown, beige, yellow, teal, green, red, purple, black 
-
 var bullet_color ={
 	"Blue" : preload("res://assets/kenney_top-down-tanks/PNG/Bullets/bulletBlue.png"),
 	"Brown" : preload("res://assets/kenney_top-down-tanks/PNG/Bullets/bulletBrown.png"),
@@ -24,7 +23,11 @@ var bullet_color ={
 # Called when the node enters the scene tree for the first time.
 
 func setup(initialPosition: Vector2, initialVelocity: Vector2):
+	var bulletSoundPath = "res://ui/bulletShot.wav"
+	if scene_file_path == "res://bullet/Bullet.tscn":
+		play_sound(bulletSoundPath, -13.0, 3)
 	if scene_file_path == "res://bullet/FastBullet.tscn":
+		play_sound(bulletSoundPath, -9.0, 2.0)
 		if Global.difficulty == 0 or Global.difficulty == 1:
 			damage = 1
 		elif Global.difficulty == 2:
@@ -32,6 +35,7 @@ func setup(initialPosition: Vector2, initialVelocity: Vector2):
 		elif Global.difficulty == 3:
 			damage = 3
 	elif scene_file_path == "res://bullet/DoubleFastBullet.tscn":
+		play_sound(bulletSoundPath, -8.0, 1.5)
 		if Global.difficulty == 0 or Global.difficulty == 1:
 			damage = 1
 		elif Global.difficulty == 2:
@@ -58,16 +62,8 @@ func _physics_process(delta):
 		if(not collision.get_collider() is TileMap):
 			if (collision.get_collider().get_groups().has("destroyable")):
 				collision.get_collider().deal_damage(damage)
-			
+		
 		self.destroy()
-		#else: # Collision with walls
-			#if (currentRebounds >= maxRebounds):
-				#queue_free()
-			#else: 
-				#velocity = velocity.bounce(collision.normal)
-				#self.rotation = velocity.angle()
-				#currentRebounds += 1;
-				
 
 
 func getCollisionShapeExtents():
@@ -79,3 +75,10 @@ func getCollisionShape():
 func _on_screen_exited():
 	queue_free()
 
+# Giving bullet sound its own function to deal with pitch
+func play_sound(sound_path: String, volume_db: float, pitch_scale: float):
+	var audio_stream = load(sound_path)
+	var audio_player = $AudioStreamPlayer
+	audio_player.stream = audio_stream
+	audio_player.volume_db = volume_db
+	audio_player.pitch_scale = pitch_scale

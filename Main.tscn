@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bm76hgqs7iqgx"]
+[gd_scene load_steps=7 format=3 uid="uid://bm76hgqs7iqgx"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_b2o4i"]
 [ext_resource type="PackedScene" uid="uid://b5esocitpx2a0" path="res://map/tile_map.tscn" id="2_v43ny"]
 [ext_resource type="PackedScene" uid="uid://cjucnla4wsu42" path="res://ui/pause_screen.tscn" id="3_sxes0"]
 [ext_resource type="PackedScene" uid="uid://d2jksevmm4q8i" path="res://ui/banner.tscn" id="4_2r3cq"]
+[ext_resource type="AudioStream" uid="uid://bg1tj2cv4i4ow" path="res://ui/gameMusic.ogg" id="6_plki5"]
 [ext_resource type="PackedScene" uid="uid://s217hqa17x3v" path="res://ui/finish.tscn" id="6_q6s18"]
 
 [node name="Main" type="Node2D"]
@@ -83,5 +84,12 @@ layout_mode = 2
 layout_mode = 2
 text = " Boss - Health: 🖤  "
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_plki5")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="question_answered" from="CanvasLayer/Banner" to="." method="spawn_tanks"]

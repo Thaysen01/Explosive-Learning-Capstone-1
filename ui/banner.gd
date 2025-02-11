@@ -9,7 +9,6 @@ var save_path = "user://questions.json"
 @onready var question = $bannerImage/Question
 @onready var animator = $bannerImage/AnimationPlayer
 @onready var button = $bannerImage/Answers.get_children()
-#var path = "res://assets/questions.json"
 
 signal question_answered
 
@@ -74,7 +73,7 @@ func new_question():
 	for i in range(0,4):
 		button[i].text = str(options[i])
 
-# Could have default question sets that the user can choose from (I think the game launches with a question set in mind) ---
+# Could have default question sets that the user can choose from (I think the game launches with a default question set) ---
 # Gets data from the JSON file
 func load_json_file(filePath: String):
 	if FileAccess.file_exists(filePath):
@@ -110,12 +109,15 @@ func show_options():
 # Checks the answer with their choice
 func check_answer(choice: int):
 	hide_options()
+	var mainPath = get_node("../..")
 	if (choice == answer[0]):
 		button[0].text = str("Correct")
 		Global.num_correct_answer += 1
 		items.questions.pop_at(question_index)
+		mainPath.play_sound("res://ui/correct.wav", -20.0)
 	else:
 		button[0].text = str("Incorrect")
+		mainPath.play_sound("res://ui/incorrect.wav", -20.0)
 	slide_up()
 
 # Calls check answer when any of the buttons are pressed
