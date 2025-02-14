@@ -25,9 +25,11 @@ var bullet_color ={
 func setup(initialPosition: Vector2, initialVelocity: Vector2):
 	var bulletSoundPath = "res://ui/bulletShot.wav"
 	if scene_file_path == "res://bullet/Bullet.tscn":
-		play_sound(bulletSoundPath, -13.0, 3)
-	if scene_file_path == "res://bullet/FastBullet.tscn":
-		play_sound(bulletSoundPath, -9.0, 2.0)
+		if (Global.masterLevel * Global.soundEffectLevel):
+			play_sound(bulletSoundPath, (Global.soundEffectLevel*Global.masterLevel * .45 - 60), 3.0) #-15
+	elif scene_file_path == "res://bullet/FastBullet.tscn":
+		if (Global.masterLevel * Global.soundEffectLevel):
+			play_sound(bulletSoundPath, (Global.soundEffectLevel*Global.masterLevel * .51 - 60), 2.0) #-9
 		if Global.difficulty == 0 or Global.difficulty == 1:
 			damage = 1
 		elif Global.difficulty == 2:
@@ -35,7 +37,8 @@ func setup(initialPosition: Vector2, initialVelocity: Vector2):
 		elif Global.difficulty == 3:
 			damage = 3
 	elif scene_file_path == "res://bullet/DoubleFastBullet.tscn":
-		play_sound(bulletSoundPath, -8.0, 1.5)
+		if (Global.masterLevel * Global.soundEffectLevel):
+			play_sound(bulletSoundPath, (Global.soundEffectLevel*Global.masterLevel * .52 - 60), 1.5) #-8
 		if Global.difficulty == 0 or Global.difficulty == 1:
 			damage = 1
 		elif Global.difficulty == 2:

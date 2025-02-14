@@ -86,10 +86,11 @@ text = " Boss - Health: 🖤  "
 horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -80.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_plki5")
-volume_db = -20.0
+volume_db = -80.0
 autoplay = true
 
 [connection signal="question_answered" from="CanvasLayer/Banner" to="." method="spawn_tanks"]

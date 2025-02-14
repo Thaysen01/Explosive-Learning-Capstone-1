@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjucnla4wsu42"]
+[gd_scene load_steps=12 format=3 uid="uid://cjucnla4wsu42"]
 
 [ext_resource type="Script" path="res://ui/pause_screen.gd" id="1_wl04b"]
 [ext_resource type="Shader" path="res://ui/pause_screen.gdshader" id="2_ptysv"]
@@ -10,6 +10,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ifjx"]
 shader = ExtResource("2_ptysv")
 shader_parameter/lod = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y23y4"]
 
 [sub_resource type="Animation" id="Animation_i4hh6"]
 length = 0.001
@@ -116,6 +118,7 @@ offset_left = -1.0
 offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 visible = false
@@ -158,7 +161,7 @@ text = "Resume"
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="restart" type="Button" parent="PanelContainer/VBoxContainer"]
@@ -168,7 +171,17 @@ text = "Restart"
 
 [node name="HSeparator2" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="audioSettings" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Audio Settings"
+
+[node name="HSeparator7" type="HSeparator" parent="PanelContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="quit" type="Button" parent="PanelContainer/VBoxContainer"]
@@ -178,7 +191,7 @@ text = "Quit"
 
 [node name="HSeparator4" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="tanks" type="Button" parent="PanelContainer/VBoxContainer"]
@@ -574,6 +587,127 @@ offset_bottom = 192.582
 tooltip_text = "Press Esc to pause and unpause"
 metadata/_edit_use_anchors_ = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="PanelContainer/VBoxContainer"]
+process_priority = 1
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/CanvasLayer"]
+top_level = true
+offset_left = 345.0
+offset_top = 102.0
+offset_right = 811.0
+offset_bottom = 538.0
+mouse_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer"]
+layout_mode = 2
+color = Color(0.121569, 0.313726, 0.188235, 1)
+
+[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 428.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 37
+text = "Audio Settings"
+horizontal_alignment = 1
+
+[node name="HScrollBar" type="HScrollBar" parent="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 219.0
+offset_right = 186.0
+offset_bottom = 227.0
+scale = Vector2(2.6, 2.6)
+theme_override_styles/grabber_highlight = SubResource("StyleBoxFlat_y23y4")
+value = 75.0
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 171.0
+offset_right = 431.0
+offset_bottom = 213.0
+theme_override_font_sizes/font_size = 30
+text = "Sound Effects"
+
+[node name="CheckBox" type="CheckBox" parent="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 178.0
+offset_right = 60.0
+offset_bottom = 202.0
+scale = Vector2(1.3, 1.3)
+button_pressed = true
+
+[node name="HScrollBar2" type="HScrollBar" parent="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 292.0
+offset_right = 186.0
+offset_bottom = 300.0
+scale = Vector2(2.6, 2.6)
+theme_override_styles/grabber_highlight = SubResource("StyleBoxFlat_y23y4")
+value = 75.0
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 246.0
+offset_right = 431.0
+offset_bottom = 288.0
+theme_override_font_sizes/font_size = 30
+text = "Music"
+
+[node name="CheckBox2" type="CheckBox" parent="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 253.0
+offset_right = 60.0
+offset_bottom = 277.0
+scale = Vector2(1.3, 1.3)
+button_pressed = true
+
+[node name="HScrollBar3" type="HScrollBar" parent="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 135.0
+offset_right = 166.0
+offset_bottom = 143.0
+scale = Vector2(3, 3)
+theme_override_styles/grabber_highlight = SubResource("StyleBoxFlat_y23y4")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Label4" type="Label" parent="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 86.0
+offset_right = 431.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 30
+text = "Master Volume"
+
+[node name="CheckBox3" type="CheckBox" parent="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 88.0
+offset_right = 52.0
+offset_bottom = 112.0
+scale = Vector2(2, 2)
+button_pressed = true
+
+[node name="Back" type="Button" parent="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 351.0
+offset_right = 371.0
+offset_bottom = 413.0
+theme_override_font_sizes/font_size = 25
+text = "Back"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_5wft6")
@@ -581,5 +715,13 @@ libraries = {
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/audioSettings" to="." method="_on_audio_settings_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/tanks" to="." method="_on_tanks_pressed"]
+[connection signal="scrolling" from="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar" to="." method="_on_h_scroll_bar_scrolling"]
+[connection signal="toggled" from="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="scrolling" from="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar2" to="." method="_on_h_scroll_bar_2_scrolling"]
+[connection signal="toggled" from="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox2" to="." method="_on_check_box_2_toggled"]
+[connection signal="scrolling" from="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar3" to="." method="_on_h_scroll_bar_3_scrolling"]
+[connection signal="toggled" from="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox3" to="." method="_on_check_box_3_toggled"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/Back" to="." method="_on_back_pressed"]

@@ -114,10 +114,12 @@ func check_answer(choice: int):
 		button[0].text = str("Correct")
 		Global.num_correct_answer += 1
 		items.questions.pop_at(question_index)
-		mainPath.play_sound("res://ui/correct.wav", -20.0)
+		if (Global.masterLevel * Global.soundEffectLevel):
+			mainPath.play_sound("res://ui/correct.wav", (Global.soundEffectLevel*Global.masterLevel * .4 - 60)) #-20
 	else:
 		button[0].text = str("Incorrect")
-		mainPath.play_sound("res://ui/incorrect.wav", -20.0)
+		if (Global.masterLevel * Global.soundEffectLevel):
+			mainPath.play_sound("res://ui/incorrect.wav", (Global.soundEffectLevel*Global.masterLevel * .4 - 60)) #-20
 	slide_up()
 
 # Calls check answer when any of the buttons are pressed

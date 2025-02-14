@@ -180,7 +180,8 @@ func deal_damage(d):
 	$health.value -= d
 	if current_hp <= 0:
 		destroy()
-		get_node("../..").play_sound(deathSoundPath, -10.0)
+		if (Global.masterLevel * Global.soundEffectLevel):
+			get_node("../..").play_sound(deathSoundPath, (Global.soundEffectLevel*Global.masterLevel * .5 - 60)) #-10
 
 func _exit_tree():
 	#print(get_parent().get_children())

@@ -1,10 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://coq27e5f43cs1"]
+[gd_scene load_steps=6 format=3 uid="uid://coq27e5f43cs1"]
 
 [ext_resource type="Texture2D" uid="uid://dfllcewog72r1" path="res://assets/Jungle.png" id="1_48gk2"]
 [ext_resource type="Script" path="res://title_screen.gd" id="1_wlq45"]
 [ext_resource type="PackedScene" uid="uid://cb43uubfftuyx" path="res://ui/CreateQuestionSet.tscn" id="4_vnajj"]
 
 [sub_resource type="FontVariation" id="FontVariation_ruic4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0lxh"]
 
 [node name="titleScreen" type="Control"]
 layout_mode = 3
@@ -73,6 +75,135 @@ theme_override_font_sizes/font_size = 25
 text = "  Difficulty: "
 alignment = 0
 
+[node name="Audio" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 60)
+layout_mode = 2
+tooltip_text = "Click this to change the difficulty."
+theme_override_fonts/font = SubResource("FontVariation_ruic4")
+theme_override_font_sizes/font_size = 25
+text = "Audio Settings"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="MarginContainer/HBoxContainer/VBoxContainer/Audio"]
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer"]
+top_level = true
+offset_left = 345.0
+offset_top = 164.0
+offset_right = 811.0
+offset_bottom = 586.0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer"]
+layout_mode = 2
+color = Color(0.121569, 0.313726, 0.188235, 1)
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 15.0
+offset_right = 428.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 37
+text = "Audio Settings"
+horizontal_alignment = 1
+
+[node name="HScrollBar" type="HScrollBar" parent="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 211.0
+offset_right = 186.0
+offset_bottom = 219.0
+scale = Vector2(2.6, 2.6)
+theme_override_styles/grabber_highlight = SubResource("StyleBoxFlat_q0lxh")
+step = 1.0
+value = 75.0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 165.0
+offset_right = 431.0
+offset_bottom = 207.0
+theme_override_font_sizes/font_size = 30
+text = "Sound Effects"
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 172.0
+offset_right = 60.0
+offset_bottom = 196.0
+scale = Vector2(1.3, 1.3)
+button_pressed = true
+
+[node name="HScrollBar2" type="HScrollBar" parent="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 286.0
+offset_right = 186.0
+offset_bottom = 294.0
+scale = Vector2(2.6, 2.6)
+theme_override_styles/grabber_highlight = SubResource("StyleBoxFlat_q0lxh")
+step = 1.0
+value = 75.0
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 240.0
+offset_right = 431.0
+offset_bottom = 282.0
+theme_override_font_sizes/font_size = 30
+text = "Music"
+
+[node name="CheckBox2" type="CheckBox" parent="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 247.0
+offset_right = 60.0
+offset_bottom = 271.0
+scale = Vector2(1.3, 1.3)
+button_pressed = true
+
+[node name="HScrollBar3" type="HScrollBar" parent="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 129.0
+offset_right = 166.0
+offset_bottom = 137.0
+scale = Vector2(3, 3)
+theme_override_styles/grabber_highlight = SubResource("StyleBoxFlat_q0lxh")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Label4" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 80.0
+offset_right = 431.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 30
+text = "Master Volume"
+
+[node name="CheckBox3" type="CheckBox" parent="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 78.0
+offset_right = 52.0
+offset_bottom = 102.0
+scale = Vector2(2, 2)
+button_pressed = true
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 337.0
+offset_right = 371.0
+offset_bottom = 399.0
+theme_override_font_sizes/font_size = 25
+text = "Back"
+
 [node name="File" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 60)
 layout_mode = 2
@@ -92,3 +223,14 @@ visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Difficulty" to="." method="_on_difficulty_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Audio" to="." method="_on_audio_pressed"]
+[connection signal="scrolling" from="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect/HScrollBar" to="." method="_on_h_scroll_bar_scrolling"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="scrolling" from="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect/HScrollBar2" to="." method="_on_h_scroll_bar_2_scrolling"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect/CheckBox2" to="." method="_on_check_box_2_toggled"]
+[connection signal="scrolling" from="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect/HScrollBar3" to="." method="_on_h_scroll_bar_3_scrolling"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect/CheckBox3" to="." method="_on_check_box_3_button_down"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect/CheckBox3" to="." method="_on_check_box_3_button_up"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect/CheckBox3" to="." method="_on_check_box_3_pressed"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect/CheckBox3" to="." method="_on_check_box_3_toggled"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect/Button" to="." method="_on_button_pressed"]

@@ -29,18 +29,20 @@ var gameOverStarted = false
 func _ready():
 	difficulty_adjustments()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED) # Mouse cannot drag off screen
+	if (Global.masterLevel * Global.musicLevel):
+		get_node("AudioStreamPlayer2").volume_db = (Global.musicLevel*Global.masterLevel  * .4) - 60 #-20
+	else:
+		get_node("AudioStreamPlayer2").volume_db = -100
 	Global.num_correct_answer = 0
 	$CanvasLayer/Finish.hide()
 	_addCurrentLevel()
 	spawn_tanks()
 
-# make sound and music audio mutable (buttons/if trues) ---
 # Decides how many new tanks to spawn as well as when to add new tank(s)
 func spawn_tanks():
 	if Global.num_correct_answer != 0 || Global.num_correct_answer == old_num_correct_answer: # Delay after questions are answered
 		await get_tree().create_timer(1.2).timeout
 	
-	#print("Spawning tanks. Number of correct anwers: ", Global.num_correct_answer)
 	if Global.total_questions == Global.num_correct_answer or (Global.num_correct_answer == 14):
 		player_failed() # Player wins the game
 
@@ -156,7 +158,8 @@ func player_failed():
 		var finish_wait = Timer.new()
 		if Global.total_questions == 0: # If the question set is invalid
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			play_sound("res://ui/error.wav", -15.0)
+			if (Global.masterLevel * Global.soundEffectLevel):
+				play_sound("res://ui/error.wav", (Global.soundEffectLevel*Global.masterLevel * .45 - 60)) # -15
 			$CanvasLayer/Finish/Panel2.show()
 			$CanvasLayer/Finish/Panel.hide()
 			$CanvasLayer/Finish/Panel.hide()
@@ -166,13 +169,15 @@ func player_failed():
 			$CanvasLayer/Finish/Panel2.hide()
 			if Global.total_questions == Global.num_correct_answer or (Global.num_correct_answer == 14):
 				$CanvasLayer/Finish/Panel/Label.text = "VICTORY"
-				play_sound("res://ui/victory.wav", -15.0)
+				if (Global.masterLevel * Global.soundEffectLevel):
+					play_sound("res://ui/victory.wav", (Global.soundEffectLevel*Global.masterLevel * .45 - 60)) #-15
 				tileMap.start_shake(0.1, 0.5)
 				finish_wait.wait_time = 5
 			else:
 				get_node("CanvasLayer/Stats/PanelContainer/VBoxContainer/Label2").text = " Health: ❤️ 0 "
 				$CanvasLayer/Finish/Panel/Label.text = "DEFEAT"
-				play_sound("res://ui/defeat.wav", -20.0)
+				if (Global.masterLevel * Global.soundEffectLevel):
+					play_sound("res://ui/defeat.wav", (Global.soundEffectLevel*Global.masterLevel * .4 - 60)) #-20
 				tileMap.start_shake(0.2, 4.0)
 				finish_wait.wait_time = 4.2
 		finish_wait.autostart = true

@@ -24,7 +24,7 @@ position = Vector2(-2.38419e-07, 0)
 scale = Vector2(0.6, 0.3)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = 1.0
+volume_db = -80.0
 autoplay = true
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

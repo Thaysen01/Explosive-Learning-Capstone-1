@@ -16,6 +16,22 @@ func _ready():
 	elif Global.difficulty == 4:
 		$PanelContainer/VBoxContainer/Label.text = "Difficulty: Impossible"
 
+	if Global.masterLevel == 0:
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox3.button_pressed = false
+	else: 
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox3.button_pressed = true
+	if Global.soundEffectLevel == 0:
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox.button_pressed = false
+	else: 
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox.button_pressed = true
+	if Global.musicLevel == 0:
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox2.button_pressed = false
+	else: 
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox2.button_pressed = true
+	$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar2.value = Global.musicLevel
+	$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar.value = Global.soundEffectLevel
+	$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar3.value = Global.masterLevel
+
 func resume():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	get_tree().paused = false
@@ -39,6 +55,11 @@ func _unhandled_input(event):
 	if event.is_action_pressed("esc") and !get_tree().paused:
 		pause()
 	elif event.is_action_pressed("esc") and get_tree().paused:
+		$PanelContainer/VBoxContainer/CanvasLayer.visible = false
+		if (Global.masterLevel * Global.musicLevel):
+			get_node("../../AudioStreamPlayer2").volume_db = (Global.musicLevel*Global.masterLevel  * .4) - 60 #-20
+		else:
+			get_node("../../AudioStreamPlayer2").volume_db = -100
 		resume()
 	elif event is InputEventKey and event.pressed and event.keycode == KEY_F11:
 		toggle_fullscreen()
@@ -98,4 +119,74 @@ func _on_quit_wait_timeout():
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(title_screen)
 
+func _on_audio_settings_pressed():
+	$PanelContainer/VBoxContainer/CanvasLayer.visible = true
+	#$PanelContainer.visible = false
 
+func _on_h_scroll_bar_value_changed(value):
+	Global.soundEffectLevel = int(value)
+
+func _on_h_scroll_bar_2_value_changed(value):
+	Global.musicLevel = (int(value))
+
+func _on_h_scroll_bar_3_value_changed(value):
+	Global.masterLevel = float(value)
+
+func _on_check_box_3_toggled(toggled_on): # Master Checked
+	if $PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox3.button_pressed:
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar3.value = .01
+		Global.masterLevel = .01
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar.mouse_filter = Control.MOUSE_FILTER_PASS
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar.modulate.a = 1
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar2.mouse_filter = Control.MOUSE_FILTER_PASS
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar2.modulate.a = 1
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox.mouse_filter = Control.MOUSE_FILTER_PASS
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox.modulate.a = 1
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox2.mouse_filter = Control.MOUSE_FILTER_PASS
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox2.modulate.a = 1
+	else: # Master Unchecked
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar3.value = 0
+		Global.masterLevel = 0
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar.modulate.a = 0.5
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar2.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar2.modulate.a = .5
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox.modulate.a = .5
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox2.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox2.modulate.a = .5
+
+func _on_check_box_toggled(toggled_on):
+	if $PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox.button_pressed:
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar.value = 1
+		Global.soundEffectLevel = 1
+	else:
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar.value = 0
+		Global.soundEffectLevel = 0
+
+func _on_check_box_2_toggled(toggled_on):
+	if $PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox2.button_pressed:
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar2.value = 1
+		Global.musicLevel = 1
+	else:
+		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar2.value = 0
+		Global.musicLevel = 0
+
+func _on_h_scroll_bar_3_scrolling():
+	$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox3.button_pressed = true
+	Global.masterLevel = float($PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar3.value)
+
+func _on_h_scroll_bar_scrolling():
+	$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox.button_pressed = true
+	Global.soundEffectLevel = int($PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar.value)
+
+func _on_h_scroll_bar_2_scrolling():
+	$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox2.button_pressed = true
+	Global.musicLevel = (int($PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar2.value))
+
+func _on_back_pressed():
+	$PanelContainer/VBoxContainer/CanvasLayer.visible = false
+	if (Global.masterLevel * Global.musicLevel):
+		get_node("../../AudioStreamPlayer2").volume_db = (Global.musicLevel*Global.masterLevel  * .4) - 60 #-20
+	else:
+		get_node("../../AudioStreamPlayer2").volume_db = -100

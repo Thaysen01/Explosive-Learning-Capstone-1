@@ -7,9 +7,11 @@ func _ready():
 	$AnimationPlayer.play("default")
 	var bombSoundPath = "res://ui/bombExplode.wav"
 	if damage_enabled:
-		get_node("../../").play_sound(bombSoundPath, -10.0)
+		if (Global.masterLevel * Global.soundEffectLevel):
+			get_node("../../").play_sound(bombSoundPath, (Global.soundEffectLevel*Global.masterLevel * .5 - 60)) #-10
 	else: # play quieter bombs when spawning (different path)
-		get_node("../Main").play_sound(bombSoundPath, -25.0)
+		if (Global.masterLevel * Global.soundEffectLevel):
+			get_node("../Main").play_sound(bombSoundPath, (Global.soundEffectLevel*Global.masterLevel * .35 - 60)) #-25
 
 func _on_Blast_body_entered(body):
 	if damage_enabled and body.get_groups().has("destroyable"):
