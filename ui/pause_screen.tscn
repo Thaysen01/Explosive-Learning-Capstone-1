@@ -149,6 +149,11 @@ layout_mode = 2
 text = "Difficulty: "
 horizontal_alignment = 1
 
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Questions: "
+horizontal_alignment = 1
+
 [node name="HSeparator6" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 10)
@@ -161,7 +166,7 @@ text = "Resume"
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="restart" type="Button" parent="PanelContainer/VBoxContainer"]
@@ -171,7 +176,7 @@ text = "Restart"
 
 [node name="HSeparator2" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="audioSettings" type="Button" parent="PanelContainer/VBoxContainer"]
@@ -181,7 +186,7 @@ text = "Audio Settings"
 
 [node name="HSeparator7" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="quit" type="Button" parent="PanelContainer/VBoxContainer"]
@@ -191,7 +196,7 @@ text = "Quit"
 
 [node name="HSeparator4" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="tanks" type="Button" parent="PanelContainer/VBoxContainer"]
@@ -201,12 +206,12 @@ text = "Tanks"
 
 [node name="HSeparator5" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 15)
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="EnemyTanksA" type="Sprite2D" parent="PanelContainer/VBoxContainer"]
 visible = false
-position = Vector2(-245.5, 199)
+position = Vector2(-245.5, 225)
 scale = Vector2(1.42086, 1.4686)
 texture = ExtResource("3_vc46e")
 
@@ -320,7 +325,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="EnemyTanksB" type="Sprite2D" parent="PanelContainer/VBoxContainer"]
 visible = false
-position = Vector2(540, 199.5)
+position = Vector2(540, 225.5)
 scale = Vector2(1.47601, 1.48086)
 texture = ExtResource("4_3d38d")
 
@@ -499,7 +504,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Controls" type="Sprite2D" parent="PanelContainer/VBoxContainer"]
 visible = false
-position = Vector2(-272.779, 230.683)
+position = Vector2(-272.779, 251.683)
 scale = Vector2(2.44275, 2.00896)
 texture = ExtResource("5_a7sjf")
 
@@ -544,7 +549,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ControlsB" type="Sprite2D" parent="PanelContainer/VBoxContainer"]
 visible = false
-position = Vector2(521, 176)
+position = Vector2(521, 197)
 scale = Vector2(2.5625, 1.95062)
 texture = ExtResource("6_s4cyg")
 

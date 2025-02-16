@@ -15,6 +15,7 @@ func _ready():
 		$PanelContainer/VBoxContainer/Label.text = "Difficulty: Hard"
 	elif Global.difficulty == 4:
 		$PanelContainer/VBoxContainer/Label.text = "Difficulty: Impossible"
+	$PanelContainer/VBoxContainer/Label2.text = "Questions: " + Global.pauseNameQs
 
 	if Global.masterLevel == 0:
 		$PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox3.button_pressed = false

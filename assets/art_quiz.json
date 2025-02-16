@@ -1,0 +1,706 @@
+{
+  "questions": [
+	{
+	  "type": "multiple_choice",
+	  "text": "Who painted the 'Mona Lisa'?",
+	  "options": [
+		"Leonardo da Vinci",
+		"Pablo Picasso",
+		"Vincent van Gogh",
+		"Claude Monet"
+	  ],
+	  "correct_option": [
+		3
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which art movement is associated with Salvador Dal\u00ed?",
+	  "options": [
+		"Impressionism",
+		"Surrealism",
+		"Cubism",
+		"Abstract Expressionism"
+	  ],
+	  "correct_option": [
+		1
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist is known for the painting 'The Persistence of Memory'?",
+	  "options": [
+		"Pablo Picasso",
+		"Salvador Dal\u00ed",
+		"Henri Matisse",
+		"Claude Monet"
+	  ],
+	  "correct_option": [
+		3
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which famous artist painted 'Starry Night'?",
+	  "options": [
+		"Vincent van Gogh",
+		"Claude Monet",
+		"Pablo Picasso",
+		"Edvard Munch"
+	  ],
+	  "correct_option": [
+		3
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who is considered the father of modern abstract art?",
+	  "options": [
+		"Pablo Picasso",
+		"Wassily Kandinsky",
+		"Jackson Pollock",
+		"Henri Matisse"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "What artistic movement is closely associated with the works of Andy Warhol?",
+	  "options": [
+		"Pop Art",
+		"Impressionism",
+		"Surrealism",
+		"Fauvism"
+	  ],
+	  "correct_option": [
+		2
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist is known for the creation of 'The Kiss' sculpture?",
+	  "options": [
+		"Auguste Rodin",
+		"Michelangelo",
+		"Giorgio de Chirico",
+		"Gustav Klimt"
+	  ],
+	  "correct_option": [
+		1
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who painted 'The Birth of Venus'?",
+	  "options": [
+		"Sandro Botticelli",
+		"Leonardo da Vinci",
+		"Raphael",
+		"Michelangelo"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist painted 'Guernica'?",
+	  "options": [
+		"Henri Matisse",
+		"Pablo Picasso",
+		"Jackson Pollock",
+		"Vincent van Gogh"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which art movement is Claude Monet associated with?",
+	  "options": [
+		"Baroque",
+		"Renaissance",
+		"Impressionism",
+		"Cubism"
+	  ],
+	  "correct_option": [
+		2
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who is considered the father of the Renaissance?",
+	  "options": [
+		"Michelangelo",
+		"Leonardo da Vinci",
+		"Raphael",
+		"Donatello"
+	  ],
+	  "correct_option": [
+		3
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist is known for his work 'The School of Athens'?",
+	  "options": [
+		"Leonardo da Vinci",
+		"Raphael",
+		"Michelangelo",
+		"Caravaggio"
+	  ],
+	  "correct_option": [
+		1
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which movement is associated with artists like Georges Braque and Pablo Picasso?",
+	  "options": [
+		"Impressionism",
+		"Fauvism",
+		"Cubism",
+		"Surrealism"
+	  ],
+	  "correct_option": [
+		2
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which famous painting is located in the Louvre Museum in Paris?",
+	  "options": [
+		"The Scream",
+		"Mona Lisa",
+		"The Starry Night",
+		"Guernica"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "What was the primary subject of the works of Jackson Pollock?",
+	  "options": [
+		"Landscapes",
+		"Portraits",
+		"Abstract Expressionism",
+		"Surrealism"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who painted 'The Night Watch'?",
+	  "options": [
+		"Vincent van Gogh",
+		"Rembrandt",
+		"Johannes Vermeer",
+		"Pieter Bruegel"
+	  ],
+	  "correct_option": [
+		1
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist is known for painting the Sistine Chapel ceiling?",
+	  "options": [
+		"Michelangelo",
+		"Leonardo da Vinci",
+		"Raphael",
+		"Donatello"
+	  ],
+	  "correct_option": [
+		3
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which of these is a well-known work of Frida Kahlo?",
+	  "options": [
+		"The Persistence of Memory",
+		"The Two Fridas",
+		"The Birth of Venus",
+		"The Kiss"
+	  ],
+	  "correct_option": [
+		1
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which art movement was Claude Monet a part of?",
+	  "options": [
+		"Impressionism",
+		"Realism",
+		"Fauvism",
+		"Cubism"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who painted the 'Water Lilies' series?",
+	  "options": [
+		"Claude Monet",
+		"Vincent van Gogh",
+		"Pablo Picasso",
+		"Edvard Munch"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which of these artists was part of the 'Blue Rider' group?",
+	  "options": [
+		"Wassily Kandinsky",
+		"Henri Matisse",
+		"Pablo Picasso",
+		"Marc Chagall"
+	  ],
+	  "correct_option": [
+		2
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist is known for creating the 'Campbell's Soup Cans' artwork?",
+	  "options": [
+		"Roy Lichtenstein",
+		"Andy Warhol",
+		"Jasper Johns",
+		"Robert Rauschenberg"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "What was the primary style of Jackson Pollock's work?",
+	  "options": [
+		"Surrealism",
+		"Abstract Expressionism",
+		"Realism",
+		"Impressionism"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who created 'The Thinker' sculpture?",
+	  "options": [
+		"Gustav Klimt",
+		"Auguste Rodin",
+		"Michelangelo",
+		"Pablo Picasso"
+	  ],
+	  "correct_option": [
+		1
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which of these artists is associated with the Art Nouveau movement?",
+	  "options": [
+		"Gustav Klimt",
+		"Pablo Picasso",
+		"Salvador Dal\u00ed",
+		"Henri Matisse"
+	  ],
+	  "correct_option": [
+		2
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who painted 'The Last Supper'?",
+	  "options": [
+		"Leonardo da Vinci",
+		"Michelangelo",
+		"Raphael",
+		"Caravaggio"
+	  ],
+	  "correct_option": [
+		2
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "What is the primary subject matter of most works by Jean-Michel Basquiat?",
+	  "options": [
+		"Abstract shapes",
+		"Social issues",
+		"Portraits",
+		"Landscapes"
+	  ],
+	  "correct_option": [
+		3
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who is known for creating the famous painting 'The Scream'?",
+	  "options": [
+		"Edvard Munch",
+		"Vincent van Gogh",
+		"Pablo Picasso",
+		"Salvador Dal\u00ed"
+	  ],
+	  "correct_option": [
+		3
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist created 'The Water Carrier of Seville'?",
+	  "options": [
+		"Diego Vel\u00e1zquez",
+		"Francisco Goya",
+		"El Greco",
+		"Pablo Picasso"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which art style is Mark Rothko most associated with?",
+	  "options": [
+		"Expressionism",
+		"Pop Art",
+		"Abstract Expressionism",
+		"Impressionism"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who painted the 'Girl with a Pearl Earring'?",
+	  "options": [
+		"Johannes Vermeer",
+		"Rembrandt",
+		"Pablo Picasso",
+		"Michelangelo"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "What art movement did Edward Munch belong to?",
+	  "options": [
+		"Expressionism",
+		"Surrealism",
+		"Impressionism",
+		"Cubism"
+	  ],
+	  "correct_option": [
+		1
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist painted 'The Garden of Earthly Delights'?",
+	  "options": [
+		"Hieronymus Bosch",
+		"Pieter Bruegel",
+		"Salvador Dal\u00ed",
+		"Caravaggio"
+	  ],
+	  "correct_option": [
+		1
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which contemporary artist is known for her works of large-scale installation art?",
+	  "options": [
+		"Yayoi Kusama",
+		"Damien Hirst",
+		"Banksy",
+		"Jeff Koons"
+	  ],
+	  "correct_option": [
+		2
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist's work is famously associated with the 'Blue Period'?",
+	  "options": [
+		"Pablo Picasso",
+		"Vincent van Gogh",
+		"Henri Matisse",
+		"Jackson Pollock"
+	  ],
+	  "correct_option": [
+		2
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who painted 'The Birth of Venus'?",
+	  "options": [
+		"Sandro Botticelli",
+		"Leonardo da Vinci",
+		"Caravaggio",
+		"Claude Monet"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who is the artist behind 'The Garden of Earthly Delights'?",
+	  "options": [
+		"Salvador Dal\u00ed",
+		"Caravaggio",
+		"Hieronymus Bosch",
+		"Vincent van Gogh"
+	  ],
+	  "correct_option": [
+		1
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist's 'Les Demoiselles d'Avignon' marked a radical break from traditional artistic representation?",
+	  "options": [
+		"Pablo Picasso",
+		"Henri Matisse",
+		"Georges Braque",
+		"Salvador Dal\u00ed"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who painted 'Les Demoiselles d'Avignon'?",
+	  "options": [
+		"Pablo Picasso",
+		"Georges Braque",
+		"Henri Matisse",
+		"Claude Monet"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist famously said 'Every child is an artist. The problem is how to remain an artist once we grow up'?",
+	  "options": [
+		"Pablo Picasso",
+		"Vincent van Gogh",
+		"Claude Monet",
+		"Salvador Dal\u00ed"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who painted 'The Creation of Adam'?",
+	  "options": [
+		"Leonardo da Vinci",
+		"Michelangelo",
+		"Raphael",
+		"Caravaggio"
+	  ],
+	  "correct_option": [
+		2
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which famous artist created 'Guernica'?",
+	  "options": [
+		"Salvador Dal\u00ed",
+		"Pablo Picasso",
+		"Henri Matisse",
+		"Vincent van Gogh"
+	  ],
+	  "correct_option": [
+		2
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist's work is known for surreal depictions of time?",
+	  "options": [
+		"Salvador Dal\u00ed",
+		"Max Ernst",
+		"Henri Matisse",
+		"Pablo Picasso"
+	  ],
+	  "correct_option": [
+		1
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist created the 'The Night Caf\u00e9'?",
+	  "options": [
+		"Vincent van Gogh",
+		"Pablo Picasso",
+		"Claude Monet",
+		"Edvard Munch"
+	  ],
+	  "correct_option": [
+		2
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artistic movement does Jackson Pollock belong to?",
+	  "options": [
+		"Abstract Expressionism",
+		"Pop Art",
+		"Fauvism",
+		"Surrealism"
+	  ],
+	  "correct_option": [
+		2
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who created the painting 'The Kiss'?",
+	  "options": [
+		"Gustav Klimt",
+		"Pablo Picasso",
+		"Edvard Munch",
+		"Henri Matisse"
+	  ],
+	  "correct_option": [
+		3
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who painted the 'School of Athens'?",
+	  "options": [
+		"Michelangelo",
+		"Raphael",
+		"Leonardo da Vinci",
+		"Caravaggio"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who is known for the 'Chalkboard' series?",
+	  "options": [
+		"Henri Matisse",
+		"Pablo Picasso",
+		"Georges Braque",
+		"Roy Lichtenstein"
+	  ],
+	  "correct_option": [
+		3
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who painted the 'Woman in the Garden'?",
+	  "options": [
+		"Claude Monet",
+		"Pierre-Auguste Renoir",
+		"Henri Matisse",
+		"Vincent van Gogh"
+	  ],
+	  "correct_option": [
+		2
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist's painting 'The Kiss' is highly influential in the Art Nouveau movement?",
+	  "options": [
+		"Gustav Klimt",
+		"Henri Matisse",
+		"Pablo Picasso",
+		"Claude Monet"
+	  ],
+	  "correct_option": [
+		3
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist is famous for the 'Campbell's Soup Cans' painting?",
+	  "options": [
+		"Andy Warhol",
+		"Roy Lichtenstein",
+		"Salvador Dal\u00ed",
+		"Jasper Johns"
+	  ],
+	  "correct_option": [
+		0
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist is best known for the 'Blue Period'?",
+	  "options": [
+		"Pablo Picasso",
+		"Vincent van Gogh",
+		"Claude Monet",
+		"Frida Kahlo"
+	  ],
+	  "correct_option": [
+		3
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Who painted the 'Chalkboard' series?",
+	  "options": [
+		"Georges Braque",
+		"Roy Lichtenstein",
+		"Pablo Picasso",
+		"Henri Matisse"
+	  ],
+	  "correct_option": [
+		1
+	  ]
+	},
+	{
+	  "type": "multiple_choice",
+	  "text": "Which artist created the 'Nighthawks' painting?",
+	  "options": [
+		"Edward Hopper",
+		"Jackson Pollock",
+		"Salvador Dal\u00ed",
+		"Vincent van Gogh"
+	  ],
+	  "correct_option": [
+		3
+	  ]
+	}
+  ]
+}

@@ -1,0 +1,411 @@
+{
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "text": "Who is known as the 'King of Pop'?",
+      "options": [
+        "Elvis Presley",
+        "Michael Jackson",
+        "Prince",
+        "Stevie Wonder"
+      ],
+      "correct_option": [1]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which band released the album 'Abbey Road'?",
+      "options": [
+        "The Rolling Stones",
+        "The Beatles",
+        "Pink Floyd",
+        "Led Zeppelin"
+      ],
+      "correct_option": [1]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which composer is known for writing 'The Four Seasons'?",
+      "options": [
+        "Ludwig van Beethoven",
+        "Johann Sebastian Bach",
+        "Antonio Vivaldi",
+        "Wolfgang Amadeus Mozart"
+      ],
+      "correct_option": [2]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which genre of music did Louis Armstrong help popularize?",
+      "options": [
+        "Jazz",
+        "Blues",
+        "Rock",
+        "Classical"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which artist is known for the hit song 'Rolling in the Deep'?",
+      "options": [
+        "Adele",
+        "Beyoncé",
+        "Rihanna",
+        "Lady Gaga"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which band is known for the iconic song 'Bohemian Rhapsody'?",
+      "options": [
+        "Queen",
+        "The Who",
+        "Pink Floyd",
+        "The Rolling Stones"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What was the first music video played on MTV?",
+      "options": [
+        "Take On Me - A-ha",
+        "Video Killed the Radio Star - The Buggles",
+        "Thriller - Michael Jackson",
+        "Like a Virgin - Madonna"
+      ],
+      "correct_option": [1]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Who is considered the 'Queen of Soul'?",
+      "options": [
+        "Aretha Franklin",
+        "Whitney Houston",
+        "Etta James",
+        "Tina Turner"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which classical composer is famous for 'Symphony No. 9'?",
+      "options": [
+        "Johannes Brahms",
+        "Wolfgang Amadeus Mozart",
+        "Ludwig van Beethoven",
+        "Frédéric Chopin"
+      ],
+      "correct_option": [2]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which Beatles album is often considered their best?",
+      "options": [
+        "Help!",
+        "Revolver",
+        "Sgt. Pepper's Lonely Hearts Club Band",
+        "Rubber Soul"
+      ],
+      "correct_option": [2]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Who is known for the song 'Like a Rolling Stone'?",
+      "options": [
+        "Bob Dylan",
+        "Elvis Presley",
+        "Johnny Cash",
+        "Bruce Springsteen"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which artist's real name is Stefani Joanne Angelina Germanotta?",
+      "options": [
+        "Katy Perry",
+        "Lady Gaga",
+        "Ariana Grande",
+        "Rihanna"
+      ],
+      "correct_option": [1]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What genre of music is Taylor Swift most associated with?",
+      "options": [
+        "Pop",
+        "Rock",
+        "Country",
+        "Jazz"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What band was formed in 1994 by Kurt Cobain and Krist Novoselic?",
+      "options": [
+        "Nirvana",
+        "Pearl Jam",
+        "Soundgarden",
+        "Alice in Chains"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which famous opera composer wrote 'The Magic Flute'?",
+      "options": [
+        "Giuseppe Verdi",
+        "Wolfgang Amadeus Mozart",
+        "Richard Wagner",
+        "Johann Strauss II"
+      ],
+      "correct_option": [1]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which pop singer's album 'Lemonade' was released in 2016?",
+      "options": [
+        "Ariana Grande",
+        "Beyoncé",
+        "Rihanna",
+        "Kesha"
+      ],
+      "correct_option": [1]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which famous singer is known for the hit song 'I Will Always Love You'?",
+      "options": [
+        "Whitney Houston",
+        "Mariah Carey",
+        "Celine Dion",
+        "Adele"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which band is known for the song 'Smells Like Teen Spirit'?",
+      "options": [
+        "Nirvana",
+        "Pearl Jam",
+        "Soundgarden",
+        "The Smashing Pumpkins"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which composer wrote the 'Moonlight Sonata'?",
+      "options": [
+        "Ludwig van Beethoven",
+        "Johann Sebastian Bach",
+        "Frédéric Chopin",
+        "Wolfgang Amadeus Mozart"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which music genre is often associated with the 'Blues Brothers'?",
+      "options": [
+        "Blues",
+        "Jazz",
+        "Rock",
+        "Folk"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which 1990s boy band released the song 'I Want It That Way'?",
+      "options": [
+        "Backstreet Boys",
+        "NSYNC",
+        "98 Degrees",
+        "Boyz II Men"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which artist was known as the 'King of Rock and Roll'?",
+      "options": [
+        "Chuck Berry",
+        "Elvis Presley",
+        "Little Richard",
+        "Buddy Holly"
+      ],
+      "correct_option": [1]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which music video was the first to reach 1 billion views on YouTube?",
+      "options": [
+        "Shape of You - Ed Sheeran",
+        "Despacito - Luis Fonsi",
+        "Gangnam Style - PSY",
+        "Uptown Funk - Mark Ronson"
+      ],
+      "correct_option": [2]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which famous singer is known for the song 'Viva La Vida'?",
+      "options": [
+        "Coldplay",
+        "U2",
+        "The Beatles",
+        "The Rolling Stones"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which artist recorded 'Imagine'?",
+      "options": [
+        "John Lennon",
+        "Paul McCartney",
+        "George Harrison",
+        "Ringo Starr"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Who is known for the hit song 'Bad Guy'?",
+      "options": [
+        "Billie Eilish",
+        "Ariana Grande",
+        "Dua Lipa",
+        "Katy Perry"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which artist is known for the album 'The Dark Side of the Moon'?",
+      "options": [
+        "The Rolling Stones",
+        "Pink Floyd",
+        "Led Zeppelin",
+        "The Who"
+      ],
+      "correct_option": [1]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Who is known as the 'Queen of Hip-Hop Soul'?",
+      "options": [
+        "Beyoncé",
+        "Missy Elliott",
+        "Mary J. Blige",
+        "Nicki Minaj"
+      ],
+      "correct_option": [2]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which group is known for the hit song 'Stayin' Alive'?",
+      "options": [
+        "The Bee Gees",
+        "ABBA",
+        "The Jackson 5",
+        "Earth, Wind & Fire"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which band recorded 'Stairway to Heaven'?",
+      "options": [
+        "The Rolling Stones",
+        "The Beatles",
+        "Led Zeppelin",
+        "Pink Floyd"
+      ],
+      "correct_option": [2]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which artist is known for the album '1989'?",
+      "options": [
+        "Katy Perry",
+        "Taylor Swift",
+        "Lady Gaga",
+        "Ariana Grande"
+      ],
+      "correct_option": [1]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which artist is known for the hit song 'Firework'?",
+      "options": [
+        "Katy Perry",
+        "Adele",
+        "Beyoncé",
+        "Rihanna"
+      ],
+      "correct_option": [0]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which band released 'Hotel California'?",
+      "options": [
+        "The Rolling Stones",
+        "The Eagles",
+        "Fleetwood Mac",
+        "Led Zeppelin"
+      ],
+      "correct_option": [1]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which artist's real name is Marshall Bruce Mathers III?",
+      "options": [
+        "Jay-Z",
+        "Drake",
+        "Eminem",
+        "Kanye West"
+      ],
+      "correct_option": [2]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which group recorded 'I Will Survive'?",
+      "options": [
+        "ABBA",
+        "Gloria Gaynor",
+        "The Supremes",
+        "Diana Ross"
+      ],
+      "correct_option": [1]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which artist is known for 'Halo'?",
+      "options": [
+        "Alicia Keys",
+        "Beyoncé",
+        "Rihanna",
+        "Nicki Minaj"
+      ],
+      "correct_option": [1]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which song is famously associated with Freddie Mercury?",
+      "options": [
+        "We Are the Champions",
+        "Bohemian Rhapsody",
+        "Don't Stop Me Now",
+        "Another One Bites the Dust"
+      ],
+      "correct_option": [1]
+    }
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Hola",
+      "options": [
+        "Goodbye",
+        "Hi",
+        "Hello",
+        "Good day"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Gracias",
+      "options": [
+        "Thank you",
+        "Please",
+        "You're welcome",
+        "Sorry"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: \u00bfC\u00f3mo est\u00e1s?",
+      "options": [
+        "What is your name?",
+        "How old are you?",
+        "How are you?",
+        "Where are you?"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Me llamo Juan",
+      "options": [
+        "I call myself Juan",
+        "I am called Juan",
+        "I am Juan",
+        "My name is Juan"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: \u00bfD\u00f3nde est\u00e1 la biblioteca?",
+      "options": [
+        "Where is the library?",
+        "Where is the park?",
+        "How is the library?",
+        "What is the library?"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Tengo hambre",
+      "options": [
+        "I am hungry",
+        "I am thirsty",
+        "I am full",
+        "I am tired"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Est\u00e1 lloviendo",
+      "options": [
+        "It is snowing",
+        "It is cold",
+        "It is raining",
+        "It is sunny"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Quiero un caf\u00e9",
+      "options": [
+        "I am drinking coffee",
+        "I want a coffee",
+        "Give me a coffee",
+        "I would like a coffee"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Perd\u00f3n",
+      "options": [
+        "Excuse me",
+        "Pardon me",
+        "Sorry",
+        "Please"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: \u00bfD\u00f3nde est\u00e1n mis llaves?",
+      "options": [
+        "What are my keys?",
+        "Where are my keys?",
+        "Who took my keys?",
+        "Where are your keys?"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Es demasiado caro",
+      "options": [
+        "It is too cheap",
+        "It is too cold",
+        "It is too expensive",
+        "It is too hot"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Estoy cansado",
+      "options": [
+        "I am tired",
+        "I am happy",
+        "I am sleepy",
+        "I am sad"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: \u00bfHablas ingl\u00e9s?",
+      "options": [
+        "Can you speak French?",
+        "Are you speaking English?",
+        "Do you speak English?",
+        "Do you speak Spanish?"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Me gusta el chocolate",
+      "options": [
+        "I hate chocolate",
+        "I eat chocolate",
+        "I love chocolate",
+        "I like chocolate"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Es un buen d\u00eda",
+      "options": [
+        "It is a beautiful evening",
+        "It is a good day",
+        "It is a bad day",
+        "It is a nice evening"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: \u00bfC\u00f3mo te llamas?",
+      "options": [
+        "How old are you?",
+        "What are you doing?",
+        "What is your name?",
+        "Where are you from?"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Es tarde",
+      "options": [
+        "It is late",
+        "It is afternoon",
+        "It is early",
+        "It is night"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Lo siento",
+      "options": [
+        "I am happy",
+        "I am sorry",
+        "I am sad",
+        "I am sorry"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Estoy bien",
+      "options": [
+        "I am fine",
+        "I am feeling good",
+        "I am not well",
+        "I am tired"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: \u00bfQu\u00e9 es esto?",
+      "options": [
+        "What are you?",
+        "Where is this?",
+        "What is this?",
+        "Who is this?"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: \u00a1Ay\u00fadame!",
+      "options": [
+        "Help me!",
+        "Leave me alone",
+        "Come here",
+        "Stay with me"
+      ],
+      "correct_option": [
+        0
+      ]
+    }
+  ]
+}

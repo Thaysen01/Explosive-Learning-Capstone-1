@@ -32,6 +32,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 60.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 60
@@ -40,6 +42,7 @@ theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 60
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 60
 
@@ -50,13 +53,8 @@ alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 10
 alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-theme_override_constants/separation = 80
 
 [node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 60)
@@ -75,10 +73,164 @@ theme_override_font_sizes/font_size = 25
 text = "  Difficulty: "
 alignment = 0
 
+[node name="SelectQuestions" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+tooltip_text = "Select this to choose which question set you would like to use. "
+theme_override_font_sizes/font_size = 25
+text = "Select Questions"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions"]
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer"]
+top_level = true
+offset_left = 317.0
+offset_top = 124.0
+offset_right = 833.0
+offset_bottom = 611.0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer"]
+layout_mode = 2
+color = Color(0.121569, 0.313726, 0.188235, 1)
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 507.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 32
+text = "Question Sets"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 2
+offset_left = 14.0
+offset_top = 61.0
+offset_right = 222.0
+offset_bottom = 339.0
+
+[node name="art" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(240, 40)
+layout_mode = 2
+tooltip_text = "Normal level difficulty"
+theme_override_font_sizes/font_size = 25
+text = "Art"
+
+[node name="state" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+tooltip_text = "Easy level difficulty"
+theme_override_font_sizes/font_size = 25
+text = "US State Capitals"
+
+[node name="math" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+tooltip_text = "Easy level difficulty"
+theme_override_font_sizes/font_size = 25
+text = "Math"
+
+[node name="science" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+tooltip_text = "Easy level difficulty"
+theme_override_font_sizes/font_size = 25
+text = "Science"
+
+[node name="spanish" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Spanish"
+
+[node name="french" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+tooltip_text = "Easy level difficulty"
+theme_override_font_sizes/font_size = 25
+text = "French"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 61.0
+offset_right = 502.0
+offset_bottom = 339.0
+
+[node name="music" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2"]
+custom_minimum_size = Vector2(240, 40)
+layout_mode = 2
+tooltip_text = "Normal level difficulty"
+theme_override_font_sizes/font_size = 25
+text = "Music"
+
+[node name="presidents" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+tooltip_text = "Easy level difficulty"
+theme_override_font_sizes/font_size = 25
+text = "US Presidents"
+
+[node name="advMath" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+tooltip_text = "Hard level difficulty"
+theme_override_font_sizes/font_size = 25
+text = "Advanced Math"
+
+[node name="advScience" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+tooltip_text = "Hard level difficulty"
+theme_override_font_sizes/font_size = 25
+text = "Advanced Science"
+
+[node name="advSpanish" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+tooltip_text = "Hard level difficulty"
+theme_override_font_sizes/font_size = 25
+text = "Advanced Spanish"
+
+[node name="advFrench" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+tooltip_text = "Hard level difficulty"
+theme_override_font_sizes/font_size = 25
+text = "Advanced French"
+
+[node name="defaultQs" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 0
+offset_left = 14.0
+offset_top = 344.0
+offset_right = 502.0
+offset_bottom = 387.0
+theme_override_font_sizes/font_size = 25
+text = "Assorted (default)"
+
+[node name="Back" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 404.0
+offset_right = 426.0
+offset_bottom = 466.0
+theme_override_font_sizes/font_size = 25
+text = "Back"
+
+[node name="File" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 60)
+layout_mode = 2
+tooltip_text = "Click this to upload your own, personal, questions. Must be in JSON file format."
+theme_override_font_sizes/font_size = 25
+text = "Upload Questions"
+
 [node name="Audio" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 60)
 layout_mode = 2
-tooltip_text = "Click this to change the difficulty."
+tooltip_text = "Click this adjust audio levels."
 theme_override_fonts/font = SubResource("FontVariation_ruic4")
 theme_override_font_sizes/font_size = 25
 text = "Audio Settings"
@@ -204,13 +356,6 @@ offset_bottom = 399.0
 theme_override_font_sizes/font_size = 25
 text = "Back"
 
-[node name="File" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(180, 60)
-layout_mode = 2
-tooltip_text = "Click this to upload your own questions. Must be in JSON file format."
-theme_override_font_sizes/font_size = 25
-text = "Upload Questions"
-
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 60)
 layout_mode = 2
@@ -218,11 +363,28 @@ tooltip_text = "Click this to close the game."
 theme_override_font_sizes/font_size = 25
 text = "Quit"
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
 [node name="CreateQuestionSet" parent="." instance=ExtResource("4_vnajj")]
-visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Difficulty" to="." method="_on_difficulty_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions" to="." method="_on_select_questions_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer/art" to="." method="_on_art_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer/state" to="." method="_on_state_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer/math" to="." method="_on_math_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer/science" to="." method="_on_science_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer/spanish" to="." method="_on_spanish_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer/french" to="." method="_on_french_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2/music" to="." method="_on_music_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2/presidents" to="." method="_on_presidents_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2/advMath" to="." method="_on_adv_math_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2/advScience" to="." method="_on_adv_science_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2/advSpanish" to="." method="_on_adv_spanish_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2/advFrench" to="." method="_on_adv_french_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/defaultQs" to="." method="_on_default_qs_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Audio" to="." method="_on_audio_pressed"]
 [connection signal="scrolling" from="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect/HScrollBar" to="." method="_on_h_scroll_bar_scrolling"]
 [connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect/CheckBox" to="." method="_on_check_box_toggled"]

@@ -78,11 +78,18 @@ func set_difficulty_button():
 	elif Global.difficulty == 4:
 		$MarginContainer/HBoxContainer/VBoxContainer/Difficulty.text = "  Difficulty: Impossible"
 
+# Audio
 func _on_audio_pressed():
 	$MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer.visible = true
 
 func _on_button_pressed():
 	$MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer.visible = false
+
+func _on_select_questions_pressed():
+	$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer.visible = true
+
+func _on_back_pressed():
+	$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer.visible = false
 
 # Audio logic is decent; take (master * volumeUsed) - x to find the prefered decibles
 func _on_check_box_3_toggled(toggled_on): # Master Checked
@@ -136,3 +143,104 @@ func _on_h_scroll_bar_scrolling():
 func _on_h_scroll_bar_2_scrolling():
 	$MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect/CheckBox2.button_pressed = true
 	Global.musicLevel = (int($MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect/HScrollBar2.value))
+
+var path
+var save_path = "user://questions.json"
+
+# Question set Choices
+func questionSetSelected(path):
+	#print("Creating parced file")
+	#If a new JSON file is saved through (FILE DIALOG): then overwrite that
+	var dataFile  = FileAccess.open(path, FileAccess.READ)
+	var parsedResults = JSON.parse_string(dataFile.get_as_text())
+	dataFile.close()
+	var file_access = FileAccess.open(save_path, FileAccess.WRITE)
+	file_access.store_line(JSON.stringify(parsedResults))
+	file_access.close()
+	
+	var parent_node = get_node("MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer")
+	for child in parent_node.get_children():
+		child.modulate.a = 1
+	parent_node = get_node("MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2")
+	for child in parent_node.get_children():
+		child.modulate.a = 1
+	get_node("MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/defaultQs").modulate.a = 1
+	#$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer.visible = false
+
+func _on_art_pressed():
+	path = "res://assets/art_quiz.json"
+	questionSetSelected(path)
+	$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer/art.modulate.a = 0.5
+	Global.pauseNameQs = "Art"
+
+func _on_state_pressed():
+	path = "res://assets/state_capital_quiz.json"
+	questionSetSelected(path)
+	$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer/state.modulate.a = 0.5
+	Global.pauseNameQs = "State Capitals"
+
+func _on_math_pressed():
+	path = "res://assets/math_quiz_easy.json"
+	questionSetSelected(path)
+	$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer/math.modulate.a = 0.5
+	Global.pauseNameQs = "Math"
+
+func _on_science_pressed():
+	path = "res://assets/science_quiz_easy.json"
+	questionSetSelected(path)
+	$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer/science.modulate.a = 0.5
+	Global.pauseNameQs = "Science"
+
+func _on_spanish_pressed():
+	path = "res://assets/spanish_translation_quiz_easy.json"
+	questionSetSelected(path)
+	$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer/spanish.modulate.a = 0.5
+	Global.pauseNameQs = "Spanish"
+
+func _on_french_pressed():
+	path = "res://assets/french_translation_quiz_easy.json"
+	questionSetSelected(path)
+	$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer/french.modulate.a = 0.5
+	Global.pauseNameQs = "French"
+
+func _on_music_pressed():
+	path = "res://assets/music_quiz.json"
+	questionSetSelected(path)
+	$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2/music.modulate.a = 0.5
+	Global.pauseNameQs = "Music"
+
+func _on_presidents_pressed():
+	path = "res://assets/president_quiz.json"
+	questionSetSelected(path)
+	$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2/presidents.modulate.a = 0.5
+	Global.pauseNameQs = "US Presidents"
+
+func _on_adv_math_pressed():
+	path = "res://assets/math_quiz_hard.json"
+	questionSetSelected(path)
+	$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2/advMath.modulate.a = 0.5
+	Global.pauseNameQs = "Advanced Math"
+
+func _on_adv_science_pressed():
+	path = "res://assets/science_quiz_hard.json"
+	questionSetSelected(path)
+	$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2/advScience.modulate.a = 0.5
+	Global.pauseNameQs = "Advanced Science"
+
+func _on_adv_spanish_pressed():
+	path = "res://assets/spanish_translation_quiz_hard.json"
+	questionSetSelected(path)
+	$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2/advSpanish.modulate.a = 0.5
+	Global.pauseNameQs = "Advanced Spanish"
+
+func _on_adv_french_pressed():
+	path = "res://assets/french_translation_quiz_hard.json"
+	questionSetSelected(path)
+	$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2/advFrench.modulate.a = 0.5
+	Global.pauseNameQs = "Advanced French"
+
+func _on_default_qs_pressed():
+	path = "res://assets/DefaultQuestions500.json"
+	questionSetSelected(path)
+	$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/defaultQs.modulate.a = 0.5
+	Global.pauseNameQs = "Assorted"

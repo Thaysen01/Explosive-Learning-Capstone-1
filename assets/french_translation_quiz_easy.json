@@ -1,0 +1,277 @@
+{
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Bonjour",
+      "options": [
+        "Hello",
+        "Hi there",
+        "Good day",
+        "Goodbye"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Merci beaucoup",
+      "options": [
+        "Excuse me",
+        "You're welcome",
+        "Thank you",
+        "Thank you very much"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Comment \u00e7a va?",
+      "options": [
+        "Where are you?",
+        "How old are you?",
+        "How are you?",
+        "What is your name?"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Je m'appelle Jean",
+      "options": [
+        "I call myself Jean",
+        "I am called Jean",
+        "My name is Jean",
+        "I am Jean"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: O\u00f9 est la biblioth\u00e8que?",
+      "options": [
+        "What is the library?",
+        "Where is the library?",
+        "How is the library?",
+        "Where is the park?"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: J'ai faim",
+      "options": [
+        "I am full",
+        "I am tired",
+        "I am hungry",
+        "I am thirsty"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Il pleut",
+      "options": [
+        "It is snowing",
+        "It is sunny",
+        "It is cold",
+        "It is raining"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Je voudrais un caf\u00e9",
+      "options": [
+        "I am drinking coffee",
+        "I want a coffee",
+        "I would like a coffee",
+        "Give me a coffee"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Excusez-moi",
+      "options": [
+        "Please",
+        "Sorry",
+        "Excuse me",
+        "Pardon me"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: O\u00f9 sont mes cl\u00e9s?",
+      "options": [
+        "Who took my keys?",
+        "Where are your keys?",
+        "Where are my keys?",
+        "What are my keys?"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: C'est trop cher",
+      "options": [
+        "It is too hot",
+        "It is too expensive",
+        "It is too cheap",
+        "It is too cold"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Je suis fatigu\u00e9",
+      "options": [
+        "I am sleepy",
+        "I am tired",
+        "I am sad",
+        "I am happy"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Parlez-vous anglais?",
+      "options": [
+        "Can you speak French?",
+        "Are you speaking English?",
+        "Do you speak Spanish?",
+        "Do you speak English?"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: J'aime le chocolat",
+      "options": [
+        "I love chocolate",
+        "I eat chocolate",
+        "I like chocolate",
+        "I hate chocolate"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: C'est une belle journ\u00e9e",
+      "options": [
+        "It is a nice evening",
+        "It is a beautiful day",
+        "It is a bad day",
+        "It is a beautiful evening"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Comment vous appelez-vous?",
+      "options": [
+        "What is your name?",
+        "How old are you?",
+        "What are you doing?",
+        "Where are you from?"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Il est tard",
+      "options": [
+        "It is late",
+        "It is night",
+        "It is afternoon",
+        "It is early"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Je suis d\u00e9sol\u00e9",
+      "options": [
+        "I am happy",
+        "I am sad",
+        "I am sorry",
+        "I am sorry"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Je vais bien",
+      "options": [
+        "I am feeling good",
+        "I am doing well",
+        "I am not well",
+        "I am tired"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Qu'est-ce que c'est?",
+      "options": [
+        "What is this?",
+        "Who is this?",
+        "What are you?",
+        "Where is this?"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English?: Aidez-moi!",
+      "options": [
+        "Leave me alone",
+        "Stay with me",
+        "Come here",
+        "Help me!"
+      ],
+      "correct_option": [
+        3
+      ]
+    }
+  ]
+}

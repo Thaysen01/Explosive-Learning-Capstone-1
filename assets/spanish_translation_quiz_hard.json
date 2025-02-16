@@ -1,0 +1,251 @@
+{
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'El que no sabe es como el que no ve.')",
+      "options": [
+        "Those who do not know cannot see.",
+        "He who is blind is also ignorant.",
+        "A person who does not know is like one who is blind.",
+        "He who does not know is like he who does not see."
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'El hombre que se ha hecho a s\u00ed mismo no tiene miedo de los retos.')",
+      "options": [
+        "The man who has made himself is not afraid of challenges.",
+        "A man who builds himself fears no challenge.",
+        "A self-made man is not afraid of struggles.",
+        "The self-made man faces no fear."
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'A veces, el amor es lo que te salva, otras veces, lo que te destruye.')",
+      "options": [
+        "Love can save and destroy at the same time.",
+        "Love can be both a remedy and a poison.",
+        "Sometimes, love is what saves you, other times, it is what destroys you.",
+        "Love can both heal and harm."
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'Las cicatrices son la huella de nuestra lucha.')",
+      "options": [
+        "Scars are the marks of our battles.",
+        "Our scars show how much we fought.",
+        "Scars are a testament to our struggles.",
+        "Scars are the trace of our struggle."
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'Quien tiene salud, tiene esperanza; y quien tiene esperanza, lo tiene todo.')",
+      "options": [
+        "Those with health have everything.",
+        "Health is hope, and hope is everything.",
+        "He who has health, has hope; and he who has hope, has everything.",
+        "He who is healthy can achieve anything."
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'La vida no se mide por las veces que respiramos, sino por los momentos que nos quitan el aliento.')",
+      "options": [
+        "Life is measured by moments that take your breath.",
+        "Life is not measured by the times we breathe, but by the moments that take our breath away.",
+        "Life is about the times that leave us speechless.",
+        "Life is counted by the moments of surprise."
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'Solo los que se arriesgan a ir demasiado lejos pueden descubrir lo lejos que se puede llegar.')",
+      "options": [
+        "To go far, one must risk everything.",
+        "Only those who risk going too far can discover how far one can go.",
+        "Only the brave can know their limits.",
+        "The furthest journey begins with a bold step."
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'La belleza est\u00e1 en los ojos de quien la mira.')",
+      "options": [
+        "Beauty is in the eyes of the beholder.",
+        "Beauty is perceived by the observer.",
+        "What is beautiful depends on who sees it.",
+        "Beauty lies in the vision of the viewer."
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'El verdadero amor no es otra cosa que el deseo insaciable de que la otra persona est\u00e9 bien.')",
+      "options": [
+        "True love is nothing other than the insatiable desire for the other person to be well.",
+        "True love is the longing for the other\u2019s happiness.",
+        "True love is about desiring the best for someone.",
+        "Love is caring for someone else's well-being."
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'El que tiene un porqu\u00e9 para vivir, se puede enfrentar a todos los c\u00f3mos.')",
+      "options": [
+        "If you have a reason to live, you can survive anything.",
+        "Those with a purpose in life can face all challenges.",
+        "Those with purpose can endure anything.",
+        "He who has a why to live can bear almost any how."
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'El silencio es un amigo que nunca traiciona.')",
+      "options": [
+        "Silence is the most trustworthy friend.",
+        "Silence is a friend that never betrays.",
+        "Silence is a loyal companion.",
+        "The quiet one never deceives."
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'No hay mal que por bien no venga.')",
+      "options": [
+        "Every cloud has a silver lining.",
+        "No bad situation is without a positive side.",
+        "Good things come after bad.",
+        "After every storm comes calm."
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'Lo \u00fanico imposible es aquello que no intentas.')",
+      "options": [
+        "Nothing is impossible if you try.",
+        "The only impossible thing is that which you do not attempt.",
+        "The only limit is what you don't try.",
+        "Everything is possible when you act."
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'Es mejor ser rey de tu silencio que esclavo de tus palabras.')",
+      "options": [
+        "It is better to be the king of your silence than the slave of your words.",
+        "Control your silence, and you control everything.",
+        "Silence is the greatest power.",
+        "Better to be silent than to be enslaved by your words."
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'La vida es como un espejo; te sonr\u00ede si la miras sonriendo.')",
+      "options": [
+        "Life reflects your mood.",
+        "Life gives back what you show it.",
+        "Life is like a mirror; it smiles at you if you smile at it.",
+        "Life mirrors your actions."
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'Quien no arriesga, no gana.')",
+      "options": [
+        "He who does not risk, does not win.",
+        "Without risk, there is no reward.",
+        "Nothing ventured, nothing gained.",
+        "If you don't take risks, you'll never succeed."
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'El hombre que no lee, no tiene ventaja sobre el que no sabe leer.')",
+      "options": [
+        "A man who does not read is as ignorant as one who cannot.",
+        "He who does not read is just as ignorant as he who cannot.",
+        "The man who does not read has no advantage over the one who cannot read.",
+        "Reading makes the difference."
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'El mayor placer en la vida es hacer lo que la gente dice que no puedes hacer.')",
+      "options": [
+        "The most satisfying success is the one others think you can't achieve.",
+        "The greatest pleasure in life is doing what people say you cannot do.",
+        "The best feeling is proving others wrong.",
+        "The joy of life is accomplishing the impossible."
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (Spanish: 'El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma direcci\u00f3n.')",
+      "options": [
+        "Love does not consist in looking at each other, but in looking together in the same direction.",
+        "Love is seeing things together, not just side by side.",
+        "True love is about being in sync, not just together.",
+        "Love is about shared vision, not just shared moments."
+      ],
+      "correct_option": [
+        0
+      ]
+    }
+  ]
+}

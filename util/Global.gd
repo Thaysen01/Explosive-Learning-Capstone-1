@@ -11,6 +11,7 @@ var difficulty = 2
 var soundEffectLevel = 75.0
 var musicLevel = 75.0
 var masterLevel = 1.0
+var pauseNameQs = "Assorted"
 
 func _ready():
 	process_mode = 3 #Node.PROCESS_MODE_DISABLED# PAUSE_MODE_PROCESS # This node ignores pause so that we can quit anytime

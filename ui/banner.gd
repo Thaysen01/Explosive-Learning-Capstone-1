@@ -73,7 +73,6 @@ func new_question():
 	for i in range(0,4):
 		button[i].text = str(options[i])
 
-# Could have default question sets that the user can choose from (I think the game launches with a default question set) ---
 # Gets data from the JSON file
 func load_json_file(filePath: String):
 	if FileAccess.file_exists(filePath):

@@ -1,0 +1,472 @@
+{
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "text": "What is 2 + 2?",
+      "options": [
+        "6",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 5 * 6?",
+      "options": [
+        "35",
+        "30",
+        "24",
+        "36"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 9 / 3?",
+      "options": [
+        "4",
+        "3",
+        "2",
+        "1"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 12 - 7?",
+      "options": [
+        "6",
+        "5",
+        "3",
+        "4"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the square root of 16?",
+      "options": [
+        "6",
+        "4",
+        "5",
+        "3"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 8 * 7?",
+      "options": [
+        "64",
+        "54",
+        "48",
+        "56"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 15 + 10?",
+      "options": [
+        "20",
+        "25",
+        "35",
+        "30"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the perimeter of a square with side length 4?",
+      "options": [
+        "14",
+        "18",
+        "16",
+        "12"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the area of a circle with radius 5? (Use \u03c0 \u2248 3.14)",
+      "options": [
+        "50",
+        "85",
+        "78.5",
+        "60"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 7^2?",
+      "options": [
+        "49",
+        "56",
+        "42",
+        "63"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 14 \u00f7 2?",
+      "options": [
+        "7",
+        "6",
+        "5",
+        "4"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the value of \u03c0 (approximately)?",
+      "options": [
+        "3.14",
+        "3.00",
+        "3.15",
+        "3.12"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 25 + 50?",
+      "options": [
+        "70",
+        "80",
+        "90",
+        "75"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 100 \u00f7 5?",
+      "options": [
+        "20",
+        "22",
+        "25",
+        "18"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 3 * 3 + 6?",
+      "options": [
+        "14",
+        "18",
+        "12",
+        "15"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the area of a triangle with base 6 and height 8?",
+      "options": [
+        "18",
+        "20",
+        "24",
+        "30"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the hypotenuse of a right triangle with legs 3 and 4?",
+      "options": [
+        "8",
+        "6",
+        "5",
+        "7"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 3 + 3 * 2?",
+      "options": [
+        "9",
+        "12",
+        "6",
+        "8"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 16 \u00f7 4?",
+      "options": [
+        "4",
+        "2",
+        "5",
+        "3"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 10 * 10?",
+      "options": [
+        "110",
+        "90",
+        "120",
+        "100"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the volume of a cube with side length 3?",
+      "options": [
+        "27",
+        "24",
+        "21",
+        "30"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the solution to x + 4 = 10?",
+      "options": [
+        "5",
+        "7",
+        "8",
+        "6"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 5^3?",
+      "options": [
+        "125",
+        "120",
+        "100",
+        "150"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the value of 8 + 12 \u00f7 4?",
+      "options": [
+        "10",
+        "12",
+        "11",
+        "13"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 2^4?",
+      "options": [
+        "16",
+        "20",
+        "12",
+        "14"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the area of a rectangle with length 5 and width 10?",
+      "options": [
+        "55",
+        "60",
+        "50",
+        "40"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 6 + 9?",
+      "options": [
+        "13",
+        "14",
+        "15",
+        "17"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 20 \u00f7 4?",
+      "options": [
+        "5",
+        "4",
+        "6",
+        "7"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 11 * 3?",
+      "options": [
+        "35",
+        "32",
+        "33",
+        "31"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 4 + 7 * 2?",
+      "options": [
+        "14",
+        "18",
+        "16",
+        "19"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the volume of a rectangular prism with length 2, width 3, and height 4?",
+      "options": [
+        "24",
+        "20",
+        "25",
+        "18"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 45 - 17?",
+      "options": [
+        "30",
+        "20",
+        "28",
+        "25"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 6^2?",
+      "options": [
+        "36",
+        "30",
+        "40",
+        "35"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the circumference of a circle with radius 3? (Use \u03c0 \u2248 3.14)",
+      "options": [
+        "19",
+        "16",
+        "17",
+        "18.84"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 3 * (4 + 2)?",
+      "options": [
+        "24",
+        "18",
+        "20",
+        "16"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is 18 \u00f7 3?",
+      "options": [
+        "7",
+        "5",
+        "8",
+        "6"
+      ],
+      "correct_option": [
+        3
+      ]
+    }
+  ]
+}

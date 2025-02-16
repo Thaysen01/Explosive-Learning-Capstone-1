@@ -1,0 +1,238 @@
+{
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'Quel est le prix de la libert\u00e9 si ce n'est pas la v\u00e9rit\u00e9?')",
+      "options": [
+        "What is the value of freedom if not justice?",
+        "What is the cost of liberty if it is not peace?",
+        "What is the worth of liberty if it is not happiness?",
+        "What is the price of freedom if not truth?"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'Les grandes choses ne se font pas par impulsion, mais par une s\u00e9rie de petites choses r\u00e9unies.')",
+      "options": [
+        "Big things are not accomplished by a sudden burst, but by many small efforts combined.",
+        "Great things are not done by impulse, but by a series of small things brought together.",
+        "Big successes are made by sudden moments, not repeated actions.",
+        "Great achievements come from great passion, not small efforts."
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'La libert\u00e9 est toujours la libert\u00e9 de celui qui pense autrement.')",
+      "options": [
+        "Freedom is always the freedom of the one who thinks differently.",
+        "Liberty is the ability to choose, not to act differently.",
+        "Liberty is always the freedom of the person who has different thoughts.",
+        "Freedom is never about doing what you want, but what others want."
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'Il n'y a que deux v\u00e9rit\u00e9s: la v\u00e9rit\u00e9 et l'illusion.')",
+      "options": [
+        "There are only two truths: truth and illusion.",
+        "There are only two options: honesty and deception.",
+        "Only truth exists, and everything else is illusion.",
+        "Truth and falsehood are the only two realities."
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'Rien n'est plus fort qu'une id\u00e9e dont l'heure est venue.')",
+      "options": [
+        "An idea whose time has come is unstoppable.",
+        "An idea whose time is up is the most powerful force.",
+        "Nothing is stronger than an idea whose time has come.",
+        "Nothing can resist an idea whose time has come."
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'L'homme est condamn\u00e9 \u00e0 \u00eatre libre.')",
+      "options": [
+        "Man is condemned to be free.",
+        "Man is cursed with freedom.",
+        "Man must always seek freedom.",
+        "Man is destined to be free."
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'C'est dans la nuit que les \u00e9toiles brillent le plus.')",
+      "options": [
+        "It is in the night that the stars shine the brightest.",
+        "Stars are most visible at night.",
+        "In the darkness, the stars shine the most brightly.",
+        "Night reveals the stars' beauty."
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'La culture, c'est ce qui reste quand on a tout oubli\u00e9.')",
+      "options": [
+        "Culture is what endures after all else fades.",
+        "Culture is what remains when everything is forgotten.",
+        "What remains is culture when everything is lost.",
+        "Culture is the essence of memory."
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'Il faut \u00eatre absolument moderne.')",
+      "options": [
+        "Being modern is essential.",
+        "You must live in the present.",
+        "To be truly yourself, you must be modern.",
+        "One must be absolutely modern."
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'Un esprit sain dans un corps sain.')",
+      "options": [
+        "Only a balanced body can have a healthy mind.",
+        "To be healthy, both mind and body must be well.",
+        "A healthy mind in a healthy body.",
+        "A strong mind and body are one."
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'L'art est un mensonge qui nous fait comprendre la v\u00e9rit\u00e9.')",
+      "options": [
+        "The truth in art is hidden by illusion.",
+        "Art lies to us about the world but shows us its reality.",
+        "Art is a lie that makes us feel the truth.",
+        "Art is a lie that makes us realize the truth."
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'Le monde est un livre, et ceux qui ne voyagent pas n'en lisent qu'une page.')",
+      "options": [
+        "If you never travel, you read one page of the world.",
+        "Traveling is reading the world.",
+        "The world is a novel, and travelers experience all chapters.",
+        "The world is a book, and those who do not travel read only one page."
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'Le seul vrai voyage, ce ne serait pas d\u2019aller vers de nouveaux paysages, mais d\u2019avoir d\u2019autres yeux.')",
+      "options": [
+        "True travel is about discovering new perspectives.",
+        "Real journeys are not about locations but about perception.",
+        "Travel is not about places, but how you see them.",
+        "The only true voyage would not be to go to new landscapes, but to have other eyes."
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'C'est en jouant et en riant que l'on devient s\u00e9rieux.')",
+      "options": [
+        "It is by playing and laughing that we become serious.",
+        "Seriousness comes from enjoyment, not from effort.",
+        "Through joy and games, we learn life\u2019s truths.",
+        "Laughter and play teach us the most important lessons."
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'La vie est ce qui nous arrive pendant que nous sommes occup\u00e9s \u00e0 faire d'autres projets.')",
+      "options": [
+        "Life happens when we stop focusing on our future.",
+        "We live life while distracted by planning.",
+        "Life is what occurs while we are distracted by our goals.",
+        "Life is what happens while we are busy making other plans."
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'Le temps est un grand ma\u00eetre, il r\u00e8gle bien des choses.')",
+      "options": [
+        "Time teaches us everything.",
+        "Everything is settled in time.",
+        "Time is a great teacher, it settles many things.",
+        "Time is the solution to many problems."
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'On ne voit bien qu'avec le c\u0153ur. L'essentiel est invisible pour les yeux.')",
+      "options": [
+        "Only the heart sees clearly, the eyes deceive.",
+        "The most important things cannot be seen.",
+        "True vision comes from the heart, not the eyes.",
+        "One sees clearly only with the heart. What is essential is invisible to the eyes."
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What does this mean in English? (French: 'L'essentiel est invisible pour les yeux.')",
+      "options": [
+        "What is essential is invisible to the eyes.",
+        "You can\u2019t always see what matters most.",
+        "What truly matters is beyond vision.",
+        "What\u2019s important can\u2019t be seen, only felt."
+      ],
+      "correct_option": [
+        0
+      ]
+    }
+  ]
+}

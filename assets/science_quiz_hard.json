@@ -1,0 +1,433 @@
+{
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "text": "What is the chemical formula for methane?",
+      "options": [
+        "CH4",
+        "CO2",
+        "C2H6",
+        "O2"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the most abundant gas in Earth's atmosphere?",
+      "options": [
+        "Oxygen",
+        "Carbon dioxide",
+        "Nitrogen",
+        "Argon"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the atomic number of Uranium?",
+      "options": [
+        "92",
+        "93",
+        "89",
+        "88"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the powerhouse of the cell?",
+      "options": [
+        "Nucleus",
+        "Mitochondria",
+        "Endoplasmic reticulum",
+        "Chloroplast"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the SI unit of force?",
+      "options": [
+        "Pascal",
+        "Newton",
+        "Joule",
+        "Watt"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the process by which plants convert sunlight into energy?",
+      "options": [
+        "Photosynthesis",
+        "Transpiration",
+        "Respiration",
+        "Fermentation"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the speed of light in a vacuum?",
+      "options": [
+        "299792458",
+        "299792460",
+        "150000000",
+        "300000000"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the chemical element with the symbol 'Fe'?",
+      "options": [
+        "Flerovium",
+        "Iron",
+        "Francium",
+        "Fluorine"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the most common type of star in the universe?",
+      "options": [
+        "Neutron star",
+        "Red dwarf",
+        "White dwarf",
+        "Yellow dwarf"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the pH level of pure water?",
+      "options": [
+        "8",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the largest planet in our solar system?",
+      "options": [
+        "Uranus",
+        "Neptune",
+        "Jupiter",
+        "Saturn"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the atomic mass of carbon?",
+      "options": [
+        "12.01",
+        "15.01",
+        "14.01",
+        "13.01"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the process by which water changes from liquid to gas?",
+      "options": [
+        "Evaporation",
+        "Condensation",
+        "Freezing",
+        "Fusion"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the molecular structure of a water molecule?",
+      "options": [
+        "O2",
+        "CO2",
+        "H2O",
+        "CH4"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the chemical symbol for gold?",
+      "options": [
+        "Ag",
+        "Au",
+        "Pb",
+        "Fe"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the force that keeps planets in orbit around the Sun?",
+      "options": [
+        "Electrostatic force",
+        "Centripetal force",
+        "Magnetism",
+        "Gravity"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the most common type of RNA?",
+      "options": [
+        "cRNA",
+        "tRNA",
+        "rRNA",
+        "mRNA"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the name of the element with the atomic number 79?",
+      "options": [
+        "Platinum",
+        "Silver",
+        "Gold",
+        "Copper"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the gas primarily responsible for global warming?",
+      "options": [
+        "Methane",
+        "Carbon dioxide",
+        "Oxygen",
+        "Nitrogen"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the type of bond that holds oxygen and hydrogen atoms together in a water molecule?",
+      "options": [
+        "Metallic bond",
+        "Covalent bond",
+        "Hydrogen bond",
+        "Ionic bond"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the unit of electric current?",
+      "options": [
+        "Ohm",
+        "Ampere",
+        "Volt",
+        "Watt"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the charge of an electron?",
+      "options": [
+        "+1",
+        "-2",
+        "-1",
+        "0"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the most abundant element in the Earth's crust?",
+      "options": [
+        "Oxygen",
+        "Iron",
+        "Calcium",
+        "Silicon"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the process of cell division in eukaryotic cells?",
+      "options": [
+        "Meiosis",
+        "Fertilization",
+        "Mitosis",
+        "Binary fission"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the speed of sound in air at 20\u00b0C?",
+      "options": [
+        "343",
+        "330",
+        "350",
+        "340"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the element with the highest atomic number naturally occurring?",
+      "options": [
+        "Radon",
+        "Thorium",
+        "Uranium",
+        "Plutonium"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the branch of science that studies heredity?",
+      "options": [
+        "Genetics",
+        "Evolution",
+        "Botany",
+        "Zoology"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the main component of the Sun's energy?",
+      "options": [
+        "Nuclear fusion",
+        "Chemical reaction",
+        "Electrical discharge",
+        "Magnetic reaction"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the chemical formula for hydrochloric acid?",
+      "options": [
+        "H2SO4",
+        "NaOH",
+        "HCl",
+        "HNO3"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the most abundant mineral in the Earth's crust?",
+      "options": [
+        "Quartz",
+        "Mica",
+        "Feldspar",
+        "Calcite"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the phenomenon responsible for the bending of light?",
+      "options": [
+        "Diffraction",
+        "Interference",
+        "Refraction",
+        "Reflection"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the SI unit of pressure?",
+      "options": [
+        "Pascal",
+        "Atmosphere",
+        "Torr",
+        "Bar"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the process that powers stars, including the Sun?",
+      "options": [
+        "Nuclear fusion",
+        "Gravitational collapse",
+        "Radioactive decay",
+        "Nuclear fission"
+      ],
+      "correct_option": [
+        0
+      ]
+    }
+  ]
+}

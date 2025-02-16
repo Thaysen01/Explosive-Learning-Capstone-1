@@ -1,0 +1,277 @@
+{
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "text": "What is the chemical symbol for Water?",
+      "options": [
+        "H2SO4",
+        "O2",
+        "CO2",
+        "H2O"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What planet is known as the Red Planet?",
+      "options": [
+        "Venus",
+        "Jupiter",
+        "Saturn",
+        "Mars"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the hardest natural substance on Earth?",
+      "options": [
+        "Quartz",
+        "Diamond",
+        "Gold",
+        "Iron"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the chemical symbol for gold?",
+      "options": [
+        "Fe",
+        "Pb",
+        "Ag",
+        "Au"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the process by which plants make their food?",
+      "options": [
+        "Respiration",
+        "Fermentation",
+        "Transpiration",
+        "Photosynthesis"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the powerhouse of the cell?",
+      "options": [
+        "Mitochondria",
+        "Endoplasmic Reticulum",
+        "Ribosome",
+        "Nucleus"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What element does 'O' represent on the periodic table?",
+      "options": [
+        "Opium",
+        "Oxygen",
+        "Ozone",
+        "Osmium"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the chemical formula for methane?",
+      "options": [
+        "C2H6",
+        "C3H8",
+        "C4H10",
+        "CH4"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the name of the force that pulls objects toward Earth?",
+      "options": [
+        "Gravity",
+        "Friction",
+        "Magnetism",
+        "Electromagnetism"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the most common gas in Earth's atmosphere?",
+      "options": [
+        "Oxygen",
+        "Nitrogen",
+        "Carbon Dioxide",
+        "Helium"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What organ in the human body is responsible for pumping blood?",
+      "options": [
+        "Heart",
+        "Lungs",
+        "Liver",
+        "Kidneys"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the unit of force in physics?",
+      "options": [
+        "Newton",
+        "Watt",
+        "Pascal",
+        "Joule"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the chemical symbol for Sodium?",
+      "options": [
+        "K",
+        "Na",
+        "Fe",
+        "Mg"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which planet is closest to the Sun?",
+      "options": [
+        "Venus",
+        "Mercury",
+        "Earth",
+        "Mars"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the process by which animals breathe?",
+      "options": [
+        "Respiration",
+        "Photosynthesis",
+        "Fermentation",
+        "Osmosis"
+      ],
+      "correct_option": [
+        0
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the smallest unit of life?",
+      "options": [
+        "Organ",
+        "Atom",
+        "Cell",
+        "Molecule"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the study of living organisms called?",
+      "options": [
+        "Physics",
+        "Geology",
+        "Chemistry",
+        "Biology"
+      ],
+      "correct_option": [
+        3
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the atomic number of Carbon?",
+      "options": [
+        "12",
+        "6",
+        "14",
+        "8"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What part of the plant conducts photosynthesis?",
+      "options": [
+        "Flower",
+        "Leaf",
+        "Stem",
+        "Root"
+      ],
+      "correct_option": [
+        1
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the formula for calculating speed?",
+      "options": [
+        "Speed = Time / Distance",
+        "Speed = Force / Time",
+        "Speed = Distance / Time",
+        "Speed = Mass / Distance"
+      ],
+      "correct_option": [
+        2
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "What is the process of changing a liquid to a gas called?",
+      "options": [
+        "Condensation",
+        "Sublimation",
+        "Freezing",
+        "Evaporation"
+      ],
+      "correct_option": [
+        3
+      ]
+    }
+  ]
+}
