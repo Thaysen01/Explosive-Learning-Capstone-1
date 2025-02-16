@@ -189,20 +189,21 @@ modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
-[node name="quit" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="tanks" type="Button" parent="PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-text = "Quit"
+text = "Tanks"
 
 [node name="HSeparator4" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
-[node name="tanks" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="quit" type="Button" parent="PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-text = "Tanks"
+tooltip_text = "Go back to the main menu"
+text = "Exit"
 
 [node name="HSeparator5" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -721,8 +722,8 @@ libraries = {
 [connection signal="pressed" from="PanelContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/audioSettings" to="." method="_on_audio_settings_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/tanks" to="." method="_on_tanks_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="scrolling" from="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar" to="." method="_on_h_scroll_bar_scrolling"]
 [connection signal="toggled" from="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="scrolling" from="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect/HScrollBar2" to="." method="_on_h_scroll_bar_2_scrolling"]

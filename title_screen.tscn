@@ -59,7 +59,7 @@ alignment = 1
 [node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 60)
 layout_mode = 2
-tooltip_text = "Click this to begin a new game."
+tooltip_text = "Click this to begin a new game"
 theme_override_fonts/font = SubResource("FontVariation_ruic4")
 theme_override_font_sizes/font_size = 25
 text = "Start Game"
@@ -67,7 +67,7 @@ text = "Start Game"
 [node name="Difficulty" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 60)
 layout_mode = 2
-tooltip_text = "Click this to change the difficulty."
+tooltip_text = "Click this to change the difficulty"
 theme_override_fonts/font = SubResource("FontVariation_ruic4")
 theme_override_font_sizes/font_size = 25
 text = "  Difficulty: "
@@ -76,7 +76,7 @@ alignment = 0
 [node name="SelectQuestions" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
-tooltip_text = "Select this to choose which question set you would like to use. "
+tooltip_text = "Select this to choose which question set you would like to use"
 theme_override_font_sizes/font_size = 25
 text = "Select Questions"
 
@@ -223,14 +223,14 @@ text = "Back"
 [node name="File" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 60)
 layout_mode = 2
-tooltip_text = "Click this to upload your own, personal, questions. Must be in JSON file format."
+tooltip_text = "Click this to upload your own, personal, questions. Must be in JSON file format"
 theme_override_font_sizes/font_size = 25
 text = "Upload Questions"
 
 [node name="Audio" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 60)
 layout_mode = 2
-tooltip_text = "Click this adjust audio levels."
+tooltip_text = "Click this adjust audio levels"
 theme_override_fonts/font = SubResource("FontVariation_ruic4")
 theme_override_font_sizes/font_size = 25
 text = "Audio Settings"
@@ -359,7 +359,7 @@ text = "Back"
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 60)
 layout_mode = 2
-tooltip_text = "Click this to close the game."
+tooltip_text = "Click this to close the game"
 theme_override_font_sizes/font_size = 25
 text = "Quit"
 
