@@ -127,7 +127,11 @@ func _on_quit_wait_timeout():
 
 func _on_audio_settings_pressed():
 	$PanelContainer/VBoxContainer/CanvasLayer.visible = true
-	#$PanelContainer.visible = false
+	$"PanelContainer/VBoxContainer/EnemyTanksA".visible = false
+	$"PanelContainer/VBoxContainer/EnemyTanksB".visible = false
+	$"PanelContainer/VBoxContainer/Controls".visible = false
+	$"PanelContainer/VBoxContainer/ControlsB".visible = false
+	$PanelContainer/VBoxContainer/tanks.text = "Display Tanks / Controls"
 
 func _on_h_scroll_bar_value_changed(value):
 	Global.soundEffectLevel = int(value)

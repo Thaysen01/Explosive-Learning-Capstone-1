@@ -244,3 +244,9 @@ func _on_default_qs_pressed():
 	questionSetSelected(path)
 	$MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/defaultQs.modulate.a = 0.5
 	Global.pauseNameQs = "Assorted"
+
+func _on_label_mouse_entered():
+	$Label/CanvasLayer.visible = true
+
+func _on_label_mouse_exited():
+	$Label/CanvasLayer.visible = false

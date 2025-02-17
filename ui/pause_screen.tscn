@@ -616,7 +616,7 @@ mouse_filter = 1
 
 [node name="ColorRect" type="ColorRect" parent="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer"]
 layout_mode = 2
-color = Color(0.121569, 0.313726, 0.188235, 1)
+color = Color(0.65098, 0.12549, 0, 1)
 
 [node name="Label3" type="Label" parent="PanelContainer/VBoxContainer/CanvasLayer/PanelContainer/ColorRect"]
 layout_mode = 0
