@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cjucnla4wsu42"]
+[gd_scene load_steps=13 format=3 uid="uid://cjucnla4wsu42"]
 
 [ext_resource type="Script" path="res://ui/pause_screen.gd" id="1_wl04b"]
 [ext_resource type="Shader" path="res://ui/pause_screen.gdshader" id="2_ptysv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://6gqfsoigp7eq" path="res://ui/enemyTanksB.png" id="4_3d38d"]
 [ext_resource type="Texture2D" uid="uid://2pecy5bnhbkx" path="res://ui/controls.png" id="5_a7sjf"]
 [ext_resource type="Texture2D" uid="uid://bwf8sidbxtqou" path="res://ui/controlsB.png" id="6_s4cyg"]
+[ext_resource type="Texture2D" uid="uid://8vu2n6wp1256" path="res://assets/kenney_top-down-tanks/PNG/Tanks/barrelBlue.png" id="7_pndxs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ifjx"]
 shader = ExtResource("2_ptysv")
@@ -248,9 +249,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabelT3" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
 offset_left = -129.0
-offset_top = 41.3223
+offset_top = 42.0032
 offset_right = -51.0
-offset_bottom = 114.322
+offset_bottom = 115.003
 tooltip_text = "Grey Tank
 Health: 5
 Movement Speed: Normal
@@ -263,9 +264,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabelT4" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
 offset_left = -129.0
-offset_top = 123.033
+offset_top = 122.352
 offset_right = -51.0
-offset_bottom = 196.033
+offset_bottom = 195.352
 tooltip_text = "Yellow Tank
 Health: 8
 Movement Speed: Fast
@@ -278,9 +279,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabelB" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
 offset_left = -48.0
-offset_top = 136.0
+offset_top = 135.319
 offset_right = -6.0
-offset_bottom = 184.0
+offset_bottom = 183.319
 tooltip_text = "Bomber: Drops explosive mines"
 metadata/_edit_use_anchors_ = true
 
@@ -323,6 +324,14 @@ offset_right = -19.4433
 offset_bottom = -104.592
 tooltip_text = "Multiple Bullets: Tank can have multiple bullets on the screen"
 metadata/_edit_use_anchors_ = true
+
+[node name="CannonSprite" type="Sprite2D" parent="PanelContainer/VBoxContainer/EnemyTanksA"]
+position = Vector2(-91.7582, -133.717)
+rotation = 1.5708
+scale = Vector2(0.766969, 0.802436)
+texture = ExtResource("7_pndxs")
+centered = false
+offset = Vector2(-8, -44)
 
 [node name="EnemyTanksB" type="Sprite2D" parent="PanelContainer/VBoxContainer"]
 visible = false

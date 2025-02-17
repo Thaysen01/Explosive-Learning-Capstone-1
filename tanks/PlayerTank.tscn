@@ -4,8 +4,21 @@
 [ext_resource type="Script" path="res://tanks/PlayerTank.gd" id="1_31hxe"]
 
 [node name="PlayerTank" groups=["player"] instance=ExtResource("1_7w22a")]
+position = Vector2(1, 0)
 script = ExtResource("1_31hxe")
 speed = 85
 maxBullets = 5
 maxMines = 5
 max_hp = 10
+
+[node name="Cannon" parent="." index="2"]
+position = Vector2(-1, 0)
+
+[node name="CannonSprite" parent="Cannon" index="0"]
+position = Vector2(9, 0)
+
+[node name="CollisionShape2D" parent="Cannon" index="1"]
+position = Vector2(9, 0)
+
+[node name="health" parent="." index="3"]
+metadata/_edit_use_anchors_ = true

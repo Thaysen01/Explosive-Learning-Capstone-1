@@ -116,6 +116,11 @@ func _on_tanks_pressed():
 		$"PanelContainer/VBoxContainer/ControlsB".visible = true
 		$PanelContainer/VBoxContainer/tanks.text = "(Controls) Display Tanks"
 
+func _process(delta):
+	var cannon = $PanelContainer/VBoxContainer/EnemyTanksA/CannonSprite
+	var cannonPos = cannon.global_position  # Get the global position of the cannon
+	cannon.rotation = cannonPos.angle_to_point(get_global_mouse_position()) + (PI/2)
+
 func _on_quit_wait_timeout():
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(title_screen)
