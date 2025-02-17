@@ -278,6 +278,14 @@ tooltip_text = "Easy level difficulty"
 theme_override_font_sizes/font_size = 25
 text = "Assorted (default)"
 
+[node name="Back" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect"]
+offset_left = 118.0
+offset_top = 405.0
+offset_right = 398.0
+offset_bottom = 467.0
+theme_override_font_sizes/font_size = 25
+text = "Back"
+
 [node name="File" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 60)
 layout_mode = 2
@@ -499,6 +507,7 @@ Alex           Research - Scene Additions"
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2/advSpanish" to="." method="_on_adv_spanish_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/VBoxContainer2/advFrench" to="." method="_on_adv_french_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/defaultQs" to="." method="_on_default_qs_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SelectQuestions/CanvasLayer/PanelContainer/ColorRect/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Audio" to="." method="_on_audio_pressed"]
 [connection signal="scrolling" from="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect/HScrollBar" to="." method="_on_h_scroll_bar_scrolling"]
 [connection signal="toggled" from="MarginContainer/HBoxContainer/VBoxContainer/Audio/CanvasLayer/PanelContainer/ColorRect/CheckBox" to="." method="_on_check_box_toggled"]
