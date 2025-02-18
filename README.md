@@ -4,7 +4,7 @@
 ### This game allows the user to control a tank. It has the ability to traverse the map and can collide with other tanks and objects. Tanks have the ability to shoot eachother and drop bombs to deal damage. Each tank has varying logic and abilities. This allows the user to fight enemies to attempt to clear different levels. After each level, the user must answer a question correctly to advance. If they answer incorrectly, they must repeat the wave. 
 
 # Game Installation: 
-### You can install this game here:
+### You can install this game here, but clicking download:
 ### [Download Explosive Learning](https://github.com/Thaysen01/Explosive-Learning-Capstone-1/blob/main/Explosive%20Learning.exe)
 ### By downloading this and running it, the game should start immediately. 
 ### Additionally, this repo can be cloned and if the below versions are in use, the user should be able to launch this way. Note: This program is expected to function in future versions, however Godot updates often and thus creates outdated code. 
