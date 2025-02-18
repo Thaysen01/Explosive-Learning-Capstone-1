@@ -5,7 +5,7 @@
 
 # Game Installation: 
 ### You can install this game here:
-[Download Explosive Learning](https://github.com/Thaysen01/Explosive-Learning-Capstone-1/blob/main/Explosive%20Learning.exe)
+### [Download Explosive Learning](https://github.com/Thaysen01/Explosive-Learning-Capstone-1/blob/main/Explosive%20Learning.exe)
 ### By downloading this and running it, the game should start immediately. 
 ### Additionally, this repo can be cloned and if the below versions are in use, the user should be able to launch this way. Note: This program is expected to function in future versions, however Godot updates often and thus creates outdated code. 
 
