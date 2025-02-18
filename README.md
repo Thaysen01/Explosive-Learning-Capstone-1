@@ -1,93 +1,54 @@
-# LeagueOfLearning
+# Explosive Learning - Capstone 1 Project
 
+# Summary:
+### This game allows the user to control a tank. It has the ability to traverse the map and can collide with other tanks and objects. Tanks have the ability to shoot eachother and drop bombs to deal damage. Each tank has varying logic and abilities. This allows the user to fight enemies to attempt to clear different levels. After each level, the user must answer a question correctly to advance. If they answer incorrectly, they must repeat the wave. 
 
+# Game Installation: 
+### This repository contains the executable file to run this game (Explosive Leaning.exe). By downloading this and running it, the game should start immediately. 
+### Additionally, this repo can be cloned and if the below versions are in use, the user should be able to launch this way. Note: This program is expected to function in future versions, however Godot updates often and thus creates outdated code. 
 
-## Getting started
+# Game Features: 
+# Questions:
+### The user must select which question set they would like to use. By default, they will play with an assorted list of questions, however, they may select from a list of preset question sets or upload their own JSON file to use; this must be in proper JSON format or the game will not begin (view 'assets/DefaultQuestions500.json' to see what this might look like). 
+### Once the user has selected a set and the game begins, their question set will be used in the game. This question set may be as long as the user wants, however, only a maximum of 14 of these will be used in the game. After each level, the user must answer a randomly selected question correctly to advance. If they answer incorrectly, they must repeat the wave. Only once a question is answered correctly will a question be removed from the possible questions asked. After the user has answered all (or 14) of these, they have won the game. 
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+# Tank Abilities:
+### Each tank has a unique set of instructions. Some tanks move faster, some shoot more powerful bullets, and some are very tanky. Tanks abilities can be viewed in the pause menu. Each tank has a limited amount of bullets and mines that can be on the screen at a time, creating an interesting fighting mechanic, at range. 
+### Shooting: Enemy tanks will rotate their barrel differently and fire different kind of bullets. The damage this deals to the player will vary depending on the selected difficulty; this can be seen as a tooltip hovering over the difficulty on the title screen. All tanks are able to damage any other tank if one gets in the way. 
+### Mines: Some tanks have the ability to drop mines around the map. Mines will explode after either a 10s delay or something collides with it (this can be bullets or other tanks). This will deal a set amount of damage to anything in a close proximity. 
+### Pathfinding: If a tank has the ability to move, it will pathfind to another spot on the map. 
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+### Player Tank: The player may move freely around the map using WASD. They are able to shoot bullets using left-click and drop mines with right-click. 
 
-## Add your files
+# Tank Spawning:
+### An algorithm was created to spawn 4-6 tanks per level. If there are 7 fewer questions in the question set, each level will only have 4 tanks and the user will not even get a final boss. For every extra question the user has after that, creates a round that does not add a new tank, but has 6 of the tanks that the user has already seen. With the first and last level not ever having 6 tanks, this gives the strange 14 level total. Each level will always contain 1-2 of the newest introduced tank; on the final level exactly one BOSS tank will spawn with 3 other tanks. 
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+# Audio / Menu Selection
+### To appeal to users more, menus were added for ease of use, allowing for quick audio adjustments and file selection. 
 
-```
-cd existing_repo
-git remote add origin https://git-classes.mst.edu/mdtnz3/leagueoflearning.git
-git branch -M main
-git push -uf origin main
-```
+# Versions:
+### These are the versions of the tools and libraries used to run these applications:
+- Gdot       : 3.12.8  [game engine]
+- (GDScript) : 2.0     [programming language]
+- rcedit     : 2.0.0   [tool]
+  
+# Coding Feats:
+### To create this application, our team concurred several coding challenges. Including: 
+- JSON file parsing
+- Ray casting
+- Path finding
+- Animation
+- File structuring
+- Scene connection
+- Spawning algorithms
+- Movment physics
+- Collision
+- Taking user input
+- Mouse detection
+- Menu systems
+- Audio cordination
 
-## Integrate with your tools
+# Assets Used
+- Kenny top down tanks
 
-- [ ] [Set up project integrations](https://git-classes.mst.edu/mdtnz3/leagueoflearning/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+### The scope of this project was developed to create an interactive education game. This game is expected to be usable for students in a classroom setting, allowing for friendly competition. Our team feels that this has been achieved. 
